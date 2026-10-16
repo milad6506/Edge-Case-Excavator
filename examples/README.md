@@ -44,3 +44,25 @@ python3 -m excavator.cli excavate \
 Then copy `runs/drivelm_full/findings.txt`,
 `excavation_report_slim.json` and `coverage_matrix.html` here. Add one row per
 new dataset (Waymo, CARLA, internal corpora) following the same layout.
+
+## Three-level upgrade (text + VLM + detector)
+
+The committed artifacts now reflect the FULL stack: L1 text (keyword sweep +
+glm-5.3-flash close-reading), L2 VLM sequence strips (qwen3-vl-8b), and L3
+YOLO-World open-vocab detector sweep (696 sequences × 4 keyframes × 3 front
+cameras).
+
+Headline: **COVERED 58 · COVERED_WEAK 41 · DETECTOR_PRESENT 13 · VLM_PRESENT 83
+· FALSE_POSITIVE 29 · TEXT_ABSENT 6 · MISSING_CANDIDATE 122.**
+
+The levels separate two different phenomena:
+
+- *Annotation gaps* — VLM_PRESENT cases (children, stroller pedestrians,
+  rain bands, twilight/night, damp pavement, lane/shoulder widths…) exist
+  visually but are never described in text.
+- *True dataset gaps* — MISSING_CANDIDATE: 122 cases confirmed absent by
+  text + VLM (+ detector for actor classes): the 25-token misbehavior
+  frontier (dooring, cut-ins, school-bus violations, honk/siren abuse,
+  dart-ins, unlit night driving…), rescue/rail/crew actors, grouped
+  processions, fallen-cargo debris, snow friction, and 87 behavioral
+  expectations (38 Vienna, 37 Texas, 7 First-Responder, 4 VRU, 1 ODD).

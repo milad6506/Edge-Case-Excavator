@@ -54,6 +54,7 @@ class ExcavatorConfig:
     strip_frames: int = 6
     detector_model: str | None = None
     detector_conf: float = 0.25
+    detector_cameras: tuple[str, ...] = ("CAM_FRONT", "CAM_FRONT_LEFT", "CAM_FRONT_RIGHT")
     api: ApiConfig = field(default_factory=ApiConfig)
     close_read: bool = True               # L1c LLM close-reading of keyword hits
     unit_label: str | None = None         # assessment-unit description for findings

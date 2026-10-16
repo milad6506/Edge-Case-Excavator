@@ -2,13 +2,17 @@
 corner-case candidates via leaf co-occurrence.
 
 Final verdicts (v1 semantics, deliberately honest about evidence strength):
-  COVERED           - keyword evidence, LLM close-read confirmed
+  COVERED           - text evidence confirmed (or at least present at text level)
+  DETECTOR_PRESENT  - detector found instances (overrides text rejection)
+  VLM_PRESENT       - VLM judged the sequence present (overrides text rejection)
   COVERED_WEAK      - keyword evidence, close-read says 'unclear'
-  FALSE_POSITIVE    - keyword evidence rejected by close-read
-  DETECTOR_PRESENT  - detector sweep found instances
-  VLM_PRESENT       - VLM judged the sequence present (>=1 scene)
-  TEXT_ABSENT       - no text evidence; queued for L2/L3 (absence not yet verified)
-  MISSING_CANDIDATE - detectors (when run) and VLM (when run) and text all negative
+  FALSE_POSITIVE    - text evidence rejected, no other level confirms presence
+  MISSING_CANDIDATE - text negative AND every executed level that produced a
+                      verdict for the case reports 'absent' (the VLM level must
+                      have executed; actor-kind cases additionally require the
+                      detector level to be negative — detectors are the
+                      absence authority for actor classes)
+  TEXT_ABSENT       - no text evidence; queued for L2/L3 (absence unverified)
   UNVERIFIED        - nothing ran for this case
 """
 from __future__ import annotations
@@ -18,17 +22,8 @@ from itertools import combinations
 
 from .reference import Case
 
-_FINAL = {
-    ("text", "present"): "COVERED",
-    ("text", "unclear"): "COVERED_WEAK",
-    ("text", "false_positive"): "FALSE_POSITIVE",
-    ("text", "absent"): None,
-    ("vlm", "present"): "VLM_PRESENT",
-    ("vlm", "unclear"): None,
-    ("vlm", "absent"): None,
-    ("detector", "present"): "DETECTOR_PRESENT",
-    ("detector", "absent"): None,
-}
+_PRESENCE_PRIORITY = (("text", "COVERED"), ("detector", "DETECTOR_PRESENT"),
+                      ("vlm", "VLM_PRESENT"))
 
 
 def fuse_case(cases: dict[str, Case], results: dict[str, dict[str, dict]],
@@ -37,30 +32,28 @@ def fuse_case(cases: dict[str, Case], results: dict[str, dict[str, dict]],
     fused: dict[str, dict] = {}
     for cid, case in cases.items():
         per_level = {lvl: (results.get(lvl, {}) or {}).get(cid) for lvl in executed_levels}
-        present_levels, final = [], None
-        details = {}
-        for lvl, r in per_level.items():
-            if r is None:
-                continue
-            details[lvl] = r
-            v = r.get("verdict")
-            if v in ("present", "unclear", "false_positive"):
-                f = _FINAL.get((lvl, v))
-                if f and (final is None or final == "COVERED_WEAK"):
-                    final = f
-                if v == "present":
-                    present_levels.append(lvl)
+        details = {lvl: r for lvl, r in per_level.items() if r is not None}
+        present_levels = [lvl for lvl, r in details.items() if r.get("verdict") == "present"]
+        final = None
+        for lvl, verdict_name in _PRESENCE_PRIORITY:
+            if lvl in present_levels:
+                final = verdict_name
+                break
+        text_verdict = details.get("text", {}).get("verdict")
+        if final is None and text_verdict == "unclear":
+            final = "COVERED_WEAK"
         if final is None:
-            detectors_ran = "detector" in executed_levels
-            text_absent = details.get("text", {}).get("verdict") == "absent"
-            vlm_negative = "vlm" not in executed_levels or \
-                details.get("vlm", {}).get("verdict") in ("absent", "unclear")
-            detector_negative = not detectors_ran or \
-                details.get("detector", {}).get("verdict") == "absent"
-            if text_absent:
-                # MISSING only when the absence authorities (L3, L2) had their say
-                final = "MISSING_CANDIDATE" if (detectors_ran and detector_negative
-                                                and vlm_negative) else "TEXT_ABSENT"
+            if text_verdict in ("absent", "false_positive"):
+                others_negative = all(r.get("verdict") == "absent"
+                                      for lvl, r in details.items() if lvl != "text")
+                sensory_ran = "vlm" in executed_levels and \
+                    (case.kind != "actor" or "detector" in executed_levels)
+                if others_negative and sensory_ran:
+                    final = "MISSING_CANDIDATE"
+                elif text_verdict == "false_positive":
+                    final = "FALSE_POSITIVE"
+                else:
+                    final = "TEXT_ABSENT"
             else:
                 final = "UNVERIFIED"
         fused[cid] = {

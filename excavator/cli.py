@@ -36,6 +36,8 @@ def _add_common(p: argparse.ArgumentParser) -> None:
     p.add_argument("--detector-model", default=None,
                    help="YOLO-World weights (enables the detector level only with --levels detector)")
     p.add_argument("--detector-conf", type=float, default=0.25)
+    p.add_argument("--detector-cameras", default="CAM_FRONT,CAM_FRONT_LEFT,CAM_FRONT_RIGHT",
+                   help="comma list of cameras for the L3 sweep")
     p.add_argument("--vlm-scenes-per-case", type=int, default=6)
     p.add_argument("--strip-frames", type=int, default=6)
 
@@ -60,6 +62,7 @@ def _config(args: argparse.Namespace) -> ExcavatorConfig:
         limit=args.limit,
         detector_model=args.detector_model,
         detector_conf=args.detector_conf,
+        detector_cameras=tuple(x.strip() for x in args.detector_cameras.split(",") if x.strip()),
         vlm_scenes_per_case=args.vlm_scenes_per_case,
         strip_frames=args.strip_frames,
         close_read=not args.no_close_read,

@@ -15,10 +15,12 @@ Derived from international treaties, state traffic codes, NHTSA pre-crash typolo
 > on it, was not tested against it, and was not validated for it — and
 > developers cannot expect the model to behave safely on it.** Silence in the
 > dataset is not evidence of safety; it is an unmeasured liability. The DriveLM
-> audit in [`examples/`](examples/) shows exactly this: **60% of the reference
-> case registry (211 of 352 cases) has zero representation** in a widely used
-> benchmark — entire weather bands, the full compliance/misbehavior frontier,
-> and 119 of 221 statutory behavioral expectations never occur in any sequence.
+> audit in [`examples/`](examples/) shows exactly this: across 696 scenario
+> sequences, **122 of 352 reference cases are confirmed absent** by the full
+> text + VLM + detector stack (the entire compliance/misbehavior frontier, 37
+> Texas statutory duties, rescue/rail actors, snow friction), while another
+> ~150 cases exist visually but are never annotated — see the audit in
+> [`examples/drivelm-full/findings.txt`](examples/drivelm-full/findings.txt).
 >
 > This is why systematic verification of scenario datasets is required, and
 > why this repository exists: the taxonomy defines what *should* exist, the

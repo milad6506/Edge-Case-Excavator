@@ -5,80 +5,96 @@ Dataset            : drivelm @ ~/Documents/DriveLM
 Assessment unit    : scenario sequence (scene: multi-keyframe ego trajectory, 6 surround cameras)
 Sequences audited  : 696
 Reference model    : taxonomy v6.0 + 221 behavioral expectations (352 audited cases)
-Levels executed    : text
+Levels executed    : vlm, text, detector
 Config             : adapter=drivelm scope=all limit=None
 
 ==============================================================================
 1. HEADLINE
 ==============================================================================
-  COVERED                86   (24.4%)
-  COVERED_WEAK           55   (15.6%)
-  FALSE_POSITIVE        121   (34.4%)
-  TEXT_ABSENT            90   (25.6%)
+  COVERED                58   (16.5%)
+  COVERED_WEAK           41   (11.6%)
+  DETECTOR_PRESENT       13   (3.7%)
+  VLM_PRESENT            83   (23.6%)
+  FALSE_POSITIVE         29   (8.2%)
+  TEXT_ABSENT             6   (1.7%)
+  MISSING_CANDIDATE     122   (34.7%)
   corner candidates     200
-
-   NOTE: absence is not yet verified — TEXT_ABSENT cases are queued for the
-   sensory (L2 VLM) and detector (L3) levels. Only cases confirmed absent by
-   all executed levels are MISSING_CANDIDATE.
 
 ==============================================================================
 2. COVERAGE BY CASE KIND
 ==============================================================================
   kind            COVERED COVERED_W DETECTOR_ VLM_PRESE FALSE_POS TEXT_ABSE MISSING_C UNVERIFIE
-  actor                16         6         0         0        14         6         0         0
-  band                  0         0         0         0         3        14         0         0
-  buffer                2         1         0         0         4         0         0         0
-  expectation          64        38         0         0        54        65         0         0
+  actor                17         0        13         6         0         1         5         0
+  band                  0         0         0        14         0         2         1         0
+  buffer                1         1         0         2         1         0         2         0
+  expectation          36        30         0        54        13         1        87         0
   factor                1         1         0         0         6         1         0         0
-  misbehavior           2         8         0         0        36         3         0         0
-  state                 1         1         0         0         4         1         0         0
+  misbehavior           2         9         0         7         6         0        25         0
+  state                 1         0         0         0         3         1         2         0
 
 ==============================================================================
 3. THE GAP LIST (sequences show no evidence for these cases)
 ==============================================================================
 
   3.1 Actor sub-classes — 6 absent
-      - ACTOR:ANIMAL:Mounted Horses & Herded Livestock (Cattle, Sheep) with Herders
-      - ACTOR:MOTOR_VEHICLE:Shuttle Vans & Airport / Transit Passenger Vans
+      - ACTOR:MOTOR_VEHICLE:Rescue Command Vehicles & Mobile Emergency Command Units
+      - ACTOR:RAIL_VEHICLE:Passenger Commuter Trains & High-Speed Passenger Rail Locomotives
       - ACTOR:RAIL_VEHICLE:Railway Crew, Switchmen & Motormen
+      - ACTOR:STATIC_OBSTACLE:Fallen Cargo & Road Debris
       - ACTOR:VRU:Grouped Pedestrian Formations & Processions
       - ACTOR:VRU:Intoxicated, Impaired or Incapacitated Pedestrians
-      - ACTOR:VRU:Pedestrians Child
 
-  3.2 Misbehavior regime tokens — 3 absent
+  3.2 Misbehavior regime tokens — 25 absent
+      - MISBEHAVIOR:ABUSIVE_TRANSIT_BUS_PULL_OUT
+      - MISBEHAVIOR:AGGRESSIVE_DOORING_INTO_TRAVEL_LANE
+      - MISBEHAVIOR:BUS_STOP_BAY_ALIGNMENT_MISUSE
+      - MISBEHAVIOR:BUS_STOP_CROSSWALK_ENCROACHMENT
+      - MISBEHAVIOR:CYCLIST_AGGRESSIVE_WRONG_WAY_RIDING
       - MISBEHAVIOR:DOMESTIC_PET_SHOULDER_STRAY
+      - MISBEHAVIOR:EXCESSIVE_SPEED_LEVEL_CROSSING_APPROACH
+      - MISBEHAVIOR:E_SCOOTER_ERRATIC_SWERVE_INTO_TRAFFIC_LANE
+      - MISBEHAVIOR:HERD_LIVESTOCK_ACTIVE_ROADWAY_BLOCKADE
+      - MISBEHAVIOR:ILLEGAL_RAILROAD_GATE_BYPASS
+      - MISBEHAVIOR:IMPROPER_SHOULDER_WARNING_FLARE_OMISSION
+      - MISBEHAVIOR:INADVERTENT_DOOR_OPENING_BEFORE_STOP
       - MISBEHAVIOR:INADVERTENT_HORN_TAP
+      - MISBEHAVIOR:LANE_STRADDLING_AND_BUS_BERTH_BLOCKADE
+      - MISBEHAVIOR:MOVE_OVER_LAW_VIOLATION
+      - MISBEHAVIOR:OMITTED_PULL_OUT_INDICATOR
+      - MISBEHAVIOR:PASSIVE_CLEARANCE_BUFFER_INFRACTION
+      - MISBEHAVIOR:POLICE_IMPERSONATION_FAKE_STROBES
       - MISBEHAVIOR:PROLONGED_ABUSIVE_HONK
+      - MISBEHAVIOR:SCHOOL_BUS_STOP_ARM_TIMING_MISUSE
+      - MISBEHAVIOR:SUDDEN_ANIMAL_DART_IN_LANE
+      - MISBEHAVIOR:SUDDEN_HIGH_SPEED_DART_IN
+      - MISBEHAVIOR:UNLAWFUL_SIREN_ASSERTION
+      - MISBEHAVIOR:UNLIT_NIGHT_DRIVING
+      - MISBEHAVIOR:UN_SIGNALED_CUT_IN_HAZARD
 
-  3.3 Signaling states — 1 absent
+  3.3 Signaling states — 3 absent
+      - STATE:MOTOR_VEHICLE:brake_lamp_states
+      - STATE:MOTOR_VEHICLE:emergency_siren_states
       - STATE:MOTOR_VEHICLE:emergency_strobe_states
 
   3.4 ODD factor enums — 1 absent
       - FACTOR:L6.6.1.V2X Status
 
-  3.5 ODD numeric bands — 14 absent
-      - BAND:L1.1.3.Damp / Wet Pavement
+  3.5 ODD numeric bands — 3 absent
       - BAND:L1.1.3.Glaze Ice / Black Ice
       - BAND:L1.1.3.Snow / Slush Covered
-      - BAND:L1.1.4.Lane Width
-      - BAND:L1.1.5.Shoulder Width
-      - BAND:L4.4.1.Longitudinal Spatial Headway Gap
       - BAND:L4.4.1.Longitudinal Time Headway
-      - BAND:L5.5.1.Heavy Rain
-      - BAND:L5.5.1.Light Rain
-      - BAND:L5.5.1.Moderate Rain
-      - BAND:L5.5.2.Civil Twilight
-      - BAND:L5.5.2.Night Streetlit
-      - BAND:L5.5.2.Night Unlit
-      - BAND:L5.5.3.Dense Fog / Heavy Smoke
 
-  3.7 Behavioral expectations — 65 of 221 absent (full list in excavation_report.json)
+  3.6 Statutory buffers — 2 absent
+      - BUFFER:L2.2.4.109
+      - BUFFER:L2.2.4.114
+
+  3.7 Behavioral expectations — 88 of 221 absent (full list in excavation_report.json)
       gap distribution by source framework:
-        - UN Vienna Convention on Road Traffic (1968): 28
-        - AVSC Best Practice for Interactions Between ADS-DVs and VRUs (AVSC00009202208): 17
-        - AVSC Best Practice for Describing an Operational Design Domain (AVSC00002202004): 11
-        - Texas Transportation Code Chapter 545: 6
-        - AVSC Best Practice for First Responder Interactions (AVSC-I-01-2024): 3
+        - UN Vienna Convention on Road Traffic (1968): 38
+        - Texas Transportation Code Chapter 545: 37
+        - AVSC Best Practice for First Responder Interactions (AVSC-I-01-2024): 7
+        - AVSC Best Practice for Interactions Between ADS-DVs and VRUs (AVSC00009202208): 4
+        - AVSC Best Practice for Describing an Operational Design Domain (AVSC00002202004): 2
 
 ==============================================================================
 4. CORNER-CASE CANDIDATES (co-occurrence mining)
@@ -138,37 +154,37 @@ Config             : adapter=drivelm scope=all limit=None
 ==============================================================================
 5. EXPECTATION COVERAGE HIGHLIGHTS
 ==============================================================================
-  102 of 221 behavioral expectations have sequences in the corpus; sample:
+  66 of 221 behavioral expectations have sequences in the corpus; sample:
     + EXP:ADS-REQ-001D  Ego Hazard Lights Deactivation (Cessation of Authori
         sequence: ACT-03 -> ACT-13 -> ACT-04 -> ACT-15
-    + EXP:ADS-REQ-002A  Continuous Ego Signaling Before and During Maneuvers
-        sequence: ACT-05 -> ACT-03 -> ACT-10 -> ACT-02
-    + EXP:ADS-REQ-002B  Perceive and Respond to Other's Direction Signals
-        sequence: ACT-05 -> ACT-03 -> ACT-10 -> ACT-02
-    + EXP:ADS-REQ-003C  Ego High-Beam Deactivation and Transition to Low-Bea
-        sequence: ACT-01 -> ACT-03
+    + EXP:ADS-REQ-002C  Ego Direction Indicator Deactivation upon Maneuver C
+        sequence: ACT-10 -> ACT-02 -> ACT-11
     + EXP:ADS-REQ-005A  Ego Smooth Yielding Without Abrupt Disruption
         sequence: ACT-05 -> ACT-03 -> ACT-06 -> ACT-02
     + EXP:ADS-REQ-006A  Slowing and Stopping for Pedestrians at Crossings
         sequence: ACT-05 -> ACT-06 -> ACT-08 -> ACT-06
-    + EXP:ADS-REQ-006B  No Overtaking Behind Vehicles Stopped at Crossings
-        sequence: ACT-05 -> ACT-06 -> ACT-08 -> ACT-06
-    + EXP:ADS-REQ-007B  Ego Behavior When Being Overtaken by Others
-        sequence: ACT-05 -> ACT-06 -> ACT-08 -> ACT-06
-    + EXP:ADS-REQ-008A  Facilitate Public Transport Moving Off From Stops
-        sequence: ACT-03 -> ACT-01 -> ACT-02
     + EXP:ADS-REQ-008B  Yielding to Passengers Alighting Public Transport
         sequence: ACT-05 -> ACT-06 -> ACT-08 -> ACT-06
-    + EXP:ADS-REQ-010A  Emergency Hand Signal Usage by Ego Vehicle
-        sequence: ACT-05 -> ACT-03 -> ACT-10 -> ACT-02
-    + EXP:ADS-REQ-010B  Absolute Obedience to Traffic Officials' Gestures
-        sequence: ACT-01 -> ACT-11 -> ACT-03
+    + EXP:ADS-REQ-012A  Ego Reversing Lamp Activation during Reversing
+        sequence: ACT-05 -> ACT-16 -> ACT-04
     + EXP:ADS-REQ-012B  Perceive and Respond to Other's Reversing Lamps
         sequence: ACT-05 -> ACT-03 -> ACT-04
-    + EXP:ADS-REQ-012C  Ego Reversing Lamp Deactivation upon Disengaging Rev
-        sequence: ACT-16 -> ACT-04 -> ACT-02
     + EXP:ADS-REQ-013A  Ego Stop Lamp Activation on Braking
         sequence: ACT-03 -> ACT-01 -> ACT-02
+    + EXP:ADS-REQ-013C  Ego Stop Lamp Deactivation on Brake Release
+        sequence: ACT-03 -> ACT-01 -> ACT-02
+    + EXP:ADS-REQ-015A  Ego Abrupt Braking Safety Limitations
+        sequence: ACT-03 -> ACT-01 -> ACT-02
+    + EXP:ADS-REQ-017A  Door Lock Prevention & Safe Passenger Alighting
+        sequence: ACT-05 -> ACT-06 -> ACT-08 -> ACT-06
+    + EXP:ADS-REQ-023A  Ego Prohibition of Severing Processions and School F
+        sequence: ACT-05 -> ACT-03 -> ACT-04 -> ACT-02
+    + EXP:ADS-REQ-023B  Perceive and Respond to Grouped Processions and Scho
+        sequence: ACT-05 -> ACT-03 -> ACT-11 -> ACT-04
+    + EXP:ADS-REQ-024A  Ego Wrong-Way driving Prevention and Position Compli
+        sequence: ACT-01 -> ACT-11 -> ACT-03
+    + EXP:ADS-REQ-025A  Ego Standing and Parking Positioning and Alignment
+        sequence: ACT-03 -> ACT-13 -> ACT-04
 
 ==============================================================================
 6. METHOD & CAVEATS

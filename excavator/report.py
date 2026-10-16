@@ -64,8 +64,9 @@ def write_findings(out_dir: Path, *, dataset_label: str, config_summary: dict,
                  f"{reference_stats.get('expectations')} behavioral expectations "
                  f"({summary['total_cases']} audited cases)")
     lines.append(f"Levels executed    : {', '.join(config_summary.get('levels', [])) or 'none'}")
-    lines.append(f"Config             : {_scrub('adapter=' + str(config_summary.get('adapter')) + ' '
-                 'scope=' + str(config_summary.get('scope')) + ' limit=' + str(config_summary.get('limit')))}")
+    cfg_line = (f"adapter={config_summary.get('adapter')} "
+                f"scope={config_summary.get('scope')} limit={config_summary.get('limit')}")
+    lines.append(f"Config             : {_scrub(cfg_line)}")
 
     head("1. HEADLINE")
     bv = summary["by_verdict"]

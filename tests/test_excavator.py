@@ -58,21 +58,52 @@ def test_text_auditor_verdicts(reference):
     assert res[cases[0].case_id]["scene_tokens"] == ["s1"]
 
 
-def test_fusion_text_only_absent_is_not_missing(reference):
+def test_fusion_semantics(reference):
     cases = {c.case_id: c for c in reference.filter("leaves", r"^MISBEHAVIOR:RUNNING_RED")}
     cid = next(iter(cases))
-    results = {"text": {cid: {"level": "text", "verdict": "absent"}}}
-    fused = fuse_case(cases, results, executed_levels={"text"})
+    A = {"level": "text", "verdict": "absent"}
+    # text alone -> never missing
+    fused = fuse_case(cases, {"text": {cid: A}}, {"text"})
     assert fused[cid]["verdict"] == "TEXT_ABSENT"
+    # text+detector negative but VLM never executed -> absence unverified
+    fused = fuse_case(cases, {"text": {cid: A}, "detector": {cid: {"level": "detector", "verdict": "absent"}}},
+                      {"text", "detector"})
+    assert fused[cid]["verdict"] == "TEXT_ABSENT"
+    # all applicable levels negative -> missing
+    res3 = {"text": {cid: A},
+            "vlm": {cid: {"level": "vlm", "verdict": "absent", "votes": {}}}}
+    fused = fuse_case(cases, res3, {"text", "vlm"})
+    assert fused[cid]["verdict"] == "MISSING_CANDIDATE"
+    # text present -> covered
+    fused = fuse_case(cases, {"text": {cid: {"level": "text", "verdict": "present"}}}, {"text"})
+    assert fused[cid]["verdict"] == "COVERED"
+    # text rejected but VLM confirms -> VLM_PRESENT
+    res = {"text": {cid: {"level": "text", "verdict": "false_positive"}},
+           "vlm": {cid: {"level": "vlm", "verdict": "present", "votes": {}}}}
+    fused = fuse_case(cases, res, {"text", "vlm"})
+    assert fused[cid]["verdict"] == "VLM_PRESENT"
+    # text rejected, VLM unclear -> stays false positive
+    res = {"text": {cid: {"level": "text", "verdict": "false_positive"}},
+           "vlm": {cid: {"level": "vlm", "verdict": "unclear", "votes": {}}}}
+    fused = fuse_case(cases, res, {"text", "vlm"})
+    assert fused[cid]["verdict"] == "FALSE_POSITIVE"
+    # text rejected + VLM absent -> missing candidate
+    res = {"text": {cid: {"level": "text", "verdict": "false_positive"}},
+           "vlm": {cid: {"level": "vlm", "verdict": "absent", "votes": {}}}}
+    fused = fuse_case(cases, res, {"text", "vlm"})
+    assert fused[cid]["verdict"] == "MISSING_CANDIDATE"
 
-    results2 = {"text": {cid: {"level": "text", "verdict": "absent"}},
-                "detector": {cid: {"level": "detector", "verdict": "absent"}}}
-    fused2 = fuse_case(cases, results2, executed_levels={"text", "detector"})
-    assert fused2[cid]["verdict"] == "MISSING_CANDIDATE"
 
-    results3 = {"text": {cid: {"level": "text", "verdict": "present"}}}
-    fused3 = fuse_case(cases, results3, executed_levels={"text"})
-    assert fused3[cid]["verdict"] == "COVERED"
+def test_fusion_actor_requires_detector_for_missing(reference):
+    cases = {c.case_id: c for c in reference.filter("leaves", r"^ACTOR:ANIMAL:Domestic Pets")}
+    cid = next(iter(cases))
+    res = {"text": {cid: {"level": "text", "verdict": "absent"}},
+           "vlm": {cid: {"level": "vlm", "verdict": "absent", "votes": {}}}}
+    fused = fuse_case(cases, res, {"text", "vlm"})
+    assert fused[cid]["verdict"] == "TEXT_ABSENT"   # detector is the actor absence authority
+    res["detector"] = {cid: {"level": "detector", "verdict": "absent"}}
+    fused = fuse_case(cases, res, {"text", "vlm", "detector"})
+    assert fused[cid]["verdict"] == "MISSING_CANDIDATE"
 
 
 def test_corner_mining():
@@ -115,3 +146,11 @@ def test_negation_guard(reference):
     res = TextAuditor(cases).run(scenes, close_read=False)
     assert res[cases[0].case_id]["verdict"] == "present"     # positive hit survives
     assert res[cases[0].case_id]["hit_count"] == 1           # the two negatives don't count
+
+
+def test_vlm_majority():
+    from excavator.audit.vlm import _majority
+    assert _majority(["absent"] * 6) == "absent"
+    assert _majority(["absent"] * 5 + ["present"]) == "present"
+    assert _majority(["unclear"] * 6) == "unclear"
+    assert _majority([]) == "not_run"

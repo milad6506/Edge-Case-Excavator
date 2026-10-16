@@ -1,6 +1,7 @@
 """Orchestrator: reference -> scenes -> levels -> fusion -> report."""
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
 from .adapters import get_adapter
@@ -46,16 +47,39 @@ def run(config: ExcavatorConfig) -> dict:
 
     executed: set[str] = set()
     results: dict[str, dict[str, dict]] = {}
+    cache_dir = out_dir / "level_cache"
+    cache_dir.mkdir(parents=True, exist_ok=True)
+
+    def load_cached(level: str) -> dict | None:
+        p = cache_dir / f"{level}_results.json"
+        if p.exists():
+            print(f"[cache] reusing {level} results from {p}")
+            return json.loads(p.read_text())
+        return None
+
+    def store_cached(level: str, res: dict) -> None:
+        (cache_dir / f"{level}_results.json").write_text(json.dumps(res))
 
     if "text" in config.levels:
-        auditor = TextAuditor(cases, llm=llm)
-        results["text"] = auditor.run(scenes, close_read=config.close_read and llm is not None)
+        cached = load_cached("text")
+        if cached is not None:
+            results["text"] = cached
+        else:
+            auditor = TextAuditor(cases, llm=llm)
+            results["text"] = auditor.run(scenes, close_read=config.close_read and llm is not None)
+            store_cached("text", results["text"])
         executed.add("text")
 
     if "detector" in config.levels:
-        model = config.detector_model or "yolov8s-worldv2.pt"
-        auditor = DetectorAuditor(model, conf=config.detector_conf)
-        results["detector"] = auditor.run(cases, scenes)
+        cached = load_cached("detector")
+        if cached is not None:
+            results["detector"] = cached
+        else:
+            model = config.detector_model or "yolov8s-worldv2.pt"
+            auditor = DetectorAuditor(model, conf=config.detector_conf,
+                                      cameras=config.detector_cameras)
+            results["detector"] = auditor.run(cases, scenes)
+            store_cached("detector", results["detector"])
         executed.add("detector")
 
     if "vlm" in config.levels:
@@ -70,13 +94,26 @@ def run(config: ExcavatorConfig) -> dict:
             auditor = VlmAuditor(vlm_llm, out_dir,
                                  scenes_per_case=config.vlm_scenes_per_case,
                                  strip_frames=config.strip_frames)
-            leaf_cases = [c for c in cases if c.kind != "expectation"]
-            exp_cases = [c for c in cases if c.kind == "expectation"]
+            # target only cases the cheaper levels left unresolved: no confirmed
+            # text evidence (absent / unclear / rejected). COVERED cases skip L2.
+            unresolved = set()
+            if "text" in results:
+                for cid, r in results["text"].items():
+                    if r.get("verdict") in ("absent", "unclear", "false_positive"):
+                        unresolved.add(cid)
+            targets = [c for c in cases if c.case_id in unresolved] or list(cases)
+            leaf_cases = [c for c in targets if c.kind != "expectation"]
+            exp_cases = [c for c in targets if c.kind == "expectation"]
             res = {}
-            if leaf_cases:
-                res.update(auditor.run(leaf_cases, scenes))
-            if exp_cases:
-                res.update(auditor.run(exp_cases, scenes))
+            cached_vlm = load_cached("vlm")
+            if cached_vlm is not None:
+                res = cached_vlm
+            else:
+                if leaf_cases:
+                    res.update(auditor.run(leaf_cases, scenes))
+                if exp_cases:
+                    res.update(auditor.run(exp_cases, scenes))
+                store_cached("vlm", res)
             results["vlm"] = res
             executed.add("vlm")
 
