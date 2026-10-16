@@ -18,6 +18,34 @@ The repository consists of three core specification files that form an end-to-en
 
 ---
 
+## Edge-Case Excavator engine (`excavator/`)
+
+The `excavator/` package is the executable engine that audits a scenario
+database (nuScenes / DriveLM-like) against the reference model above and mines
+**EDGE / CORNER / MISSING** cases. You provide dataset access and your own
+strong LLM API (any OpenAI-compatible endpoint — key stays in your env, never
+in the repo); the engine provides:
+
+- a **352-case registry** built from the taxonomy + 221 expectations
+- three audit levels: **L1 text** (deterministic keyword sweep + LLM
+  close-reading), **L2 VLM sequence strips** (time×camera contact sheets,
+  constrained JSON verdicts, provenance), **L3 detector sweep** (YOLO-World
+  open-vocab, the authority on absence)
+- fusion with honest verdict semantics (`COVERED` … `TEXT_ABSENT` …
+  `MISSING_CANDIDATE`), corner mining via co-occurrence, and a JSON + HTML
+  coverage-matrix report
+
+```bash
+python3 -m excavator.cli excavate --dataset-root ~/Documents/DriveLM \
+  --adapter drivelm --levels text,vlm,detector --env-file ~/secrets/openrouter.env \
+  --out runs/excavate
+```
+
+See [`excavator/README.md`](excavator/README.md) and
+[`ASSESSOR_PLAN.md`](ASSESSOR_PLAN.md) for the full architecture.
+
+---
+
 ## 🔬 Derivation Methodology & Process
 
 The specifications in this repository were derived through a rigorous 5-stage synthesis and formalization pipeline:

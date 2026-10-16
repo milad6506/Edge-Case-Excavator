@@ -79,6 +79,13 @@ covered / trigger-present-response-unknown / trigger-absent.
 
 ## Known limitations carried into the assessor
 
-See `GAP_ANALYSIS.md` §7 "still open" list (curve radius absent from v6 Layer 1,
-ramp-metering/bus-priority signal types, school-zone/no-passing sign categories,
-lane-width lower bound, superelevation sign, narrow-mountain-pass network type).
+Resolution status after taxonomy v5→v6 (tracked in the git history of the
+superseded gap-analysis document): still open — `curve_radius_m` absent from
+v6 Layer 1.4; RAMP_METERING_SIGNAL & BUS_LANE_PRIORITY_SIGNAL signal types
+dropped vs v4; SCHOOL_ZONE_FLASHING & NO_PASSING_ZONE sign categories not
+restored; lane-width lower bound raised 2.5→2.75 m; superelevation changed
+from ±6° to 1–6% (negative bank angles unrepresentable);
+NARROW_MOUNTAIN_SINGLE_LANE_PASS network type removed. Expectation-layer
+items (AVSC metadata restore, sequence-template audit, TX/Texas IDs) and the
+v2.1 synthesis-layer import (130 combined cases + 259 gap candidates) remain
+open work items.
