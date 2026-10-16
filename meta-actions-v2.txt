@@ -1,0 +1,69 @@
+================================================================================
+META-ACTIONS / CONTROL ACTIONS SPECIFICATION (v2.0)
+Source: "A Framework for Automated Driving System Testable Cases and Scenarios"
+        (USDOT / NHTSA Report DOT HS 812 623, Page 58) + Directional Extension
+================================================================================
+
+[ACT-01] Follow Vehicle
+  Category: Longitudinal & Lateral Control
+  Description: Implement lateral and/or longitudinal control actions to maintain a safe following distance from an immediate lead vehicle, while continuing to follow the current lane of travel.
+
+[ACT-02] Accelerate
+  Category: Longitudinal Control
+  Description: Implement longitudinal control actions to increase speed, as appropriate and lawful.
+
+[ACT-03] Decelerate
+  Category: Longitudinal Control
+  Description: Implement longitudinal control actions to decrease speed, as appropriate.
+
+[ACT-04] Stop
+  Category: Longitudinal Control
+  Description: Implement longitudinal control actions to decelerate in a safe and stable manner to a complete stop.
+
+[ACT-05] Yield
+  Category: Right-of-Way & Deceleration
+  Description: Relinquish right-of-way to another road user, including decelerating or stopping as required by traffic regulations or safety etiquette.
+
+[ACT-06] Change Lane
+  Category: Lateral & Longitudinal Maneuver
+  Description: Implement longitudinal and/or lateral control actions to shift into an adjacent lane.
+
+[ACT-07] Abort Lane Change
+  Category: Lateral & Longitudinal Maneuver
+  Description: Cancel the maneuver to shift into an adjacent lane (remain in or return to original lane).
+
+[ACT-08] Pass
+  Category: Lateral & Longitudinal Maneuver
+  Description: Implement longitudinal and/or lateral control actions to shift into an adjacent lane to accelerate to desired speed and overtake another vehicle.
+
+[ACT-09] Abort Pass
+  Category: Lateral & Longitudinal Maneuver
+  Description: Cancel maneuver to shift into an adjacent lane (remain in or return to original lane).
+
+[ACT-10] Turn
+  Category: Lateral & Longitudinal Maneuver
+  Description: Implement lateral and longitudinal control actions to transition from current road/lane to connecting road/lane (includes parameterizations for left, right, and U-turns).
+
+[ACT-11] Shift Within Lane
+  Category: Lateral Control / Nudge
+  Description: Implement lateral and/or longitudinal control actions such that the ADS does not follow the center (or near-center) of the current lane but remains fully within the current lane.
+
+[ACT-12] Shift Outside of Lane
+  Category: Lateral Control / Encroachment
+  Description: Implement lateral and/or longitudinal control actions such that the ADS partially or fully moves outside of the current lane of travel (i.e., one or more wheels cross the lane boundary).
+
+[ACT-13] Move Out of Travel Lane/Park
+  Category: Egress & Parking Maneuver
+  Description: Implement lateral and longitudinal control actions such that the ADS fully exits the current active lane of travel onto a shoulder or parking lane and stops.
+
+[ACT-14] Transition to MRC: Return Control to Fallback-Ready User
+  Category: System Fallback & Handover
+  Description: Return longitudinal and lateral control to human occupant/driver (while providing sufficient advance warning).
+
+[ACT-15] Transition to MRC: ADS Implements Minimal Risk Maneuver
+  Category: System Fallback & Autonomous MRC
+  Description: Implement lateral and/or longitudinal control actions to achieve a minimal risk condition automatically without reliance on human driver takeover.
+
+[ACT-16] Reverse / Back Up
+  Category: Longitudinal & Directional Control
+  Description: Implement reverse gear longitudinal and lateral control actions to move the vehicle backward safely while monitoring rear blind-spot hazards (grounded in Vienna Convention Art. 14/25, Texas Code Sec. 545.415, and NHTSA Pre-Crash Scenarios 8, 15, 33-35).
