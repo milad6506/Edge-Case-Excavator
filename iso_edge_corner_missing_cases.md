@@ -1,7 +1,7 @@
 # ISO Safety Standards Analysis: Edge Cases, Corner Cases, and Missing Cases in Automated Driving Systems
 
 ## Executive Summary
-This document provides formal, standardized definitions for **Edge Cases**, **Corner Cases**, and **Missing Cases** in Automated Driving Systems (ADS), directly grounded in international safety standards: **ISO 21448:2022** (Safety of the Intended Functionality — SOTIF) and **ISO/DTS 5083:2023** (Design, Verification, and Validation of Automated Driving Systems). Furthermore, it details how the structured **Actors-Factors Taxonomy** (`actors-factors-list-v4.txt`) and **Meta-Actions Framework** (`meta-actions-v2.txt`) facilitate the systematic, automated discovery and resolution of these critical safety scenarios.
+This document provides formal, standardized definitions for **Edge Cases**, **Corner Cases**, and **Missing Cases** in Automated Driving Systems (ADS), directly grounded in international safety standards: **ISO 21448:2022** (Safety of the Intended Functionality — SOTIF) and **ISO/DTS 5083:2023** (Design, Verification, and Validation of Automated Driving Systems). Furthermore, it details how the structured **Actors-Factors Taxonomy** (`actors-factors-list-v6.txt`) and **Meta-Actions Framework** (`meta-actions-v2.txt`) facilitate the systematic, automated discovery and resolution of these critical safety scenarios.
 
 ---
 
@@ -48,7 +48,7 @@ This document provides formal, standardized definitions for **Edge Cases**, **Co
 
 ## 2. Systematic Scenario Discovery Using Actors-Factors List & Meta-Actions
 
-The structured **Actors-Factors Taxonomy** (`actors-factors-list-v4.txt`) and **Meta-Actions Framework** (`meta-actions-v2.txt`) provide a formal matrix structure that enables automated, systematic discovery of Edge Cases, Corner Cases, and Missing Cases.
+The structured **Actors-Factors Taxonomy** (`actors-factors-list-v6.txt`) and **Meta-Actions Framework** (`meta-actions-v2.txt`) provide a formal matrix structure that enables automated, systematic discovery of Edge Cases, Corner Cases, and Missing Cases.
 
 ```
                           SYSTEMATIC DISCOVERY MATRIX
@@ -73,7 +73,7 @@ The structured **Actors-Factors Taxonomy** (`actors-factors-list-v4.txt`) and **
 * **Methodology: Single-Parameter Boundary Sweeping**
 * **Mechanism:**
   1. Select a baseline scenario driven by a single Meta-Action primitive (e.g., `[ACT-03] Decelerate` or `[ACT-04] Stop`).
-  2. Sweep a single quantitative metric in the **6-Layer ODD Factor Taxonomy** (Part III of `actors-factors-list-v4.txt`) to its absolute physical or statutory limit while keeping all other variables nominal.
+  2. Sweep a single quantitative metric in the **6-Layer ODD Factor Taxonomy** (Part III of `actors-factors-list-v6.txt`) to its absolute physical or statutory limit while keeping all other variables nominal.
 * **Examples:**
   * *Layer 5.1 Sweeping:* Increasing precipitation rate from $0.0\text{ mm/hr}$ to the upper boundary of $50.0\text{ mm/hr}$ (Heavy Torrential Rain).
   * *Layer 1.2 Sweeping:* Decreasing road surface friction coefficient $\mu$ from $0.85$ (dry asphalt) to $0.15$ (glaze ice).
@@ -84,7 +84,7 @@ The structured **Actors-Factors Taxonomy** (`actors-factors-list-v4.txt`) and **
 * **Mechanism:**
   1. Instantiate a multi-actor interaction using the **Universal 3-State Compliance Engine** (`compliance_state = NON_COMPLIANT`, `non_compliance_type = ABUSE`).
   2. Select an actor executing a high-energy violation from the **Misbehavior Regime** (e.g., `RUNNING_RED_LIGHT`, `UNLAWFUL_ABUSIVE_BACKING`, or `WRONG_WAY_DRIVING`).
-  3. Inject simultaneous stress factors across multiple ODD layers from Part III of `actors-factors-list-v4.txt`:
+  3. Inject simultaneous stress factors across multiple ODD layers from Part III of `actors-factors-list-v6.txt`:
      * **Layer 1:** Steep Grade ($> \pm 10\%$) + Narrow Carriageway ($< 3.5\text{ m}$).
      * **Layer 5:** Dense Fog ($1.0\text{–}20.0\text{ m}$ visibility) + Night Unlit ($0.0001\text{ lx}$).
      * **Layer 6:** Sensor Camera Glare + GNSS Denied Tunnel State.

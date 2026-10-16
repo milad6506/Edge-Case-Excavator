@@ -2,7 +2,7 @@
 """P1: parse the Excavator reference specs into machine-readable JSON.
 
 Inputs : actors-factors-list-v6.txt, behavioral_refinements-v2.txt, meta-actions-v2.txt
-Outputs: reference/taxonomy_v6.json, reference/expectations.json
+Outputs: reference/taxonomy_v6.json, reference/expectations_v2.json
 
 Design: section-aware walker. Every bullet line inside a recognized section is
 classified (sub-class | kinematic | movement-regime | misbehavior | state-enum |
@@ -382,7 +382,7 @@ def main():
     exps = parse_expectations(EXP_SRC.read_text().splitlines())
 
     (OUT / "taxonomy_v6.json").write_text(json.dumps(tax, indent=1, ensure_ascii=False) + "\n")
-    (OUT / "expectations.json").write_text(json.dumps(exps, indent=1, ensure_ascii=False) + "\n")
+    (OUT / "expectations_v2.json").write_text(json.dumps(exps, indent=1, ensure_ascii=False) + "\n")
 
     subs = [(c["name"], len(c["sub_classes"])) for c in tax["actor_categories"]]
     mis = Counter(t["token"] for c in tax["actor_categories"] for g in c["misbehavior_regime"] for t in g["tokens"])

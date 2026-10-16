@@ -1,7 +1,7 @@
 # Gap Analysis — Legacy Expectations & Taxonomy Corpus vs Edge-Case-Excavator v4
 
 **Date:** 2026-10-16
-**Compares:** the September 2026 corpus under `~/Documents/DriveLM/` (expectations JSONs, taxonomy v2/v2.1, meta-actions v1, coverage audit) against this repository's current contents (`behavioral_refinements-v2.txt`, `meta-actions-v2.txt`, `actors-factors-list-v4.txt`, `iso_edge_corner_missing_cases.md`).
+**Compares:** the September 2026 corpus under `~/Documents/DriveLM/` (expectations JSONs, taxonomy v2/v2.1, meta-actions v1, coverage audit) against this repository's contents at analysis time (`behavioral_refinements-v2.txt`, `meta-actions-v2.txt`, `actors-factors-list-v4.txt`, `iso_edge_corner_missing_cases.md`) — §7 records the v5→v6 supersession of the taxonomy file.
 **Verdict up front:** the expectations layer carried over losslessly (221→221, plus a new meta-action-sequence capability). The taxonomy layer was re-architected (gains in rigor) but **dropped ~20 actor sub-classes, ~15 named factor leaves, and — most importantly — the entire synthesis layer** (130 combined cases + 259 gap candidates) that motivated this project in the first place.
 
 ---
@@ -23,7 +23,7 @@
 | `meta-actions.txt` | 15 NHTSA meta-actions (ACT-01..15) |
 | `taxonomy_coverage/FINDINGS.md` (+ reports, Desktop PDF) | dataset-coverage audit: 158 leaf verdicts vs DriveLM-nuScenes/CARLA — 79 categorically absent, 34 parametrically limited, 5/10 combined classes never co-occur |
 
-**New (this repo):** `behavioral_refinements-v2.txt` · `meta-actions-v2.txt` · `actors-factors-list-v4.txt` · `iso_edge_corner_missing_cases.md`
+**New (this repo, at analysis time):** `behavioral_refinements-v2.txt` · `meta-actions-v2.txt` · `actors-factors-list-v4.txt` (superseded by v6, see §7) · `iso_edge_corner_missing_cases.md`
 
 ---
 

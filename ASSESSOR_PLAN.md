@@ -22,7 +22,7 @@ L0 reference ──► case registry (EDGE/CORNER/MISSING predicates)
 
 **L0 — Reference layer** (`reference/`): machine-readable `taxonomy_v6.json`
 (actor sub-classes + SI bounds, movement regimes, misbehavior tokens, factor
-bands/enums/buffers) and `expectations.json` (221 entries: trigger conditions,
+bands/enums/buffers) and `expectations_v2.json` (221 entries: trigger conditions,
 meta-action sequences, statutory refs). ISO classes as computable predicates:
 EDGE = parameter at band extreme; CORNER = multi-actor/factor confluence;
 MISSING = zero evidence across all levels / expectation triggers never occur.

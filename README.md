@@ -13,7 +13,7 @@ The repository consists of three core specification files that form an end-to-en
 | File Name | Description | Key Specifications |
 | :--- | :--- | :--- |
 | **`meta-actions-v2.txt`** | **Control Action Primitives Framework** | Defines **16 standardized control primitives (`[ACT-01]` through `[ACT-16]`)** grounded in USDOT/NHTSA Report DOT HS 812 623 (Table 42). Establishes standardized longitudinal, lateral, fallback handover, and directional reversing primitives. |
-| **`actors-factors-list-v4.txt`** | **Unified Actor & 6-Layer ODD Taxonomy** | Establishes a **Universal 3-State Compliance Architecture (`[NONE \| MISUSE \| ABUSE]`)**, 26 actor sub-classes across 5 categories, 55 misuse/abuse misbehavior primitives, differentiated vehicle vs. non-vehicle movement regimes, and a **6-Layer ODD Factor Catalog** with SI metrics and statutory clearance thresholds. |
+| **`actors-factors-list-v6.txt`** | **Unified Actor & 6-Layer ODD Taxonomy** | Establishes a **Universal 3-State Compliance Architecture (`[NONE \| MISUSE \| ABUSE]`)**, 42 actor sub-classes across 5 categories, 49 misuse/abuse misbehavior primitives, differentiated vehicle vs. non-vehicle movement regimes, and a **6-Layer ODD Factor Catalog** with SI metrics and statutory clearance thresholds — every section grounded in named standards (ISO, AVSC, NHTSA, Vienna, Texas Code, Waymo labeling spec). |
 | **`behavioral_refinements-v2.txt`** | **Refined ADS Behavioral Expectations Catalog** | Contains **221 refined ADS Behavioral Requirements**. Each requirement maps 1-to-1 to a structured 4-step control response sequence composed of the 16 Meta-Actions. Fully covers proactive driving, reactive responses to external misuse/abuse (106 reactive items), emergency MRC transitions, and reversing controls. |
 
 ---
@@ -61,7 +61,7 @@ The specifications in this repository were derived through a rigorous 5-stage sy
 * Grounded all dynamic vehicle maneuvers in the USDOT/NHTSA 15-action control framework (USDOT Report DOT HS 812 623, Page 59, Table 42).
 * Extended the framework with **`[ACT-16] Reverse / Back Up`** to provide explicit coverage for backward longitudinal motion ($v < 0$) grounded in Vienna Convention Art. 14/25 and Texas Transportation Code Sec. 545.415.
 
-### Stage 3: Decoupled Taxonomy Construction (`actors-factors-list-v4.txt`)
+### Stage 3: Decoupled Taxonomy Construction (`actors-factors-list-v6.txt`)
 * Separated dynamic actor capabilities from environmental factor layers.
 * Formulated a **Universal 3-State Compliance Engine** applicable across all road users:
   1. `COMPLIANT` (`non_compliance_type = NONE`): Strict statutory rule adherence.
@@ -132,8 +132,8 @@ This repository is designed to serve as an actionable dataset and specification 
 ```
 
 ### 1. Automated Scenario Generation & Synthetic Test Synthesis
-* **OpenSCENARIO & Simulator Ingestion:** Programmatically map `behavioral_refinements-v2.txt` control sequences and `actors-factors-list-v4.txt` ODD layers into simulator test scripts (CARLA, SVL, Metadrive, Applied Intuition).
-* **Combinatorial Test Matrix Generation:** Instantiate combinations by pairing any of the 221 requirement baselines with the 26 actor sub-classes, 55 misbehavior modes, and 6 ODD factor layers to generate millions of unique executable scenario variants.
+* **OpenSCENARIO & Simulator Ingestion:** Programmatically map `behavioral_refinements-v2.txt` control sequences and `actors-factors-list-v6.txt` ODD layers into simulator test scripts (CARLA, SVL, Metadrive, Applied Intuition).
+* **Combinatorial Test Matrix Generation:** Instantiate combinations by pairing any of the 221 requirement baselines with the 42 actor sub-classes, 49 misbehavior modes, and 6 ODD factor layers to generate millions of unique executable scenario variants.
 
 ### 2. SOTIF & Functional Safety Case Engineering (ISO 21448 / ISO 5083)
 * **Triggering Condition Mapping:** Use the 6-Layer ODD factor catalog to define known hazardous triggering conditions (e.g., solar glare + dense fog + low friction $\mu=0.15$).
@@ -164,10 +164,10 @@ REPOSITORY METRICS SUMMARY
 
 • Universal Control Actions            : 16 Meta-Actions ([ACT-01] to [ACT-16])
 • Universal Compliance States          : 3 Modes (COMPLIANT, MISUSE, ABUSE)
-• Actor Taxonomy Catalog               : 5 Categories | 26 Sub-Classes
-• Misbehavior Primitives               : 55 Items (Misuse & Abuse)
-• Operational Design Domain Layers     : 6 Layers | 19 Sub-Sections | 80+ SI Metrics
-• Total Base Statutory Sources         : 12 Grounding Frameworks
+• Actor Taxonomy Catalog               : 5 Categories | 42 Sub-Classes
+• Misbehavior Primitives               : 49 Items (Misuse & Abuse)
+• Operational Design Domain Layers     : 6 Layers | 22 Sub-Sections | 80+ SI Metrics
+• Total Base Statutory Sources         : 10 Grounding Frameworks
 ================================================================================
 ```
 
