@@ -117,3 +117,23 @@ Moved, not dropped: moped riders → motor-vehicle category; rail-borne vehicles
 4. **Fill factor regressions:** re-add crosswalk/stop-line/cyclist markings, bridge/viaduct/flyover/crest structures, shoulder width, damp & hydroplaning friction states; define the 200 m–10 km visibility band; restore or explicitly document the EXTREME precipitation tier merge.
 5. **Re-run the coverage audit** (`taxonomy_coverage/` tooling) against v4 leaf keys — FINDINGS.md verdicts are keyed to v2 names and now stale.
 6. **Bridge to noise-injector:** v4's Layer 5/6 bands (rain mm/hr, illuminance lx, fog distance, V2X/GNSS states) map naturally onto injector sensor families (fog/glare/low_light already exist); the ~45 misbehavior tokens are the spec for a new Layer-B "compliance misbehavior" family; ACT-16 enables backing/reversing scenario generation.
+
+---
+
+## 7. Resolution status after taxonomy v5/v6 (2026-10-16 addendum)
+
+The author iterated the taxonomy twice after this analysis (v5 "Fully Grounded" → v6, now `actors-factors-list-v6.txt`, replacing v4 in this repo). v6 additionally grounds every section in named standards (Waymo labeling spec, AVSC ODD/VRU/First-Responder sections, dot_38824_DS1 Fig 17, ISO 21448 Table A.5, Vienna Art. 23/26-bis, Texas § 545.058/545.060).
+
+**Resolved by v5, retained in v6:** shoulder types + width (§1.5); highway structures incl. BRIDGE_VIADUCT/FLYOVER_RAMP/OVERPASS/HILL_CREST_BLIND_CURVE/TUNNEL/GUARDRAIL (§1.2); GREEN_ARROW + PROTECTED_ARROW signal type; TRANSVERSE_CROSSWALK_LINES / TRANSVERSE_STOP_BAR / GREEN_CYCLIST_LANE_PAINT markings; Damp/Wet band; Hydroplaning as named state; Snow/Slush as new surface state; full visibility chain (new Reduced/Mist 200–1000 m band); Extreme Torrential Downpour >50 mm/hr as 5th tier; Civil Twilight split (10–100 lx); dual headway metrics (time 0.5–4.0 s AND spatial 0.5–100 m); pickup trucks, farm/agricultural/construction equipment, animal-drawn carriages, stroller/bulky-object pedestrians, traffic police/flaggers, first responders, recumbent/cargo cyclists.
+
+**Resolved by v6:** convertibles & cabriolets; shuttle vans; motorcycles with sidecars/tricycles; rescue command vehicles; passenger commuter & high-speed rail; intoxicated/impaired pedestrians; person pushing bicycle/e-scooter/handcart/stroller; roadway-maintenance workers & construction flaggers on foot; tow-truck operators & roadside mechanics on foot; named sign categories (REGULATORY_STOP, REGULATORY_YIELD, REGULATORY_DO_NOT_ENTER, REGULATORY_ONE_WAY, RAILROAD_CROSSBUCK); stopping_distance_multiplier restored per friction state (1.0× → 10×).
+
+**Still open (tracked):**
+- `curve_radius_m` (old v2: 15–1000 m) remains absent from Layer 1.4 geometry metrics.
+- Signal types RAMP_METERING_SIGNAL and BUS_LANE_PRIORITY_SIGNAL (present in v4 Layer 2.1) dropped.
+- Sign categories SCHOOL_ZONE_FLASHING and NO_PASSING_ZONE (present in v4) not restored — only WORKZONE_TEMPORARY survives as a related category.
+- Lane-width lower bound 2.5 m (old v2 / v4) raised to 2.75 m; superelevation changed from ±6° to 1–6% (negative bank angles unrepresentable); NARROW_MOUNTAIN_SINGLE_LANE_PASS network type removed (only a lane-width note remains).
+- Expectation-layer items from §1 are untouched by v5/v6 (AVSC metadata restore, sequence-template audit, TX/Texas IDs) — tracked in §6.3.
+- Synthesis layer import (§6.1) and v2→v6 crosswalk (§6.2) remain open.
+
+The assessor (next phase) should parse `actors-factors-list-v6.txt` as the authoritative reference and treat the "still open" list as known limitations of the reference model.

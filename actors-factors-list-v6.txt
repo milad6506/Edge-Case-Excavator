@@ -1,10 +1,12 @@
 ================================================================================
-MASTER UNIFIED ACTORS & FACTORS TAXONOMY SPECIFICATION (v4.0)
-Filename: actors-factors-list-v4.txt
-Unit System: Metric / SI Units (m, m/s, m/s², mm/hr, lx, km/h, friction_coeff_mu)
+MASTER UNIFIED ACTORS & FACTORS TAXONOMY SPECIFICATION (VERSION 6.0 - FULLY GROUNDED)
+Filename: actors-factors-list-v6.txt
+Unit System: Metric / SI Units (m, m/s, m/s², mm/hr, lx, km/h, friction_coeff_mu, TTC_s)
 Standards Alignment: ISO DTS 5083, ISO 21448 (SOTIF), AVSC ODD Lexicon (AVSC00002202004),
+                    AVSC VRU Best Practice (AVSC00009202208), AVSC First Responder (AVSC-I-01-2024),
                     NHTSA OEDR Framework (DOT HS 812 623 / dot_38824_DS1),
-                    Vienna Convention on Road Traffic, Texas Transportation Code Ch. 545.
+                    UN Vienna Convention on Road Traffic, Texas Transportation Code Ch. 545,
+                    Waymo Open Dataset Labeling Specifications.
 ================================================================================
 
 ================================================================================
@@ -17,7 +19,7 @@ Every actor instance evaluated within a scenario is governed by a uniform,
 top-level compliance state machine. Compliant behavior patterns are defined in 
 standalone behavioral expectations catalogs (e.g., ADS and Road User expectations) 
 and are omitted from this taxonomy catalog to maintain a clean focus on physical 
-capabilities and operational misbehaviors.
+capabilities, operational misuse, and active abuse.
 
 Top-Level Compliance Attributes:
   * compliance_state: [COMPLIANT | NON_COMPLIANT]
@@ -39,7 +41,7 @@ Definition of Compliance Modes:
      surrounding actors or the Ego vehicle into emergency evasive or defensive maneuvers.
      (e.g., running active red lights, running stop signs, unlawful backing/reversing 
      on highways or in tunnels, wrong-way driving, unsignaled cut-in hazards, police 
-     impersonation with fake strobes, sudden high-speed pedestrian dart-ins).
+     impersonation with fake strobes, sudden high-speed pedestrian dart-ins, passing stopped school bus).
 
 2. DIFFERENTIATED MOVEMENT REGIME ARCHITECTURE
 --------------------------------------------------------------------------------
@@ -65,9 +67,11 @@ PART II: COMPLETE ACTOR TAXONOMY CATALOG
 CATEGORY 1: MOTOR VEHICLES (actor_category = MOTOR_VEHICLE)
 --------------------------------------------------------------------------------
 
-1.1 Sub-Classes & Physical Bounding Boxes:
+1.1 Sub-Classes & Physical Bounding Boxes (Grounded in dot_38824_DS1, AVSC-I-01-2024, Texas Code Ch. 545):
   * Passenger Light Vehicles (Sedans, Coupe, Hatchback, SUV, Minivan):
     - Length: 4.0m to 5.2m | Width: 1.7m to 2.1m | Height: 1.4m to 1.9m
+  * Pickup Trucks & Commercial Utility Vans:
+    - Length: 5.0m to 6.5m | Width: 1.9m to 2.3m | Height: 1.8m to 2.5m
   * Heavy Commercial Trucks & Combination Trailers:
     - Length: 8.0m to 22.0m | Width: 2.4m to 2.6m | Height: 3.2m to 4.2m
   * Transit Buses & Articulated Passenger Coaches:
@@ -76,10 +80,20 @@ CATEGORY 1: MOTOR VEHICLES (actor_category = MOTOR_VEHICLE)
     - Length: 7.5m to 12.2m | Width: 2.4m to 2.6m | Height: 2.9m to 3.3m
   * Motorcycles, Mopeds & Motorized Two-Wheelers:
     - Length: 1.8m to 2.4m | Width: 0.7m to 1.0m | Height: 1.0m to 1.4m
-  * Emergency Priority Vehicles (Police, Fire Engine, Ambulance):
+  * Emergency Priority Vehicles (Police Cruisers, Fire Engines, Ambulances):
     - Length: 5.5m to 10.0m | Width: 2.0m to 2.6m | Height: 2.0m to 3.6m
   * Tow Trucks & Roadside Emergency Service Patrol Vehicles:
     - Length: 6.0m to 9.5m | Width: 2.2m to 2.6m | Height: 2.4m to 3.2m
+  * Open-Top Convertibles & Cabriolets:
+    - Length: 4.1m to 5.0m | Width: 1.7m to 2.0m | Height: 1.3m to 1.6m
+  * Shuttle Vans & Airport / Transit Passenger Vans:
+    - Length: 5.2m to 7.0m | Width: 2.0m to 2.4m | Height: 2.2m to 2.8m
+  * Motorcycles with Sidecars, Motorized Tricycles & Three-Wheelers:
+    - Length: 2.0m to 2.6m | Width: 1.2m to 1.6m | Height: 1.1m to 1.5m
+  * Rescue Command Vehicles & Mobile Emergency Command Units:
+    - Length: 8.5m to 12.5m | Width: 2.5m to 2.6m | Height: 3.2m to 3.8m
+  * Farm Tractors, Agricultural & Heavy Construction Equipment:
+    - Length: 3.5m to 8.0m | Width: 2.0m to 3.5m | Height: 2.5m to 4.0m
 
 1.2 Universal Vehicle Kinematic Bounds (SI Units):
   * Forward Velocity (v_fwd): 0.0 m/s to 45.0 m/s (0 to 162 km/h)
@@ -118,17 +132,14 @@ CATEGORY 1: MOTOR VEHICLES (actor_category = MOTOR_VEHICLE)
     - INADVERTENT_HORN_TAP (Accidental brief horn tap)
     - OMITTED_WARNING_HONK_IN_BLIND_MOUNTAIN_CURVE (Failing to sound horn on narrow blind mountain curve)
     - IMPROPER_SHOULDER_WARNING_FLARE_OMISSION (Failing to deploy warning triangles/flares behind disabled vehicle)
+    - UNCOVERED_LOOSE_CARGO_SPILL_HAZARD (Transporting loose dirt/gravel without tarpaulin)
 
   * misuse_misbehaviors (Transit & School Bus Drivers):
-    - BUS_STOP_BAY_ALIGNMENT_MISUSE (Stopping outside designated transit bay, causing rear-end overhang)
-    - OMITTED_PULL_OUT_INDICATOR (Pulling out from curbside bay without engaging turn signal)
-    - INADVERTENT_DOOR_OPENING_BEFORE_STOP (Opening access doors prior to complete vehicle standstill)
+    - BUS_STOP_BAY_ALIGNMENT_MISUSE (Stopping outside designated transit bay, causing rear overhang)
+    - OMITTED_PULL_OUT_INDICATOR (Pulling out from transit bay without engaging left turn signal)
+    - INADVERTENT_DOOR_OPENING_BEFORE_STOP (Opening passenger access doors prior to complete standstill)
     - BUS_STOP_CROSSWALK_ENCROACHMENT (Stopping for passenger transfer with front bumper in crosswalk)
-    - SCHOOL_BUS_STOP_ARM_TIMING_MISUSE (Premature or delayed deployment of flashing student stop-arm)
-
-  * misuse_misbehaviors (Commercial Truck & Tow Operators):
-    - UNCOVERED_LOOSE_CARGO_SPILL_HAZARD (Failing to secure tarpaulin leading to loose gravel/cargo spill)
-    - TOW_TRUCK_SHOULDER_CLEARANCE_INSUFFICIENCY (Hooking disabled vehicle with insufficient lateral margin)
+    - SCHOOL_BUS_STOP_ARM_TIMING_MISUSE (Premature or delayed deployment of student stop-arm)
 
   * abuse_misbehaviors (General Motor Vehicles):
     - RUNNING_RED_LIGHT (Entering intersection against active red signal)
@@ -142,24 +153,16 @@ CATEGORY 1: MOTOR VEHICLES (actor_category = MOTOR_VEHICLE)
     - RECKLESS_TAILGATING_HARASSMENT (Encroaching headway to unsafe sub-second TTC)
     - PROLONGED_ABUSIVE_HONK (Continuous acoustic harassment/intimidation)
     - UNLAWFUL_SIREN_ASSERTION (Illegal activation of acoustic siren by non-emergency vehicle)
-    - ILLEGAL_PASSING_STOPPED_SCHOOL_BUS (Overtaking stopped school bus displaying active red flashing lights - Texas Sec. 545.066)
-    - MOVE_OVER_LAW_VIOLATION (Failing to slow down by 20 mph or yield lane to emergency/tow vehicle on shoulder - Texas Sec. 545.157)
-    - ILLEGAL_RAILROAD_GATE_BYPASS (Driving around or under lowered railroad crossing gates - Texas Sec. 545.251)
-    - INTERSECTION_GRIDLOCK_BLOCKING_THE_BOX (Entering intersection/crossing when exit is blocked - Vienna Art. 18(4))
+    - ILLEGAL_PASSING_STOPPED_SCHOOL_BUS (Overtaking stopped school bus displaying active red stop-arm)
+    - MOVE_OVER_LAW_VIOLATION (Failing to slow down or vacate adjacent lane near stationary emergency vehicle)
+    - ILLEGAL_RAILROAD_GATE_BYPASS (Driving around or under lowered mechanical railroad gates)
+    - INTERSECTION_GRIDLOCK_BLOCKING_THE_BOX (Entering junction when exit is blocked, straddling intersection)
 
   * abuse_misbehaviors (Transit & School Bus Drivers):
-    - ABUSIVE_TRANSIT_BUS_PULL_OUT (Abruptly forcing way out of transit bay into active travel lane)
-    - DISREGARD_OF_ALIGHTING_PASSENGER_SAFETY_ZONE (Discharging passengers into active travel berth without hazard lights)
-    - LANE_STRADDLING_AND_BUS_BERTH_BLOCKADE (Continuously straddling two lanes while idling)
-    - ABUSIVE_BUS_HEADWAY_PRESSURING (Tailgating light vehicles using bus mass/size intimidation)
-    - DISREGARD_OF_SCHOOL_CHILD_ALIGHTING_SAFETY (Discharging school children without active flashing red loading signals)
-
-  * abuse_misbehaviors (Commercial Truck & Tow Operators):
-    - UNLAWFUL_TRUCK_LANE_RESTRICTION_VIOLATION (Operating heavy combination trucks in restricted express/left lanes)
-    - UNLAWFUL_HIGHWAY_MEDIAN_CROSSOVER_TOW_TRUCK (Executing illegal U-turn across divided highway median)
-
-  * abuse_misbehaviors (Emergency Vehicle Operators):
-    - EXCESSIVE_SPEED_UNREGISTERED_EMERGENCY_RUN (Speeding or breaching red light without active sirens and strobes)
+    - ABUSIVE_TRANSIT_BUS_PULL_OUT (Abruptly forcing way out of transit bay, cutting off travel lane)
+    - DISREGARD_OF_ALIGHTING_PASSENGER_SAFETY_ZONE (Discharging passengers directly into cycle lane or travel berth)
+    - DISREGARD_OF_SCHOOL_CHILD_ALIGHTING_SAFETY (Discharging students without activating red warning signals)
+    - LANE_STRADDLING_AND_BUS_BERTH_BLOCKADE (Continuously straddling two lanes or blocking bike lanes)
 
 1.5 Vehicle Lighting & Visual Signaling States:
   * Headlamp States: [HEADLAMPS_OFF, LOW_BEAM_PASSING, HIGH_BEAM_GLARING, DAYTIME_RUNNING_LIGHTS]
@@ -177,25 +180,41 @@ CATEGORY 1: MOTOR VEHICLES (actor_category = MOTOR_VEHICLE)
 CATEGORY 2: VULNERABLE ROAD USERS (actor_category = VRU)
 --------------------------------------------------------------------------------
 
-2.1 Sub-Classes & Physical Bounding Boxes:
-  * Pedestrians Adult:
+2.1 Sub-Classes & Physical Bounding Boxes (Grounded in AVSC00009202208, Vienna Convention, Texas Code):
+  * Pedestrians Adult (Standard Walking / Running):
     - Length: 0.3m to 0.6m | Width: 0.4m to 0.7m | Height: 1.5m to 2.0m
-  * Pedestrians Child (Toddler 0-4, Young Child 5-12, Teen 13-17):
+  * Pedestrians Child (Toddlers 0-4, Young Children 5-12, Preteens/Teens 13-17):
     - Length: 0.2m to 0.5m | Width: 0.3m to 0.6m | Height: 0.8m to 1.4m
+  * Pedestrians with Strollers, Pushing Carts & Carrying Bulky Objects:
+    - Length: 0.8m to 1.6m | Width: 0.6m to 1.0m | Height: 1.0m to 1.8m
+  * Traffic Police Officers, Flaggers & Authorized Emergency Officials (Manual Gestures):
+    - Length: 0.4m to 0.7m | Width: 0.5m to 0.8m | Height: 1.6m to 2.0m
+  * First Responders & EMS Personnel on Foot:
+    - Length: 0.4m to 0.7m | Width: 0.5m to 0.8m | Height: 1.6m to 2.0m
   * Grouped Pedestrian Formations & Processions (Funeral processions, military troop columns, marching bands, school files):
-    - Footprint: 5.0m to 100.0m length | 2.0m to 8.0m width
-  * Accompanied Supervisors, Escorts & Crossing Guards:
-    - Length: 0.4m to 0.7m | Width: 0.4m to 0.7m | Height: 1.5m to 2.0m
-  * Persons with Reduced Mobility (Wheelchair Users, Visually Impaired with Canes):
+    - Length: 5.0m to 50.0m | Width: 1.5m to 4.0m | Height: 1.2m to 2.0m
+  * Accompanied Supervisors, Escorts & School Crossing Guards:
+    - Length: 0.4m to 0.7m | Width: 0.5m to 0.8m | Height: 1.5m to 1.9m
+  * Persons with Reduced Mobility (Wheelchair Users, Motorized Chairs, Visually Impaired with Canes/Dogs):
     - Length: 0.8m to 1.4m | Width: 0.6m to 0.9m | Height: 1.0m to 1.5m
   * Bicyclists & Commuter Cyclists:
     - Length: 1.6m to 2.0m | Width: 0.5m to 0.8m | Height: 1.2m to 1.9m
-  * Electric Scooter / Micro-Mobility Operators:
+  * Recumbent Cyclists, Cargo Bikes & Tricycles:
+    - Length: 1.8m to 2.5m | Width: 0.7m to 1.1m | Height: 0.8m to 1.4m
+  * Electric Scooter & Micro-Mobility Operators (E-scooters, Hoverboards, Segways):
     - Length: 1.0m to 1.5m | Width: 0.4m to 0.7m | Height: 1.3m to 2.0m
-  * Transit Passengers Boarding / Alighting:
+  * Transit Passengers Boarding / Alighting at Stops:
     - Length: 0.4m to 0.7m | Width: 0.4m to 0.7m | Height: 1.4m to 1.9m
-  * Vehicle Cabin Passengers & Occupants (Potential interfering/obstructing actors):
-    - Seated Footprint within vehicle interior
+  * Intoxicated, Impaired or Incapacitated Pedestrians (Stochastic/Erratic Kinematics):
+    - Length: 0.4m to 0.8m | Width: 0.5m to 0.9m | Height: 1.5m to 2.0m
+  * Person Pushing or Pulling Bicycle, E-scooter, Handcart, or Stroller:
+    - Length: 1.6m to 2.2m | Width: 0.7m to 1.1m | Height: 1.2m to 1.9m
+  * Roadway-Maintenance Workers, Highway Utility Personnel & Construction Flaggers on Foot:
+    - Length: 0.4m to 0.7m | Width: 0.5m to 0.8m | Height: 1.6m to 2.0m
+  * Tow-Truck Operators & Roadside Assistance Mechanics on Foot:
+    - Length: 0.4m to 0.7m | Width: 0.5m to 0.8m | Height: 1.6m to 2.0m
+  * Vehicle Cabin Passengers & Occupants (Potential interior view/control interfering actors):
+    - Length: 0.4m to 0.7m | Width: 0.4m to 0.7m | Height: 1.0m to 1.5m
 
 2.2 VRU Kinematic Bounds (SI Units):
   * Pedestrian Walking Speed: 0.5 m/s to 2.5 m/s (Nominal adult: 1.34 m/s)
@@ -208,15 +227,15 @@ CATEGORY 2: VULNERABLE ROAD USERS (actor_category = VRU)
   * STATIONARY_WAITING_CURB: Standing at sidewalk/curb edge preparing to cross.
   * CANALIZED_WALKING_CROSSWALK: Walking within marked crosswalk boundaries.
   * DIAGONAL_INTERSECTION_CROSSING: Traversing junction outside marked paths.
-  * FORMATION_PROCESSION_MARCHING: Coordinated group traversal following supervisor directives.
-  * CROSSING_GUARD_HAND_STOP_ASSERTION: Crossing guard stepping into street holding portable stop sign.
+  * FORMATION_PROCESSION_MARCHING: Organized group marching along roadway/shoulder.
+  * CROSSING_GUARD_HAND_STOP_ASSERTION: Crossing guard standing in lane displaying stop paddle.
   * LANE_SHARING_CYCLIST_TRACK: Riding parallel to motor traffic in lane/bike path.
   * TRANSIT_BOARDING_ALIGHTING: Stepping between curbside bay and transit bus door.
 
 2.4 VRU Misbehavior Regime:
   * misuse_misbehaviors:
     - PASSIVE_JAYWALKING_CLEAR_ROADWAY (Crossing outside crosswalk when roadway is clear)
-    - DISTRACTED_WALKING_SHOULDER_ENCROACHMENT (Stepping onto shoulder while using smartphone/headphones)
+    - DISTRACTED_WALKING_SHOULDER_ENCROACHMENT (Stepping onto shoulder while using smartphone)
     - CYCLIST_OMITTED_HAND_SIGNAL (Turning without executing manual direction signal)
     - INADVERTENT_SIDEWALK_EDGE_STEP_OFF (Accidental stumble off sidewalk curb)
   * abuse_misbehaviors:
@@ -225,7 +244,6 @@ CATEGORY 2: VULNERABLE ROAD USERS (actor_category = VRU)
     - CROSSING_AGAINST_DONOT_WALK_SIGNAL (Entering crosswalk against solid red hand signal)
     - CYCLIST_AGGRESSIVE_WRONG_WAY_RIDING (Riding bicycle directly against motor traffic flow)
     - E_SCOOTER_ERRATIC_SWERVE_INTO_TRAFFIC_LANE (Abrupt swerve from sidewalk into travel lane)
-    - PASSENGER_CABIN_CONTROL_INTERFERENCE (Passenger physically interfering with steering/gear controls or covering sensors - Texas Sec. 545.417)
 
 
 --------------------------------------------------------------------------------
@@ -235,10 +253,12 @@ CATEGORY 3: RAIL-BOUND VEHICLES (actor_category = RAIL_VEHICLE)
 3.1 Sub-Classes & Physical Bounding Boxes:
   * Freight Trains & Heavy Rail Locomotives:
     - Length: 50.0m to 2000.0m | Width: 3.0m to 3.4m | Height: 4.0m to 4.9m
+  * Passenger Commuter Trains & High-Speed Passenger Rail Locomotives:
+    - Length: 100.0m to 400.0m | Width: 3.0m to 3.3m | Height: 4.0m to 4.5m
   * Passenger Streetcars / Trams / Light Rail:
     - Length: 20.0m to 60.0m | Width: 2.4m to 2.8m | Height: 3.2m to 3.8m
-  * Railway Crew & Motormen:
-    - Rail-borne vehicle operators
+  * Railway Crew, Switchmen & Motormen:
+    - Length: 0.4m to 0.7m | Width: 0.5m to 0.8m | Height: 1.6m to 2.0m
 
 3.2 Rail Kinematic Bounds:
   * Velocity: 0.0 m/s to 35.0 m/s (0 to 126 km/h)
@@ -256,16 +276,18 @@ CATEGORY 3: RAIL-BOUND VEHICLES (actor_category = RAIL_VEHICLE)
 
 
 --------------------------------------------------------------------------------
-CATEGORY 4: ANIMALS & HERDED LIVESTOCK (actor_category = ANIMAL)
+CATEGORY 4: ANIMALS, MOUNTED LIVESTOCK & CARRIAGES (actor_category = ANIMAL)
 --------------------------------------------------------------------------------
 
-4.1 Sub-Classes & Physical Bounding Boxes:
+4.1 Sub-Classes & Physical Bounding Boxes (Grounded in Vienna Convention, dot_38824_DS1):
   * Domestic Pets (Dogs, Cats):
     - Length: 0.4m to 1.1m | Width: 0.2m to 0.4m | Height: 0.3m to 0.9m
   * Large Wild Animals (Deer, Elk, Moose):
     - Length: 1.5m to 2.8m | Width: 0.6m to 1.0m | Height: 1.2m to 2.3m
   * Mounted Horses & Herded Livestock (Cattle, Sheep) with Herders:
     - Length: 2.0m to 2.6m | Width: 0.8m to 1.2m | Height: 1.5m to 2.4m
+  * Animal-Drawn Carriages, Buggies & Equestrian Riders:
+    - Length: 3.0m to 6.0m | Width: 1.5m to 2.2m | Height: 1.8m to 2.6m
 
 4.2 Animal Kinematic Bounds:
   * Velocity: 0.0 m/s to 15.0 m/s (0 to 54 km/h)
@@ -281,7 +303,7 @@ CATEGORY 4: ANIMALS & HERDED LIVESTOCK (actor_category = ANIMAL)
     - DOMESTIC_PET_SHOULDER_STRAY (Unleashed dog wandering onto paved shoulder)
   * abuse_misbehaviors:
     - SUDDEN_ANIMAL_DART_IN_LANE (Deer bounding directly into vehicle trajectory)
-    - HERD_LIVESTOCK_ACTIVE_ROADWAY_BLOCKADE (Cattle herd occupying active carriageway without herder signals)
+    - HERD_LIVESTOCK_ACTIVE_ROADWAY_BLOCKADE (Cattle herd occupying active carriageway)
 
 
 --------------------------------------------------------------------------------
@@ -292,7 +314,7 @@ CATEGORY 5: STATIC OBSTACLES & DEBRIS (actor_category = STATIC_OBSTACLE)
   * Fallen Cargo & Road Debris (Lumber, Tires, Shipping Boxes)
   * Fallen Trees, Branches & Downed Utility Wires
   * Stationary Disabled Vehicles & Crashed Wrecks
-  * Construction Channelization Drums, Cones & Barricades
+  * Construction Channelization Drums, Cones, Barricades & Arrow Boards
 
 5.2 Movement Regime:
   * FIXED_POSITION_OBSTRUCTION: Stationary spatial footprint occupying travel berth.
@@ -309,52 +331,53 @@ LAYER 1: ROAD GEOMETRY, TOPOLOGY, STRUCTURES & SURFACE CONDITIONS
 --------------------------------------------------------------------------------
 1.1 Roadway Network Classification:
   * Types: [DIVIDED_HIGHWAY | UNDIVIDED_ARTERIAL | URBAN_COLLECTOR | LOCAL_ALLEY | 
-            MOUNTAIN_PASS | ROTARY_ROUNDABOUT | HIGHWAY_ON_OFF_RAMP | PRIVATE_DRIVEWAY |
-            ENCLOSED_TUNNEL_PASSAGE | NARROW_MOUNTAIN_SINGLE_LANE_PASS]
-  * Geometry Metrics:
-    - Number of Lanes: 1 to 8 lanes per carriageway
-    - Lane Width: 2.5m (Narrow alley/pass) to 3.75m (Standard highway)
-    - Roadway Grade: -12.0% (Steep downhill) to +12.0% (Steep uphill)
-    - Super-elevation / Bank Angle: -6.0° to +6.0°
-    - Curve Radius: 15.0m (Tight urban turn) to 1000.0m+ (Straight)
+            MOUNTAIN_PASS | ROTARY_ROUNDABOUT | HIGHWAY_ON_OFF_RAMP | PRIVATE_DRIVEWAY_ALLEYWAY]
 
-1.2 Surface Condition & Friction Coefficient:
-  * Surface Material: [ASPHALT | CONCRETE | GRAVEL | UNPAVED_DIRT | COBBLESTONE]
-  * Surface State & Friction (mu):
-    - Dry Clean Pavement: mu = 0.70 to 0.85
-    - Wet / Rain Soaked: mu = 0.40 to 0.60
-    - Packed Snow / Mud: mu = 0.20 to 0.35
-    - Black Ice / Glaze Ice: mu = 0.15 to 0.20
+1.2 Highway Structures, Elevation & Enclosures (Grounded in dot_38824_DS1 Fig 17, ISO 21448 Table A.5):
+  * Structure Types: [FLAT_ROADWAY | BRIDGE_VIADUCT | FLYOVER_RAMP | OVERPASS | 
+                      HILL_CREST_BLIND_CURVE | TUNNEL_ENCLOSED_SPACE | GUARDRAIL_SIDE_BARRIER]
 
-1.3 Missing Lane & Junction Structures (Derived Gap-A Taxonomy):
-  * ACCELERATION_DECELERATION_LANES (Speed-change ramps)
-  * ADDITIONAL_SLOW_LANE_LAY_BYS (Mountain road passing turnouts)
-  * DECELERATION_RAMP_ZONE (Managed highway exit zones)
-  * PROPERTY_ALLEY_DRIVEWAY (Private access and curb cuts)
-  * LEVEL_CROSSING_GATES_BARRIERS (Rail grade crossing barriers/gates)
-  * PEDESTRIAN_VERGE_SIDEWALK_AREA (Unpaved roadside verges and footpaths)
-  * FIXED_SAFETY_ZONE_ISLAND (Channelizing traffic islands and refuge zones)
+1.3 Surface Condition, Moisture, Friction Coefficient (mu) & Stopping Distance Multipliers (Grounded in AVSC00002202004 Sec 5, dot_38824_DS1, ISO 21448):
+  * Dry Asphalt / Concrete: mu = 0.70 to 0.85 | stopping_distance_multiplier = 1.0x (Nominal baseline)
+  * Damp / Wet Pavement: mu = 0.40 to 0.60 | stopping_distance_multiplier = 1.5x
+  * Hydroplaning Standing Water Puddles: mu = 0.20 to 0.35 | stopping_distance_multiplier = 2.5x to 4.0x (Water film depth > 3.0mm)
+  * Snow / Slush Covered: mu = 0.20 to 0.35 | stopping_distance_multiplier = 3.0x to 5.0x
+  * Glaze Ice / Black Ice: mu = 0.15 to 0.25 | stopping_distance_multiplier = 6.0x to 10.0x
 
-1.4 Road Surface Distress & Defects:
-  * Potholes (Depth > 50mm, Width > 300mm)
-  * Surface Rutting & Severe Cracking
-  * Loose Surface Gravel / Oil Spills
+1.4 Geometry Metrics:
+  * Lane Width: 2.75m to 3.75m (Narrow mountain pass: < 3.5m)
+  * Road Grade / Incline: -12.0% to +12.0% (Steep mountain grade threshold: > ±10.0%)
+  * Crossfall / Superelevation: 1.0% to 6.0%
+
+1.5 Shoulder Geometry & Width Metrics (Grounded in AVSC00002202004 Sec 5.1, Texas Code Sec. 545.058):
+  * Shoulder Types: [PAVED_SHOULDER | UNPAVED_VERGE | EMERGENCY_LAY_BY | CURB_PARKING_LANE]
+  * Shoulder Width: 0.5m to 3.5m
+
+1.6 Missing Lane & Junction Structures:
+  * Structure Gaps: [MISSING_LAY_BY_MOUNTAIN_PASS | MISSING_ACCELERATION_LANE | 
+                    MISSING_DECELERATION_LANE | MISSING_RAIL_GATE_BARRIER | 
+                    MISSING_PEDESTRIAN_SAFETY_ISLAND]
+
+1.7 Road Surface Distress & Defects:
+  * Defect Types: [POTHOLE_DEEP_HAZARD | RUTTING_WATER_POCKETS | ASPHALT_CRACKING | 
+                   LOOSE_GRAVEL_SPILL | OIL_SLICK_SURFACE]
 
 
 --------------------------------------------------------------------------------
 LAYER 2: TRAFFIC CONTROL DEVICES, MARKINGS & STATUTORY BUFFERS
 --------------------------------------------------------------------------------
-2.1 Traffic Control Signals:
-  * Types: [STANDARD_3_COLOR_LIGHT | PEDESTRIAN_COUNTDOWN | RAILROAD_CROSSING_FLASHERS | 
-            RAMP_METERING_SIGNAL | BUS_LANE_PRIORITY_SIGNAL]
-  * States: [GREEN | YELLOW | RED | FLASHING_RED | FLASHING_YELLOW | DARK_POWER_FAILURE]
+2.1 Traffic Control Signals & Aspect States (Grounded in Vienna Convention Art. 23, Texas Code Sec. 545.060):
+  * Types: [STANDARD_3_ASPECT | PROTECTED_ARROW_SIGNAL | PEDESTRIAN_COUNTDOWN | RAIL_CROSSING_FLASHER]
+  * Aspect States: [RED_SOLID | YELLOW_SOLID | GREEN_SOLID | GREEN_ARROW | FLASHING_RED | FLASHING_YELLOW | DARK_UNPOWERED]
 
 2.2 Statutory Road Signs:
-  * Categories: [REGULATORY_STOP_YIELD | SPEED_LIMIT_STATIC | VARIABLE_MESSAGE_SIGN_VMS | 
-                 WARNING_HAZARD | SCHOOL_ZONE_FLASHING | NO_PASSING_ZONE]
+  * Categories: [REGULATORY_STOP | REGULATORY_YIELD | REGULATORY_DO_NOT_ENTER | REGULATORY_ONE_WAY | 
+                RAILROAD_CROSSBUCK | SPEED_LIMIT_EXPLICIT | WARNING_CURVE_GRADE | 
+                WORKZONE_TEMPORARY | VARIABLE_MESSAGE_SIGN_VMS]
 
-2.3 Road Markings & Conspicuity States:
-  * Line Types: [SINGLE_SOLID_WHITE | DOUBLE_SOLID_YELLOW | DASHED_WHITE | DASHED_YELLOW]
+2.3 Road Markings, Transverse Lines & Conspicuity States (Grounded in Vienna Convention Art. 26 bis, ISO 21448 Table A.5):
+  * Line Types: [SINGLE_SOLID_WHITE | DOUBLE_SOLID_YELLOW | DASHED_WHITE | DASHED_YELLOW | 
+                 TRANSVERSE_CROSSWALK_LINES | TRANSVERSE_STOP_BAR_LINE | GREEN_CYCLIST_LANE_PAINT]
   * Conspicuity States: [GOOD | FAIR | POOR | MISSING | SNOW_COVERED | TEMPORARY_WORKZONE]
 
 2.4 Statutory Distance Buffers & Clearance Thresholds:
@@ -362,6 +385,7 @@ LAYER 2: TRAFFIC CONTROL DEVICES, MARKINGS & STATUTORY BUFFERS
   * 100 ft (30.48m) Railroad Grade Crossing / Intersection Approach Buffer
   * 30 ft (9.14m) Traffic Control Signal / Safety Zone Buffer
   * 20 ft (6.10m) Marked Crosswalk Approach Buffer
+  * 20 ft (6.10m) School Bus Flashing Stop-Arm Clearance Buffer
   * 15 ft (4.57m) Fire Hydrant Parking Ban Clearance
   * 1.5m (3-4 ft) Lateral VRU Overtaking Clearance Berth
 
@@ -379,12 +403,13 @@ LAYER 3: TEMPORARY WORKZONES, CONSTRUCTION & INCIDENTS
 
 
 --------------------------------------------------------------------------------
-LAYER 4: SURROUNDING ACTORS & DYNAMIC OBJECTS
+LAYER 4: SURROUNDING ACTORS & DYNAMIC HEADWAY METRICS
 --------------------------------------------------------------------------------
-4.1 Actor Density & Spatial Headway:
+4.1 Actor Density & Dual Headway Metrics (Grounded in dot_38824_DS1, AVSC00009202208 Sec 5.2):
   * Traffic Density: 0 to 120 vehicles/km/lane
   * Time-To-Collision (TTC): 0.2s (Imminent crash) to >5.0s (Nominal)
-  * Longitudinal Headway Gap: 0.5m to 100.0m
+  * Longitudinal Time Headway: 0.5s to 4.0s (Nominal safe following buffer: 2.0s to 3.0s)
+  * Longitudinal Spatial Headway Gap: 0.5m to 100.0m
 
 4.2 Cross-Reference:
   * All active actor entities in Layer 4 inherit the complete schema specifications 
@@ -395,23 +420,26 @@ LAYER 4: SURROUNDING ACTORS & DYNAMIC OBJECTS
 --------------------------------------------------------------------------------
 LAYER 5: ENVIRONMENTAL, METEOROLOGICAL & LIGHTING CONDITIONS
 --------------------------------------------------------------------------------
-5.1 Precipitation & Rain Rates:
+5.1 Precipitation & Rain Rates (Grounded in AVSC00002202004 Sec 5):
   * Clear / None: 0.0 mm/hr
   * Light Rain: 0.1 mm/hr to 2.5 mm/hr
   * Moderate Rain: 2.5 mm/hr to 10.0 mm/hr
-  * Heavy Torrential Rain: 10.0 mm/hr to 50.0 mm/hr
+  * Heavy Rain: 10.0 mm/hr to 50.0 mm/hr
+  * Extreme Torrential Downpour: > 50.0 mm/hr (Severe sensor blinding / hydroplaning)
 
-5.2 Ambient Illuminance & Solar Glare:
+5.2 Ambient Illuminance & Solar Glare (Grounded in AVSC00002202004 Sec 5):
   * Night Unlit (Overcast/Moonless): 0.0001 lx to 0.01 lx
   * Night Streetlit: 1.0 lx to 20.0 lx
+  * Civil Twilight: 10.0 lx to 100.0 lx
   * Dawn / Dusk Twilight: 100.0 lx to 1,000.0 lx
   * Overcast Daylight: 1,000.0 lx to 10,000.0 lx
   * Direct Sunlight / Solar Glare: 30,000.0 lx to 100,000.0 lx
 
-5.3 Visibility Distance & Fog:
+5.3 Visibility Distance & Fog Ranges (Grounded in AVSC00002202004, dot_38824_DS1):
   * Dense Fog / Heavy Smoke: 1.0m to 20.0m (Severe sensor degradation)
   * Moderate Fog / Haze: 20.0m to 200.0m
-  * Clear Visibility: >10,000.0m
+  * Reduced Visibility / Mist: 200.0m to 1,000.0m
+  * Clear Visibility: 1,000.0m to 10,000.0+m
 
 5.4 Wind Speed & Atmospheric Temperature:
   * Wind Velocity: 0 km/h (Calm) to 120 km/h (Gale force / storm gusts)
