@@ -1,0 +1,2322 @@
+{
+ "version": "6.0",
+ "source_file": "actors-factors-list-v6.txt",
+ "unit_system": "Metric / SI Units (m, m/s, m/s², mm/hr, lx, km/h, friction_coeff_mu, TTC_s)",
+ "standards": [
+  "ISO DTS 5083",
+  "ISO 21448 (SOTIF)",
+  "AVSC ODD Lexicon (AVSC00002202004)",
+  "AVSC VRU Best Practice (AVSC00009202208)",
+  "AVSC First Responder (AVSC-I-01-2024)",
+  "NHTSA OEDR Framework (DOT HS 812 623 / dot_38824_DS1)",
+  "UN Vienna Convention on Road Traffic",
+  "Texas Transportation Code Ch. 545",
+  "Waymo Open Dataset Labeling Specifications."
+ ],
+ "architecture": {
+  "compliance_states": [],
+  "compliance_definitions": {}
+ },
+ "actor_categories": [
+  {
+   "category_id": 1,
+   "name": "Motor Vehicles",
+   "actor_category": "MOTOR_VEHICLE",
+   "sub_classes": [
+    {
+     "name": "Passenger Light Vehicles",
+     "variants": "Sedans, Coupe, Hatchback, SUV, Minivan",
+     "bounds": {
+      "length": {
+       "min": 4.0,
+       "max": 5.2,
+       "unit": "m"
+      },
+      "width": {
+       "min": 1.7,
+       "max": 2.1,
+       "unit": "m"
+      },
+      "height": {
+       "min": 1.4,
+       "max": 1.9,
+       "unit": "m"
+      }
+     }
+    },
+    {
+     "name": "Pickup Trucks & Commercial Utility Vans",
+     "variants": null,
+     "bounds": {
+      "length": {
+       "min": 5.0,
+       "max": 6.5,
+       "unit": "m"
+      },
+      "width": {
+       "min": 1.9,
+       "max": 2.3,
+       "unit": "m"
+      },
+      "height": {
+       "min": 1.8,
+       "max": 2.5,
+       "unit": "m"
+      }
+     }
+    },
+    {
+     "name": "Heavy Commercial Trucks & Combination Trailers",
+     "variants": null,
+     "bounds": {
+      "length": {
+       "min": 8.0,
+       "max": 22.0,
+       "unit": "m"
+      },
+      "width": {
+       "min": 2.4,
+       "max": 2.6,
+       "unit": "m"
+      },
+      "height": {
+       "min": 3.2,
+       "max": 4.2,
+       "unit": "m"
+      }
+     }
+    },
+    {
+     "name": "Transit Buses & Articulated Passenger Coaches",
+     "variants": null,
+     "bounds": {
+      "length": {
+       "min": 10.5,
+       "max": 18.5,
+       "unit": "m"
+      },
+      "width": {
+       "min": 2.5,
+       "max": 2.6,
+       "unit": "m"
+      },
+      "height": {
+       "min": 3.0,
+       "max": 3.5,
+       "unit": "m"
+      }
+     }
+    },
+    {
+     "name": "Yellow School Buses & Student Transport Coaches",
+     "variants": null,
+     "bounds": {
+      "length": {
+       "min": 7.5,
+       "max": 12.2,
+       "unit": "m"
+      },
+      "width": {
+       "min": 2.4,
+       "max": 2.6,
+       "unit": "m"
+      },
+      "height": {
+       "min": 2.9,
+       "max": 3.3,
+       "unit": "m"
+      }
+     }
+    },
+    {
+     "name": "Motorcycles, Mopeds & Motorized Two-Wheelers",
+     "variants": null,
+     "bounds": {
+      "length": {
+       "min": 1.8,
+       "max": 2.4,
+       "unit": "m"
+      },
+      "width": {
+       "min": 0.7,
+       "max": 1.0,
+       "unit": "m"
+      },
+      "height": {
+       "min": 1.0,
+       "max": 1.4,
+       "unit": "m"
+      }
+     }
+    },
+    {
+     "name": "Emergency Priority Vehicles",
+     "variants": "Police Cruisers, Fire Engines, Ambulances",
+     "bounds": {
+      "length": {
+       "min": 5.5,
+       "max": 10.0,
+       "unit": "m"
+      },
+      "width": {
+       "min": 2.0,
+       "max": 2.6,
+       "unit": "m"
+      },
+      "height": {
+       "min": 2.0,
+       "max": 3.6,
+       "unit": "m"
+      }
+     }
+    },
+    {
+     "name": "Tow Trucks & Roadside Emergency Service Patrol Vehicles",
+     "variants": null,
+     "bounds": {
+      "length": {
+       "min": 6.0,
+       "max": 9.5,
+       "unit": "m"
+      },
+      "width": {
+       "min": 2.2,
+       "max": 2.6,
+       "unit": "m"
+      },
+      "height": {
+       "min": 2.4,
+       "max": 3.2,
+       "unit": "m"
+      }
+     }
+    },
+    {
+     "name": "Open-Top Convertibles & Cabriolets",
+     "variants": null,
+     "bounds": {
+      "length": {
+       "min": 4.1,
+       "max": 5.0,
+       "unit": "m"
+      },
+      "width": {
+       "min": 1.7,
+       "max": 2.0,
+       "unit": "m"
+      },
+      "height": {
+       "min": 1.3,
+       "max": 1.6,
+       "unit": "m"
+      }
+     }
+    },
+    {
+     "name": "Shuttle Vans & Airport / Transit Passenger Vans",
+     "variants": null,
+     "bounds": {
+      "length": {
+       "min": 5.2,
+       "max": 7.0,
+       "unit": "m"
+      },
+      "width": {
+       "min": 2.0,
+       "max": 2.4,
+       "unit": "m"
+      },
+      "height": {
+       "min": 2.2,
+       "max": 2.8,
+       "unit": "m"
+      }
+     }
+    },
+    {
+     "name": "Motorcycles with Sidecars, Motorized Tricycles & Three-Wheelers",
+     "variants": null,
+     "bounds": {
+      "length": {
+       "min": 2.0,
+       "max": 2.6,
+       "unit": "m"
+      },
+      "width": {
+       "min": 1.2,
+       "max": 1.6,
+       "unit": "m"
+      },
+      "height": {
+       "min": 1.1,
+       "max": 1.5,
+       "unit": "m"
+      }
+     }
+    },
+    {
+     "name": "Rescue Command Vehicles & Mobile Emergency Command Units",
+     "variants": null,
+     "bounds": {
+      "length": {
+       "min": 8.5,
+       "max": 12.5,
+       "unit": "m"
+      },
+      "width": {
+       "min": 2.5,
+       "max": 2.6,
+       "unit": "m"
+      },
+      "height": {
+       "min": 3.2,
+       "max": 3.8,
+       "unit": "m"
+      }
+     }
+    },
+    {
+     "name": "Farm Tractors, Agricultural & Heavy Construction Equipment",
+     "variants": null,
+     "bounds": {
+      "length": {
+       "min": 3.5,
+       "max": 8.0,
+       "unit": "m"
+      },
+      "width": {
+       "min": 2.0,
+       "max": 3.5,
+       "unit": "m"
+      },
+      "height": {
+       "min": 2.5,
+       "max": 4.0,
+       "unit": "m"
+      }
+     }
+    }
+   ],
+   "movement_regime": [
+    {
+     "act": "ACT-01",
+     "name": "Follow Vehicle",
+     "description": "Maintain safe longitudinal headway behind lead vehicle."
+    },
+    {
+     "act": "ACT-02",
+     "name": "Accelerate",
+     "description": "Increase forward longitudinal velocity lawfully."
+    },
+    {
+     "act": "ACT-03",
+     "name": "Decelerate",
+     "description": "Decrease forward longitudinal velocity."
+    },
+    {
+     "act": "ACT-04",
+     "name": "Stop",
+     "description": "Stable deceleration to a complete stationary state (v = 0)."
+    },
+    {
+     "act": "ACT-05",
+     "name": "Yield",
+     "description": "Relinquish right-of-way by decelerating or stopping."
+    },
+    {
+     "act": "ACT-06",
+     "name": "Change Lane",
+     "description": "Lateral shift into an adjacent parallel travel lane."
+    },
+    {
+     "act": "ACT-07",
+     "name": "Abort Lane Change",
+     "description": "Cancel lateral transition and return to original lane."
+    },
+    {
+     "act": "ACT-08",
+     "name": "Pass",
+     "description": "Overtake a slower vehicle via adjacent lane acceleration."
+    },
+    {
+     "act": "ACT-09",
+     "name": "Abort Pass",
+     "description": "Cancel overtaking maneuver and return behind lead vehicle."
+    },
+    {
+     "act": "ACT-10",
+     "name": "Turn",
+     "description": "Transition between connecting roadways (Left, Right, U-Turn)."
+    },
+    {
+     "act": "ACT-11",
+     "name": "Shift Within Lane",
+     "description": "Lateral nudge without crossing lane boundaries."
+    },
+    {
+     "act": "ACT-12",
+     "name": "Shift Outside of Lane",
+     "description": "Partial or full wheel encroachment over line."
+    },
+    {
+     "act": "ACT-13",
+     "name": "Move Out of Travel Lane/Park",
+     "description": "Exit active carriageway to shoulder/curb."
+    },
+    {
+     "act": "ACT-14",
+     "name": "Transition to MRC (Handover)",
+     "description": "Transfer control to fallback human driver."
+    },
+    {
+     "act": "ACT-15",
+     "name": "Transition to MRC (Autonomous)",
+     "description": "System executes minimal risk maneuver."
+    },
+    {
+     "act": "ACT-16",
+     "name": "Reverse / Back Up",
+     "description": "Longitudinal/lateral control in reverse gear (v < 0)."
+    }
+   ],
+   "misbehavior_regime": [
+    {
+     "type": "misuse",
+     "group": "General Motor Vehicles",
+     "tokens": [
+      {
+       "token": "FORGOTTEN_SIGNAL_DEACTIVATION",
+       "description": "Indicator left flashing after turn completion"
+      },
+      {
+       "token": "INADVERTENT_STOP_LINE_OVERSHOOT",
+       "description": "Stopping 0.5m-1.5m past painted stop bar"
+      },
+      {
+       "token": "MINOR_LANE_DRIFT_TOUCH",
+       "description": "Inadvertent tire contact with lane line without cut-in"
+      },
+      {
+       "token": "PASSIVE_CLEARANCE_BUFFER_INFRACTION",
+       "description": "Parking/stopping within 15ft hydrant or 20ft crosswalk buffer"
+      },
+      {
+       "token": "INADVERTENT_ABNORMALLY_SLOW_SPEED_IMPEDIMENT",
+       "description": "Impeding flow due to mechanical issue/confusion"
+      },
+      {
+       "token": "FORGOTTEN_HIGH_BEAM_GLARE",
+       "description": "Inadvertently leaving high beams on when facing oncoming traffic"
+      },
+      {
+       "token": "HEADLAMP_ONE_BULB_DEFECTIVE",
+       "description": "Operating with one burned-out headlight"
+      },
+      {
+       "token": "INADVERTENT_HORN_TAP",
+       "description": "Accidental brief horn tap"
+      },
+      {
+       "token": "OMITTED_WARNING_HONK_IN_BLIND_MOUNTAIN_CURVE",
+       "description": "Failing to sound horn on narrow blind mountain curve"
+      },
+      {
+       "token": "IMPROPER_SHOULDER_WARNING_FLARE_OMISSION",
+       "description": "Failing to deploy warning triangles/flares behind disabled vehicle"
+      },
+      {
+       "token": "UNCOVERED_LOOSE_CARGO_SPILL_HAZARD",
+       "description": "Transporting loose dirt/gravel without tarpaulin"
+      }
+     ]
+    },
+    {
+     "type": "misuse",
+     "group": "Transit & School Bus Drivers",
+     "tokens": [
+      {
+       "token": "BUS_STOP_BAY_ALIGNMENT_MISUSE",
+       "description": "Stopping outside designated transit bay, causing rear overhang"
+      },
+      {
+       "token": "OMITTED_PULL_OUT_INDICATOR",
+       "description": "Pulling out from transit bay without engaging left turn signal"
+      },
+      {
+       "token": "INADVERTENT_DOOR_OPENING_BEFORE_STOP",
+       "description": "Opening passenger access doors prior to complete standstill"
+      },
+      {
+       "token": "BUS_STOP_CROSSWALK_ENCROACHMENT",
+       "description": "Stopping for passenger transfer with front bumper in crosswalk"
+      },
+      {
+       "token": "SCHOOL_BUS_STOP_ARM_TIMING_MISUSE",
+       "description": "Premature or delayed deployment of student stop-arm"
+      }
+     ]
+    },
+    {
+     "type": "abuse",
+     "group": "General Motor Vehicles",
+     "tokens": [
+      {
+       "token": "RUNNING_RED_LIGHT",
+       "description": "Entering intersection against active red signal"
+      },
+      {
+       "token": "RUNNING_STOP_SIGN",
+       "description": "Traversing stop-controlled junction without stopping"
+      },
+      {
+       "token": "UNLAWFUL_ABUSIVE_BACKING",
+       "description": "Reversing on highway, shoulder, or inside tunnel"
+      },
+      {
+       "token": "UN_SIGNALED_CUT_IN_HAZARD",
+       "description": "Aggressive, low-headway lateral cut-in forcing hard brake"
+      },
+      {
+       "token": "WRONG_WAY_DRIVING",
+       "description": "Operating against designated flow on one-way/divided road"
+      },
+      {
+       "token": "UNLIT_NIGHT_DRIVING",
+       "description": "Operating vehicle completely unlit at night or in dark tunnels"
+      },
+      {
+       "token": "POLICE_IMPERSONATION_FAKE_STROBES",
+       "description": "Unlawful assertion of priority emergency right-of-way"
+      },
+      {
+       "token": "AGGRESSIVE_DOORING_INTO_TRAVEL_LANE",
+       "description": "Opening vehicle door directly into active travel lane"
+      },
+      {
+       "token": "RECKLESS_TAILGATING_HARASSMENT",
+       "description": "Encroaching headway to unsafe sub-second TTC"
+      },
+      {
+       "token": "PROLONGED_ABUSIVE_HONK",
+       "description": "Continuous acoustic harassment/intimidation"
+      },
+      {
+       "token": "UNLAWFUL_SIREN_ASSERTION",
+       "description": "Illegal activation of acoustic siren by non-emergency vehicle"
+      },
+      {
+       "token": "ILLEGAL_PASSING_STOPPED_SCHOOL_BUS",
+       "description": "Overtaking stopped school bus displaying active red stop-arm"
+      },
+      {
+       "token": "MOVE_OVER_LAW_VIOLATION",
+       "description": "Failing to slow down or vacate adjacent lane near stationary emergency vehicle"
+      },
+      {
+       "token": "ILLEGAL_RAILROAD_GATE_BYPASS",
+       "description": "Driving around or under lowered mechanical railroad gates"
+      },
+      {
+       "token": "INTERSECTION_GRIDLOCK_BLOCKING_THE_BOX",
+       "description": "Entering junction when exit is blocked, straddling intersection"
+      }
+     ]
+    },
+    {
+     "type": "abuse",
+     "group": "Transit & School Bus Drivers",
+     "tokens": [
+      {
+       "token": "ABUSIVE_TRANSIT_BUS_PULL_OUT",
+       "description": "Abruptly forcing way out of transit bay, cutting off travel lane"
+      },
+      {
+       "token": "DISREGARD_OF_ALIGHTING_PASSENGER_SAFETY_ZONE",
+       "description": "Discharging passengers directly into cycle lane or travel berth"
+      },
+      {
+       "token": "DISREGARD_OF_SCHOOL_CHILD_ALIGHTING_SAFETY",
+       "description": "Discharging students without activating red warning signals"
+      },
+      {
+       "token": "LANE_STRADDLING_AND_BUS_BERTH_BLOCKADE",
+       "description": "Continuously straddling two lanes or blocking bike lanes"
+      }
+     ]
+    }
+   ],
+   "state_machines": {
+    "headlamp_states": {
+     "name": "Headlamp States",
+     "values": [
+      "HEADLAMPS_OFF",
+      "LOW_BEAM_PASSING",
+      "HIGH_BEAM_GLARING",
+      "DAYTIME_RUNNING_LIGHTS"
+     ]
+    },
+    "signal_lamp_states": {
+     "name": "Signal Lamp States",
+     "values": [
+      "SIGNALS_OFF",
+      "LEFT_TURN_SIGNAL",
+      "RIGHT_TURN_SIGNAL",
+      "HAZARD_FLASHERS_ACTIVE"
+     ]
+    },
+    "brake_lamp_states": {
+     "name": "Brake Lamp States",
+     "values": [
+      "BRAKE_LAMPS_OFF",
+      "BRAKE_LAMPS_ACTIVE"
+     ]
+    },
+    "reversing_lamp_states": {
+     "name": "Reversing Lamp States",
+     "values": [
+      "REVERSING_LAMPS_OFF",
+      "REVERSING_LAMPS_ACTIVE"
+     ]
+    },
+    "emergency_strobe_states": {
+     "name": "Emergency Strobe States",
+     "values": [
+      "STROBES_OFF",
+      "RED_BLUE_STROBES_ACTIVE",
+      "AMBER_SERVICE_STROBES_ACTIVE"
+     ]
+    },
+    "acoustic_horn_states": {
+     "name": "Acoustic Horn States",
+     "values": [
+      "SILENT",
+      "SHORT_WARNING_TAP",
+      "PROLONGED_ABUSIVE_HONK"
+     ]
+    },
+    "emergency_siren_states": {
+     "name": "Emergency Siren States",
+     "values": [
+      "SIREN_OFF",
+      "ACTIVE_EMERGENCY_SIREN"
+     ]
+    }
+   },
+   "kinematic_bounds": {},
+   "sections": [
+    {
+     "id": "1.1",
+     "title": "Sub-Classes & Physical Bounding Boxes",
+     "grounding": "dot_38824_DS1, AVSC-I-01-2024, Texas Code Ch. 545",
+     "items": []
+    },
+    {
+     "id": "1.2",
+     "title": "Universal Vehicle Kinematic Bounds (SI Units)",
+     "items": [
+      {
+       "type": "kinematic",
+       "name": "Forward Velocity",
+       "param": "v_fwd",
+       "min": 0.0,
+       "max": 45.0,
+       "unit": "m/s",
+       "note": "m/s"
+      },
+      {
+       "type": "kinematic",
+       "name": "Reverse Velocity",
+       "param": "v_rev",
+       "min": -8.0,
+       "max": 0.0,
+       "unit": "m/s",
+       "note": "m/s"
+      },
+      {
+       "type": "statement",
+       "name": "Longitudinal Acceleration (a_lon)",
+       "text": "-9.0 m/s² (Emergency braking) to +4.5 m/s²"
+      },
+      {
+       "type": "statement",
+       "name": "Lateral Acceleration (a_lat)",
+       "text": "-6.5 m/s² to +6.5 m/s²"
+      },
+      {
+       "type": "statement",
+       "name": "Longitudinal Jerk (j_lon)",
+       "text": "-15.0 m/s³ to +10.0 m/s³"
+      }
+     ]
+    },
+    {
+     "id": "1.3",
+     "title": "Vehicle Movement Regime (Driven strictly by the 16 Meta-Actions)",
+     "items": []
+    },
+    {
+     "id": "1.4",
+     "title": "Vehicle Misbehavior Regime",
+     "items": []
+    },
+    {
+     "id": "1.5",
+     "title": "Vehicle Lighting & Visual Signaling States",
+     "items": []
+    },
+    {
+     "id": "1.6",
+     "title": "Acoustic & Honking Signaling States",
+     "items": []
+    }
+   ]
+  },
+  {
+   "category_id": 2,
+   "name": "Vulnerable Road Users",
+   "actor_category": "VRU",
+   "sub_classes": [
+    {
+     "name": "Pedestrians Adult",
+     "variants": "Standard Walking / Running",
+     "bounds": {
+      "length": {
+       "min": 0.3,
+       "max": 0.6,
+       "unit": "m"
+      },
+      "width": {
+       "min": 0.4,
+       "max": 0.7,
+       "unit": "m"
+      },
+      "height": {
+       "min": 1.5,
+       "max": 2.0,
+       "unit": "m"
+      }
+     }
+    },
+    {
+     "name": "Pedestrians Child",
+     "variants": "Toddlers 0-4, Young Children 5-12, Preteens/Teens 13-17",
+     "bounds": {
+      "length": {
+       "min": 0.2,
+       "max": 0.5,
+       "unit": "m"
+      },
+      "width": {
+       "min": 0.3,
+       "max": 0.6,
+       "unit": "m"
+      },
+      "height": {
+       "min": 0.8,
+       "max": 1.4,
+       "unit": "m"
+      }
+     }
+    },
+    {
+     "name": "Pedestrians with Strollers, Pushing Carts & Carrying Bulky Objects",
+     "variants": null,
+     "bounds": {
+      "length": {
+       "min": 0.8,
+       "max": 1.6,
+       "unit": "m"
+      },
+      "width": {
+       "min": 0.6,
+       "max": 1.0,
+       "unit": "m"
+      },
+      "height": {
+       "min": 1.0,
+       "max": 1.8,
+       "unit": "m"
+      }
+     }
+    },
+    {
+     "name": "Traffic Police Officers, Flaggers & Authorized Emergency Officials",
+     "variants": "Manual Gestures",
+     "bounds": {
+      "length": {
+       "min": 0.4,
+       "max": 0.7,
+       "unit": "m"
+      },
+      "width": {
+       "min": 0.5,
+       "max": 0.8,
+       "unit": "m"
+      },
+      "height": {
+       "min": 1.6,
+       "max": 2.0,
+       "unit": "m"
+      }
+     }
+    },
+    {
+     "name": "First Responders & EMS Personnel on Foot",
+     "variants": null,
+     "bounds": {
+      "length": {
+       "min": 0.4,
+       "max": 0.7,
+       "unit": "m"
+      },
+      "width": {
+       "min": 0.5,
+       "max": 0.8,
+       "unit": "m"
+      },
+      "height": {
+       "min": 1.6,
+       "max": 2.0,
+       "unit": "m"
+      }
+     }
+    },
+    {
+     "name": "Grouped Pedestrian Formations & Processions",
+     "variants": "Funeral processions, military troop columns, marching bands, school files",
+     "bounds": {
+      "length": {
+       "min": 5.0,
+       "max": 50.0,
+       "unit": "m"
+      },
+      "width": {
+       "min": 1.5,
+       "max": 4.0,
+       "unit": "m"
+      },
+      "height": {
+       "min": 1.2,
+       "max": 2.0,
+       "unit": "m"
+      }
+     }
+    },
+    {
+     "name": "Accompanied Supervisors, Escorts & School Crossing Guards",
+     "variants": null,
+     "bounds": {
+      "length": {
+       "min": 0.4,
+       "max": 0.7,
+       "unit": "m"
+      },
+      "width": {
+       "min": 0.5,
+       "max": 0.8,
+       "unit": "m"
+      },
+      "height": {
+       "min": 1.5,
+       "max": 1.9,
+       "unit": "m"
+      }
+     }
+    },
+    {
+     "name": "Persons with Reduced Mobility",
+     "variants": "Wheelchair Users, Motorized Chairs, Visually Impaired with Canes/Dogs",
+     "bounds": {
+      "length": {
+       "min": 0.8,
+       "max": 1.4,
+       "unit": "m"
+      },
+      "width": {
+       "min": 0.6,
+       "max": 0.9,
+       "unit": "m"
+      },
+      "height": {
+       "min": 1.0,
+       "max": 1.5,
+       "unit": "m"
+      }
+     }
+    },
+    {
+     "name": "Bicyclists & Commuter Cyclists",
+     "variants": null,
+     "bounds": {
+      "length": {
+       "min": 1.6,
+       "max": 2.0,
+       "unit": "m"
+      },
+      "width": {
+       "min": 0.5,
+       "max": 0.8,
+       "unit": "m"
+      },
+      "height": {
+       "min": 1.2,
+       "max": 1.9,
+       "unit": "m"
+      }
+     }
+    },
+    {
+     "name": "Recumbent Cyclists, Cargo Bikes & Tricycles",
+     "variants": null,
+     "bounds": {
+      "length": {
+       "min": 1.8,
+       "max": 2.5,
+       "unit": "m"
+      },
+      "width": {
+       "min": 0.7,
+       "max": 1.1,
+       "unit": "m"
+      },
+      "height": {
+       "min": 0.8,
+       "max": 1.4,
+       "unit": "m"
+      }
+     }
+    },
+    {
+     "name": "Electric Scooter & Micro-Mobility Operators",
+     "variants": "E-scooters, Hoverboards, Segways",
+     "bounds": {
+      "length": {
+       "min": 1.0,
+       "max": 1.5,
+       "unit": "m"
+      },
+      "width": {
+       "min": 0.4,
+       "max": 0.7,
+       "unit": "m"
+      },
+      "height": {
+       "min": 1.3,
+       "max": 2.0,
+       "unit": "m"
+      }
+     }
+    },
+    {
+     "name": "Transit Passengers Boarding / Alighting at Stops",
+     "variants": null,
+     "bounds": {
+      "length": {
+       "min": 0.4,
+       "max": 0.7,
+       "unit": "m"
+      },
+      "width": {
+       "min": 0.4,
+       "max": 0.7,
+       "unit": "m"
+      },
+      "height": {
+       "min": 1.4,
+       "max": 1.9,
+       "unit": "m"
+      }
+     }
+    },
+    {
+     "name": "Intoxicated, Impaired or Incapacitated Pedestrians",
+     "variants": "Stochastic/Erratic Kinematics",
+     "bounds": {
+      "length": {
+       "min": 0.4,
+       "max": 0.8,
+       "unit": "m"
+      },
+      "width": {
+       "min": 0.5,
+       "max": 0.9,
+       "unit": "m"
+      },
+      "height": {
+       "min": 1.5,
+       "max": 2.0,
+       "unit": "m"
+      }
+     }
+    },
+    {
+     "name": "Person Pushing or Pulling Bicycle, E-scooter, Handcart, or Stroller",
+     "variants": null,
+     "bounds": {
+      "length": {
+       "min": 1.6,
+       "max": 2.2,
+       "unit": "m"
+      },
+      "width": {
+       "min": 0.7,
+       "max": 1.1,
+       "unit": "m"
+      },
+      "height": {
+       "min": 1.2,
+       "max": 1.9,
+       "unit": "m"
+      }
+     }
+    },
+    {
+     "name": "Roadway-Maintenance Workers, Highway Utility Personnel & Construction Flaggers on Foot",
+     "variants": null,
+     "bounds": {
+      "length": {
+       "min": 0.4,
+       "max": 0.7,
+       "unit": "m"
+      },
+      "width": {
+       "min": 0.5,
+       "max": 0.8,
+       "unit": "m"
+      },
+      "height": {
+       "min": 1.6,
+       "max": 2.0,
+       "unit": "m"
+      }
+     }
+    },
+    {
+     "name": "Tow-Truck Operators & Roadside Assistance Mechanics on Foot",
+     "variants": null,
+     "bounds": {
+      "length": {
+       "min": 0.4,
+       "max": 0.7,
+       "unit": "m"
+      },
+      "width": {
+       "min": 0.5,
+       "max": 0.8,
+       "unit": "m"
+      },
+      "height": {
+       "min": 1.6,
+       "max": 2.0,
+       "unit": "m"
+      }
+     }
+    },
+    {
+     "name": "Vehicle Cabin Passengers & Occupants",
+     "variants": "Potential interior view/control interfering actors",
+     "bounds": {
+      "length": {
+       "min": 0.4,
+       "max": 0.7,
+       "unit": "m"
+      },
+      "width": {
+       "min": 0.4,
+       "max": 0.7,
+       "unit": "m"
+      },
+      "height": {
+       "min": 1.0,
+       "max": 1.5,
+       "unit": "m"
+      }
+     }
+    }
+   ],
+   "movement_regime": [],
+   "misbehavior_regime": [
+    {
+     "type": "misuse",
+     "group": "General",
+     "tokens": [
+      {
+       "token": "PASSIVE_JAYWALKING_CLEAR_ROADWAY",
+       "description": "Crossing outside crosswalk when roadway is clear"
+      },
+      {
+       "token": "DISTRACTED_WALKING_SHOULDER_ENCROACHMENT",
+       "description": "Stepping onto shoulder while using smartphone"
+      },
+      {
+       "token": "CYCLIST_OMITTED_HAND_SIGNAL",
+       "description": "Turning without executing manual direction signal"
+      },
+      {
+       "token": "INADVERTENT_SIDEWALK_EDGE_STEP_OFF",
+       "description": "Accidental stumble off sidewalk curb"
+      }
+     ]
+    },
+    {
+     "type": "abuse",
+     "group": "General",
+     "tokens": [
+      {
+       "token": "SUDDEN_HIGH_SPEED_DART_IN",
+       "description": "Sudden running dart-in directly into oncoming vehicle path"
+      },
+      {
+       "token": "ACTIVE_ROADWAY_BLOCKADE",
+       "description": "Standing intentionally in travel lane to impede traffic"
+      },
+      {
+       "token": "CROSSING_AGAINST_DONOT_WALK_SIGNAL",
+       "description": "Entering crosswalk against solid red hand signal"
+      },
+      {
+       "token": "CYCLIST_AGGRESSIVE_WRONG_WAY_RIDING",
+       "description": "Riding bicycle directly against motor traffic flow"
+      },
+      {
+       "token": "E_SCOOTER_ERRATIC_SWERVE_INTO_TRAFFIC_LANE",
+       "description": "Abrupt swerve from sidewalk into travel lane"
+      }
+     ]
+    }
+   ],
+   "state_machines": {},
+   "kinematic_bounds": {},
+   "sections": [
+    {
+     "id": "2.1",
+     "title": "Sub-Classes & Physical Bounding Boxes",
+     "grounding": "AVSC00009202208, Vienna Convention, Texas Code",
+     "items": []
+    },
+    {
+     "id": "2.2",
+     "title": "VRU Kinematic Bounds (SI Units)",
+     "items": [
+      {
+       "type": "range",
+       "name": "Pedestrian Walking Speed",
+       "min": 0.5,
+       "max": 2.5,
+       "unit": "m/s",
+       "note": "m/s"
+      },
+      {
+       "type": "range",
+       "name": "Pedestrian Running / Dart-In Speed",
+       "min": 2.5,
+       "max": 4.5,
+       "unit": "m/s",
+       "note": "m/s"
+      },
+      {
+       "type": "range",
+       "name": "Cyclist Velocity",
+       "min": 1.5,
+       "max": 12.5,
+       "unit": "m/s",
+       "note": "m/s"
+      },
+      {
+       "type": "range",
+       "name": "Micro-Mobility Velocity",
+       "min": 1.0,
+       "max": 8.3,
+       "unit": "m/s",
+       "note": "m/s"
+      },
+      {
+       "type": "range",
+       "name": "Reaction Time Delay",
+       "min": 0.3,
+       "max": 3.0,
+       "unit": "s",
+       "note": "s"
+      }
+     ]
+    },
+    {
+     "id": "2.3",
+     "title": "VRU Movement Regime (Domain-Specific Physical Trajectory Patterns)",
+     "items": [
+      {
+       "type": "statement",
+       "name": "STATIONARY_WAITING_CURB",
+       "text": "Standing at sidewalk/curb edge preparing to cross."
+      },
+      {
+       "type": "statement",
+       "name": "CANALIZED_WALKING_CROSSWALK",
+       "text": "Walking within marked crosswalk boundaries."
+      },
+      {
+       "type": "statement",
+       "name": "DIAGONAL_INTERSECTION_CROSSING",
+       "text": "Traversing junction outside marked paths."
+      },
+      {
+       "type": "statement",
+       "name": "FORMATION_PROCESSION_MARCHING",
+       "text": "Organized group marching along roadway/shoulder."
+      },
+      {
+       "type": "statement",
+       "name": "CROSSING_GUARD_HAND_STOP_ASSERTION",
+       "text": "Crossing guard standing in lane displaying stop paddle."
+      },
+      {
+       "type": "statement",
+       "name": "LANE_SHARING_CYCLIST_TRACK",
+       "text": "Riding parallel to motor traffic in lane/bike path."
+      },
+      {
+       "type": "statement",
+       "name": "TRANSIT_BOARDING_ALIGHTING",
+       "text": "Stepping between curbside bay and transit bus door."
+      }
+     ]
+    },
+    {
+     "id": "2.4",
+     "title": "VRU Misbehavior Regime",
+     "items": []
+    }
+   ]
+  },
+  {
+   "category_id": 3,
+   "name": "Rail-Bound Vehicles",
+   "actor_category": "RAIL_VEHICLE",
+   "sub_classes": [
+    {
+     "name": "Freight Trains & Heavy Rail Locomotives",
+     "variants": null,
+     "bounds": {
+      "length": {
+       "min": 50.0,
+       "max": 2000.0,
+       "unit": "m"
+      },
+      "width": {
+       "min": 3.0,
+       "max": 3.4,
+       "unit": "m"
+      },
+      "height": {
+       "min": 4.0,
+       "max": 4.9,
+       "unit": "m"
+      }
+     }
+    },
+    {
+     "name": "Passenger Commuter Trains & High-Speed Passenger Rail Locomotives",
+     "variants": null,
+     "bounds": {
+      "length": {
+       "min": 100.0,
+       "max": 400.0,
+       "unit": "m"
+      },
+      "width": {
+       "min": 3.0,
+       "max": 3.3,
+       "unit": "m"
+      },
+      "height": {
+       "min": 4.0,
+       "max": 4.5,
+       "unit": "m"
+      }
+     }
+    },
+    {
+     "name": "Passenger Streetcars / Trams / Light Rail",
+     "variants": null,
+     "bounds": {
+      "length": {
+       "min": 20.0,
+       "max": 60.0,
+       "unit": "m"
+      },
+      "width": {
+       "min": 2.4,
+       "max": 2.8,
+       "unit": "m"
+      },
+      "height": {
+       "min": 3.2,
+       "max": 3.8,
+       "unit": "m"
+      }
+     }
+    },
+    {
+     "name": "Railway Crew, Switchmen & Motormen",
+     "variants": null,
+     "bounds": {
+      "length": {
+       "min": 0.4,
+       "max": 0.7,
+       "unit": "m"
+      },
+      "width": {
+       "min": 0.5,
+       "max": 0.8,
+       "unit": "m"
+      },
+      "height": {
+       "min": 1.6,
+       "max": 2.0,
+       "unit": "m"
+      }
+     }
+    }
+   ],
+   "movement_regime": [],
+   "misbehavior_regime": [
+    {
+     "type": "misuse",
+     "group": "General",
+     "tokens": [
+      {
+       "token": "INADVERTENT_CROSSING_WHISTLE_OMISSION",
+       "description": "Failure to sound acoustic horn at grade crossing"
+      }
+     ]
+    },
+    {
+     "type": "abuse",
+     "group": "General",
+     "tokens": [
+      {
+       "token": "EXCESSIVE_SPEED_LEVEL_CROSSING_APPROACH",
+       "description": "Approaching grade crossing above track limit"
+      }
+     ]
+    }
+   ],
+   "state_machines": {},
+   "kinematic_bounds": {},
+   "sections": [
+    {
+     "id": "3.1",
+     "title": "Sub-Classes & Physical Bounding Boxes",
+     "items": []
+    },
+    {
+     "id": "3.2",
+     "title": "Rail Kinematic Bounds",
+     "items": [
+      {
+       "type": "range",
+       "name": "Velocity",
+       "min": 0.0,
+       "max": 35.0,
+       "unit": "m/s",
+       "note": "m/s"
+      },
+      {
+       "type": "range",
+       "name": "Emergency Braking Deceleration",
+       "min": -1.2,
+       "max": -2.5,
+       "unit": "m/s²",
+       "note": "m/s²"
+      }
+     ]
+    },
+    {
+     "id": "3.3",
+     "title": "Rail Movement Regime",
+     "items": [
+      {
+       "type": "statement",
+       "name": "RAIL_BOUND_TRAVERSAL",
+       "text": "Rigid longitudinal movement strictly constrained to physical tracks."
+      },
+      {
+       "type": "statement",
+       "name": "LEVEL_CROSSING_APPROACH_TRAVERSAL",
+       "text": "Crossing road junctions at grade."
+      }
+     ]
+    },
+    {
+     "id": "3.4",
+     "title": "Rail Misbehavior Regime",
+     "items": []
+    }
+   ]
+  },
+  {
+   "category_id": 4,
+   "name": "Animals, Mounted Livestock & Carriages",
+   "actor_category": "ANIMAL",
+   "sub_classes": [
+    {
+     "name": "Domestic Pets",
+     "variants": "Dogs, Cats",
+     "bounds": {
+      "length": {
+       "min": 0.4,
+       "max": 1.1,
+       "unit": "m"
+      },
+      "width": {
+       "min": 0.2,
+       "max": 0.4,
+       "unit": "m"
+      },
+      "height": {
+       "min": 0.3,
+       "max": 0.9,
+       "unit": "m"
+      }
+     }
+    },
+    {
+     "name": "Large Wild Animals",
+     "variants": "Deer, Elk, Moose",
+     "bounds": {
+      "length": {
+       "min": 1.5,
+       "max": 2.8,
+       "unit": "m"
+      },
+      "width": {
+       "min": 0.6,
+       "max": 1.0,
+       "unit": "m"
+      },
+      "height": {
+       "min": 1.2,
+       "max": 2.3,
+       "unit": "m"
+      }
+     }
+    },
+    {
+     "name": "Mounted Horses & Herded Livestock (Cattle, Sheep) with Herders",
+     "variants": null,
+     "bounds": {
+      "length": {
+       "min": 2.0,
+       "max": 2.6,
+       "unit": "m"
+      },
+      "width": {
+       "min": 0.8,
+       "max": 1.2,
+       "unit": "m"
+      },
+      "height": {
+       "min": 1.5,
+       "max": 2.4,
+       "unit": "m"
+      }
+     }
+    },
+    {
+     "name": "Animal-Drawn Carriages, Buggies & Equestrian Riders",
+     "variants": null,
+     "bounds": {
+      "length": {
+       "min": 3.0,
+       "max": 6.0,
+       "unit": "m"
+      },
+      "width": {
+       "min": 1.5,
+       "max": 2.2,
+       "unit": "m"
+      },
+      "height": {
+       "min": 1.8,
+       "max": 2.6,
+       "unit": "m"
+      }
+     }
+    }
+   ],
+   "movement_regime": [],
+   "misbehavior_regime": [
+    {
+     "type": "misuse",
+     "group": "General",
+     "tokens": [
+      {
+       "token": "DOMESTIC_PET_SHOULDER_STRAY",
+       "description": "Unleashed dog wandering onto paved shoulder"
+      }
+     ]
+    },
+    {
+     "type": "abuse",
+     "group": "General",
+     "tokens": [
+      {
+       "token": "SUDDEN_ANIMAL_DART_IN_LANE",
+       "description": "Deer bounding directly into vehicle trajectory"
+      },
+      {
+       "token": "HERD_LIVESTOCK_ACTIVE_ROADWAY_BLOCKADE",
+       "description": "Cattle herd occupying active carriageway"
+      }
+     ]
+    }
+   ],
+   "state_machines": {},
+   "kinematic_bounds": {},
+   "sections": [
+    {
+     "id": "4.1",
+     "title": "Sub-Classes & Physical Bounding Boxes",
+     "grounding": "Vienna Convention, dot_38824_DS1",
+     "items": []
+    },
+    {
+     "id": "4.2",
+     "title": "Animal Kinematic Bounds",
+     "items": [
+      {
+       "type": "range",
+       "name": "Velocity",
+       "min": 0.0,
+       "max": 15.0,
+       "unit": "m/s",
+       "note": "m/s"
+      },
+      {
+       "type": "statement",
+       "name": "Lateral Agility",
+       "text": "Extremely high, non-holonomic, un-signaled directional shifts."
+      }
+     ]
+    },
+    {
+     "id": "4.3",
+     "title": "Animal Movement Regime",
+     "items": [
+      {
+       "type": "statement",
+       "name": "STATIONARY_VERGE_WAITING",
+       "text": "Standing on roadside verge or unpaved shoulder."
+      },
+      {
+       "type": "statement",
+       "name": "VERGE_PARALLEL_MOVEMENT",
+       "text": "Walking parallel to roadway boundary."
+      },
+      {
+       "type": "statement",
+       "name": "ROADWAY_TRANSVERSE_CROSSING",
+       "text": "Crossing perpendicular or oblique to travel lanes."
+      }
+     ]
+    },
+    {
+     "id": "4.4",
+     "title": "Animal Misbehavior Regime",
+     "items": []
+    }
+   ]
+  },
+  {
+   "category_id": 5,
+   "name": "Static Obstacles & Debris",
+   "actor_category": "STATIC_OBSTACLE",
+   "sub_classes": [
+    {
+     "name": "Fallen Cargo & Road Debris",
+     "variants": "Lumber, Tires, Shipping Boxes",
+     "bounds": null
+    },
+    {
+     "name": "Fallen Trees, Branches & Downed Utility Wires",
+     "variants": null,
+     "bounds": null
+    },
+    {
+     "name": "Stationary Disabled Vehicles & Crashed Wrecks",
+     "variants": null,
+     "bounds": null
+    },
+    {
+     "name": "Construction Channelization Drums, Cones, Barricades & Arrow Boards",
+     "variants": null,
+     "bounds": null
+    }
+   ],
+   "movement_regime": [],
+   "misbehavior_regime": [],
+   "state_machines": {},
+   "kinematic_bounds": {},
+   "sections": [
+    {
+     "id": "5.1",
+     "title": "Sub-Classes",
+     "items": []
+    },
+    {
+     "id": "5.2",
+     "title": "Movement Regime",
+     "items": [
+      {
+       "type": "statement",
+       "name": "FIXED_POSITION_OBSTRUCTION",
+       "text": "Stationary spatial footprint occupying travel berth."
+      }
+     ]
+    },
+    {
+     "id": "5.3",
+     "title": "Misbehavior Regime",
+     "items": [
+      {
+       "type": "statement",
+       "name": "Misbehavior Regime",
+       "text": "N/A (Static Physical Hazard / Infrastructure Impediment)."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "factor_layers": [
+  {
+   "layer_id": 1,
+   "name": "ROAD GEOMETRY, TOPOLOGY, STRUCTURES & SURFACE CONDITIONS",
+   "sections": [
+    {
+     "id": "1.1",
+     "title": "Roadway Network Classification",
+     "items": [
+      {
+       "type": "statement",
+       "name": "Types",
+       "text": "[DIVIDED_HIGHWAY | UNDIVIDED_ARTERIAL | URBAN_COLLECTOR | LOCAL_ALLEY |"
+      },
+      {
+       "type": "prose",
+       "text": "MOUNTAIN_PASS | ROTARY_ROUNDABOUT | HIGHWAY_ON_OFF_RAMP | PRIVATE_DRIVEWAY_ALLEYWAY]"
+      }
+     ]
+    },
+    {
+     "id": "1.2",
+     "title": "Highway Structures, Elevation & Enclosures",
+     "grounding": "dot_38824_DS1 Fig 17, ISO 21448 Table A.5",
+     "items": [
+      {
+       "type": "statement",
+       "name": "Structure Types",
+       "text": "[FLAT_ROADWAY | BRIDGE_VIADUCT | FLYOVER_RAMP | OVERPASS |"
+      },
+      {
+       "type": "prose",
+       "text": "HILL_CREST_BLIND_CURVE | TUNNEL_ENCLOSED_SPACE | GUARDRAIL_SIDE_BARRIER]"
+      }
+     ]
+    },
+    {
+     "id": "1.3",
+     "title": "Surface Condition, Moisture, Friction Coefficient (mu) & Stopping Distance Multipliers",
+     "grounding": "AVSC00002202004 Sec 5, dot_38824_DS1, ISO 21448",
+     "items": [
+      {
+       "type": "band",
+       "name": "Dry Asphalt / Concrete",
+       "params": {
+        "mu": [
+         0.7,
+         0.85
+        ],
+        "stopping_distance_multiplier": {
+         "range": [
+          1.0
+         ],
+         "per": "x"
+        },
+        "_notes": [
+         "(Nominal baseline)"
+        ]
+       }
+      },
+      {
+       "type": "band",
+       "name": "Damp / Wet Pavement",
+       "params": {
+        "mu": [
+         0.4,
+         0.6
+        ],
+        "stopping_distance_multiplier": {
+         "range": [
+          1.5
+         ],
+         "per": "x"
+        }
+       }
+      },
+      {
+       "type": "band",
+       "name": "Hydroplaning Standing Water Puddles",
+       "params": {
+        "mu": [
+         0.2,
+         0.35
+        ],
+        "stopping_distance_multiplier": {
+         "range": [
+          2.5,
+          4.0
+         ],
+         "per": "x"
+        },
+        "_notes": [
+         "(Water film depth > 3.0mm)"
+        ]
+       }
+      },
+      {
+       "type": "band",
+       "name": "Snow / Slush Covered",
+       "params": {
+        "mu": [
+         0.2,
+         0.35
+        ],
+        "stopping_distance_multiplier": {
+         "range": [
+          3.0,
+          5.0
+         ],
+         "per": "x"
+        }
+       }
+      },
+      {
+       "type": "band",
+       "name": "Glaze Ice / Black Ice",
+       "params": {
+        "mu": [
+         0.15,
+         0.25
+        ],
+        "stopping_distance_multiplier": {
+         "range": [
+          6.0,
+          10.0
+         ],
+         "per": "x"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "1.4",
+     "title": "Geometry Metrics",
+     "items": [
+      {
+       "type": "range",
+       "name": "Lane Width",
+       "min": 2.75,
+       "max": 3.75,
+       "unit": "m",
+       "note": "m"
+      },
+      {
+       "type": "statement",
+       "name": "Road Grade / Incline",
+       "text": "-12.0% to +12.0% (Steep mountain grade threshold: > ±10.0%)"
+      },
+      {
+       "type": "statement",
+       "name": "Crossfall / Superelevation",
+       "text": "1.0% to 6.0%"
+      }
+     ]
+    },
+    {
+     "id": "1.5",
+     "title": "Shoulder Geometry & Width Metrics",
+     "grounding": "AVSC00002202004 Sec 5.1, Texas Code Sec. 545.058",
+     "items": [
+      {
+       "type": "enum",
+       "name": "Shoulder Types",
+       "values": [
+        "PAVED_SHOULDER",
+        "UNPAVED_VERGE",
+        "EMERGENCY_LAY_BY",
+        "CURB_PARKING_LANE"
+       ]
+      },
+      {
+       "type": "range",
+       "name": "Shoulder Width",
+       "min": 0.5,
+       "max": 3.5,
+       "unit": "m",
+       "note": "m"
+      }
+     ]
+    },
+    {
+     "id": "1.6",
+     "title": "Missing Lane & Junction Structures",
+     "items": [
+      {
+       "type": "statement",
+       "name": "Structure Gaps",
+       "text": "[MISSING_LAY_BY_MOUNTAIN_PASS | MISSING_ACCELERATION_LANE |"
+      },
+      {
+       "type": "prose",
+       "text": "MISSING_DECELERATION_LANE | MISSING_RAIL_GATE_BARRIER | MISSING_PEDESTRIAN_SAFETY_ISLAND]"
+      }
+     ]
+    },
+    {
+     "id": "1.7",
+     "title": "Road Surface Distress & Defects",
+     "items": [
+      {
+       "type": "statement",
+       "name": "Defect Types",
+       "text": "[POTHOLE_DEEP_HAZARD | RUTTING_WATER_POCKETS | ASPHALT_CRACKING |"
+      },
+      {
+       "type": "prose",
+       "text": "LOOSE_GRAVEL_SPILL | OIL_SLICK_SURFACE]"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "layer_id": 2,
+   "name": "TRAFFIC CONTROL DEVICES, MARKINGS & STATUTORY BUFFERS",
+   "sections": [
+    {
+     "id": "2.1",
+     "title": "Traffic Control Signals & Aspect States",
+     "grounding": "Vienna Convention Art. 23, Texas Code Sec. 545.060",
+     "items": [
+      {
+       "type": "enum",
+       "name": "Types",
+       "values": [
+        "STANDARD_3_ASPECT",
+        "PROTECTED_ARROW_SIGNAL",
+        "PEDESTRIAN_COUNTDOWN",
+        "RAIL_CROSSING_FLASHER"
+       ]
+      },
+      {
+       "type": "enum",
+       "name": "Aspect States",
+       "values": [
+        "RED_SOLID",
+        "YELLOW_SOLID",
+        "GREEN_SOLID",
+        "GREEN_ARROW",
+        "FLASHING_RED",
+        "FLASHING_YELLOW",
+        "DARK_UNPOWERED"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "2.2",
+     "title": "Statutory Road Signs",
+     "items": [
+      {
+       "type": "statement",
+       "name": "Categories",
+       "text": "[REGULATORY_STOP | REGULATORY_YIELD | REGULATORY_DO_NOT_ENTER | REGULATORY_ONE_WAY |"
+      },
+      {
+       "type": "prose",
+       "text": "RAILROAD_CROSSBUCK | SPEED_LIMIT_EXPLICIT | WARNING_CURVE_GRADE | WORKZONE_TEMPORARY | VARIABLE_MESSAGE_SIGN_VMS]"
+      }
+     ]
+    },
+    {
+     "id": "2.3",
+     "title": "Road Markings, Transverse Lines & Conspicuity States",
+     "grounding": "Vienna Convention Art. 26 bis, ISO 21448 Table A.5",
+     "items": [
+      {
+       "type": "statement",
+       "name": "Line Types",
+       "text": "[SINGLE_SOLID_WHITE | DOUBLE_SOLID_YELLOW | DASHED_WHITE | DASHED_YELLOW |"
+      },
+      {
+       "type": "prose",
+       "text": "TRANSVERSE_CROSSWALK_LINES | TRANSVERSE_STOP_BAR_LINE | GREEN_CYCLIST_LANE_PAINT]"
+      },
+      {
+       "type": "enum",
+       "name": "Conspicuity States",
+       "values": [
+        "GOOD",
+        "FAIR",
+        "POOR",
+        "MISSING",
+        "SNOW_COVERED",
+        "TEMPORARY_WORKZONE"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "2.4",
+     "title": "Statutory Distance Buffers & Clearance Thresholds",
+     "items": [
+      {
+       "type": "buffer",
+       "text": "200 ft (60.96m) Crest / U-Turn Visibility Clearance Buffer"
+      },
+      {
+       "type": "buffer",
+       "text": "100 ft (30.48m) Railroad Grade Crossing / Intersection Approach Buffer"
+      },
+      {
+       "type": "buffer",
+       "text": "30 ft (9.14m) Traffic Control Signal / Safety Zone Buffer"
+      },
+      {
+       "type": "buffer",
+       "text": "20 ft (6.10m) Marked Crosswalk Approach Buffer"
+      },
+      {
+       "type": "buffer",
+       "text": "20 ft (6.10m) School Bus Flashing Stop-Arm Clearance Buffer"
+      },
+      {
+       "type": "buffer",
+       "text": "15 ft (4.57m) Fire Hydrant Parking Ban Clearance"
+      },
+      {
+       "type": "buffer",
+       "text": "1.5m (3-4 ft) Lateral VRU Overtaking Clearance Berth"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "layer_id": 3,
+   "name": "TEMPORARY WORKZONES, CONSTRUCTION & INCIDENTS",
+   "sections": [
+    {
+     "id": "3.1",
+     "title": "Workzone Channelization & Control",
+     "items": [
+      {
+       "type": "statement",
+       "name": "Equipment",
+       "text": "[CHANNELIZATION_CONES | BARREL_DRUMS | CONCRETE_JERSEY_BARRIERS |"
+      },
+      {
+       "type": "prose",
+       "text": "ARROW_BOARDS | HUMAN_FLAGGER_HAND_SIGNALS]"
+      }
+     ]
+    },
+    {
+     "id": "3.2",
+     "title": "Emergency Incident Scenes",
+     "items": [
+      {
+       "type": "statement",
+       "name": "Characteristics",
+       "text": "[FIRST_RESPONDER_STROBES | EMERGENCY_FLARES | INCIDENT_COMMAND_ZONE |"
+      },
+      {
+       "type": "prose",
+       "text": "TOW_TRUCK_CLEARANCE_ZONE]"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "layer_id": 4,
+   "name": "SURROUNDING ACTORS & DYNAMIC HEADWAY METRICS",
+   "sections": [
+    {
+     "id": "4.1",
+     "title": "Actor Density & Dual Headway Metrics",
+     "grounding": "dot_38824_DS1, AVSC00009202208 Sec 5.2",
+     "items": [
+      {
+       "type": "statement",
+       "name": "Traffic Density",
+       "text": "0 to 120 vehicles/km/lane"
+      },
+      {
+       "type": "statement",
+       "name": "Time-To-Collision (TTC)",
+       "text": "0.2s (Imminent crash) to >5.0s (Nominal)"
+      },
+      {
+       "type": "range",
+       "name": "Longitudinal Time Headway",
+       "min": 0.5,
+       "max": 4.0,
+       "unit": "s",
+       "note": "s"
+      },
+      {
+       "type": "range",
+       "name": "Longitudinal Spatial Headway Gap",
+       "min": 0.5,
+       "max": 100.0,
+       "unit": "m",
+       "note": "m"
+      }
+     ]
+    },
+    {
+     "id": "4.2",
+     "title": "Cross-Reference",
+     "items": [
+      {
+       "type": "prose",
+       "unclassified": false,
+       "text": "All active actor entities in Layer 4 inherit the complete schema specifications defined in PART II (Bounding Boxes, Kinematic Bounds, Universal Compliance, Movement Regimes, and Misbehavior Regimes)."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "layer_id": 5,
+   "name": "ENVIRONMENTAL, METEOROLOGICAL & LIGHTING CONDITIONS",
+   "sections": [
+    {
+     "id": "5.1",
+     "title": "Precipitation & Rain Rates",
+     "grounding": "AVSC00002202004 Sec 5",
+     "items": [
+      {
+       "type": "statement",
+       "name": "Clear / None",
+       "text": "0.0 mm/hr"
+      },
+      {
+       "type": "range",
+       "name": "Light Rain",
+       "min": 0.1,
+       "max": 2.5,
+       "unit": "mm/hr",
+       "note": "mm/hr"
+      },
+      {
+       "type": "range",
+       "name": "Moderate Rain",
+       "min": 2.5,
+       "max": 10.0,
+       "unit": "mm/hr",
+       "note": "mm/hr"
+      },
+      {
+       "type": "range",
+       "name": "Heavy Rain",
+       "min": 10.0,
+       "max": 50.0,
+       "unit": "mm/hr",
+       "note": "mm/hr"
+      },
+      {
+       "type": "statement",
+       "name": "Extreme Torrential Downpour",
+       "text": "> 50.0 mm/hr (Severe sensor blinding / hydroplaning)"
+      }
+     ]
+    },
+    {
+     "id": "5.2",
+     "title": "Ambient Illuminance & Solar Glare",
+     "grounding": "AVSC00002202004 Sec 5",
+     "items": [
+      {
+       "type": "range",
+       "name": "Night Unlit",
+       "min": 0.0001,
+       "max": 0.01,
+       "unit": "lx",
+       "note": "Overcast/Moonless"
+      },
+      {
+       "type": "range",
+       "name": "Night Streetlit",
+       "min": 1.0,
+       "max": 20.0,
+       "unit": "lx",
+       "note": "lx"
+      },
+      {
+       "type": "range",
+       "name": "Civil Twilight",
+       "min": 10.0,
+       "max": 100.0,
+       "unit": "lx",
+       "note": "lx"
+      },
+      {
+       "type": "statement",
+       "name": "Dawn / Dusk Twilight",
+       "text": "100.0 lx to 1,000.0 lx"
+      },
+      {
+       "type": "statement",
+       "name": "Overcast Daylight",
+       "text": "1,000.0 lx to 10,000.0 lx"
+      },
+      {
+       "type": "statement",
+       "name": "Direct Sunlight / Solar Glare",
+       "text": "30,000.0 lx to 100,000.0 lx"
+      }
+     ]
+    },
+    {
+     "id": "5.3",
+     "title": "Visibility Distance & Fog Ranges",
+     "grounding": "AVSC00002202004, dot_38824_DS1",
+     "items": [
+      {
+       "type": "range",
+       "name": "Dense Fog / Heavy Smoke",
+       "min": 1.0,
+       "max": 20.0,
+       "unit": "m",
+       "note": "m"
+      },
+      {
+       "type": "range",
+       "name": "Moderate Fog / Haze",
+       "min": 20.0,
+       "max": 200.0,
+       "unit": "m",
+       "note": "m"
+      },
+      {
+       "type": "statement",
+       "name": "Reduced Visibility / Mist",
+       "text": "200.0m to 1,000.0m"
+      },
+      {
+       "type": "statement",
+       "name": "Clear Visibility",
+       "text": "1,000.0m to 10,000.0+m"
+      }
+     ]
+    },
+    {
+     "id": "5.4",
+     "title": "Wind Speed & Atmospheric Temperature",
+     "items": [
+      {
+       "type": "statement",
+       "name": "Wind Velocity",
+       "text": "0 km/h (Calm) to 120 km/h (Gale force / storm gusts)"
+      },
+      {
+       "type": "statement",
+       "name": "Ambient Temperature",
+       "text": "-30.0°C to +50.0°C"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "layer_id": 6,
+   "name": "DIGITAL INFRASTRUCTURE, V2X TELEMATICS & SYSTEM/EGO OPERATING STATES",
+   "sections": [
+    {
+     "id": "6.1",
+     "title": "Digital Infrastructure & V2X Connectivity",
+     "items": [
+      {
+       "type": "enum",
+       "name": "V2X Status",
+       "values": [
+        "OPTIMAL_V2I_CONNECTED",
+        "LATENCY_DEGRADED",
+        "PACKET_LOSS_ZONE",
+        "DISCONNECTED"
+       ]
+      },
+      {
+       "type": "enum",
+       "name": "Map Payload Freshness",
+       "values": [
+        "UP_TO_DATE_HD_MAP",
+        "STALE_PAYLOAD",
+        "UNMAPPED_CONSTRUCTION_ZONE"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "6.2",
+     "title": "GNSS Localization Quality",
+     "items": [
+      {
+       "type": "enum",
+       "name": "Status",
+       "values": [
+        "RTK_FIXED_CENTIMETER",
+        "STANDARD_GPS_METER",
+        "MULTIPATH_URBAN_CANYON",
+        "GNSS_DENIED_TUNNEL"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "6.3",
+     "title": "Sensor Conspicuity, Occlusion & System Operating States",
+     "items": [
+      {
+       "type": "statement",
+       "name": "Sensor Cleanliness & Glare",
+       "text": "[CLEAN_NOMINAL | CAMERA_DIRECT_SUN_GLARE | LIDAR_RAIN_NOISE_BLINDING | RADAR_MULTIPATH_GHOSTING]"
+      },
+      {
+       "type": "enum",
+       "name": "Ego Perception Occlusions",
+       "values": [
+        "PARKED_TRUCK_CROSSWALK_OCCLUSION",
+        "PASSENGER_LOAD_VIEW_OBSTRUCTION",
+        "CABIN_SENSOR_CAMERA_COVERED"
+       ]
+      },
+      {
+       "type": "enum",
+       "name": "ADS System Fallback States",
+       "values": [
+        "NOMINAL_AUTONOMOUS_TRAVEL",
+        "FALLBACK_HANDOVER_REQUEST",
+        "AUTOMATED_MINIMAL_RISK_MANEUVER"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "parse_warnings": [],
+ "unclassified_items": [],
+ "meta_actions": [
+  {
+   "act": "ACT-01",
+   "name": "Follow Vehicle",
+   "category": "Longitudinal & Lateral Control",
+   "description": "Implement lateral and/or longitudinal control actions to maintain a safe following distance from an immediate lead vehicle, while continuing to follow the current lane of travel."
+  },
+  {
+   "act": "ACT-02",
+   "name": "Accelerate",
+   "category": "Longitudinal Control",
+   "description": "Implement longitudinal control actions to increase speed, as appropriate and lawful."
+  },
+  {
+   "act": "ACT-03",
+   "name": "Decelerate",
+   "category": "Longitudinal Control",
+   "description": "Implement longitudinal control actions to decrease speed, as appropriate."
+  },
+  {
+   "act": "ACT-04",
+   "name": "Stop",
+   "category": "Longitudinal Control",
+   "description": "Implement longitudinal control actions to decelerate in a safe and stable manner to a complete stop."
+  },
+  {
+   "act": "ACT-05",
+   "name": "Yield",
+   "category": "Right-of-Way & Deceleration",
+   "description": "Relinquish right-of-way to another road user, including decelerating or stopping as required by traffic regulations or safety etiquette."
+  },
+  {
+   "act": "ACT-06",
+   "name": "Change Lane",
+   "category": "Lateral & Longitudinal Maneuver",
+   "description": "Implement longitudinal and/or lateral control actions to shift into an adjacent lane."
+  },
+  {
+   "act": "ACT-07",
+   "name": "Abort Lane Change",
+   "category": "Lateral & Longitudinal Maneuver",
+   "description": "Cancel the maneuver to shift into an adjacent lane (remain in or return to original lane)."
+  },
+  {
+   "act": "ACT-08",
+   "name": "Pass",
+   "category": "Lateral & Longitudinal Maneuver",
+   "description": "Implement longitudinal and/or lateral control actions to shift into an adjacent lane to accelerate to desired speed and overtake another vehicle."
+  },
+  {
+   "act": "ACT-09",
+   "name": "Abort Pass",
+   "category": "Lateral & Longitudinal Maneuver",
+   "description": "Cancel maneuver to shift into an adjacent lane (remain in or return to original lane)."
+  },
+  {
+   "act": "ACT-10",
+   "name": "Turn",
+   "category": "Lateral & Longitudinal Maneuver",
+   "description": "Implement lateral and longitudinal control actions to transition from current road/lane to connecting road/lane (includes parameterizations for left, right, and U-turns)."
+  },
+  {
+   "act": "ACT-11",
+   "name": "Shift Within Lane",
+   "category": "Lateral Control / Nudge",
+   "description": "Implement lateral and/or longitudinal control actions such that the ADS does not follow the center (or near-center) of the current lane but remains fully within the current lane."
+  },
+  {
+   "act": "ACT-12",
+   "name": "Shift Outside of Lane",
+   "category": "Lateral Control / Encroachment",
+   "description": "Implement lateral and/or longitudinal control actions such that the ADS partially or fully moves outside of the current lane of travel (i.e., one or more wheels cross the lane boundary)."
+  },
+  {
+   "act": "ACT-13",
+   "name": "Move Out of Travel Lane/Park",
+   "category": "Egress & Parking Maneuver",
+   "description": "Implement lateral and longitudinal control actions such that the ADS fully exits the current active lane of travel onto a shoulder or parking lane and stops."
+  },
+  {
+   "act": "ACT-14",
+   "name": "Transition to MRC: Return Control to Fallback-Ready User",
+   "category": "System Fallback & Handover",
+   "description": "Return longitudinal and lateral control to human occupant/driver (while providing sufficient advance warning)."
+  },
+  {
+   "act": "ACT-15",
+   "name": "Transition to MRC: ADS Implements Minimal Risk Maneuver",
+   "category": "System Fallback & Autonomous MRC",
+   "description": "Implement lateral and/or longitudinal control actions to achieve a minimal risk condition automatically without reliance on human driver takeover."
+  },
+  {
+   "act": "ACT-16",
+   "name": "Reverse / Back Up",
+   "category": "Longitudinal & Directional Control",
+   "description": "Implement reverse gear longitudinal and lateral control actions to move the vehicle backward safely while monitoring rear blind-spot hazards (grounded in Vienna Convention Art. 14/25, Texas Code Sec. 545.415, and NHTSA Pre-Crash Scenarios 8, 15, 33-35)."
+  }
+ ]
+}
