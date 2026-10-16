@@ -76,7 +76,7 @@ def test_fusion_text_only_absent_is_not_missing(reference):
 
 
 def test_corner_mining():
-    hits = {"A": {"s1", "s2", "s3"}, "B": {"s1"}, "C": {"s4"}}
+    hits = {"A": {"s1", "s2", "s3"}, "B": {"s1", "s5"}, "C": {"s4", "s6"}}
     corners = mine_corners(hits)
     pair = {(c["pair"][0], c["pair"][1]): c for c in corners}
     assert pair[("A", "B")]["class"] == "rare_confluence"
@@ -100,3 +100,18 @@ def test_drivelm_adapter_offline(reference):
     assert sc.frames and sc.frames[0].texts
     kinds = {k for k, _ in sc.corpus()}
     assert kinds <= {"description", "qa", "annotation", "scene_description"}
+
+
+def test_negation_guard(reference):
+    from excavator.adapters.base import Frame, Scene, TextRecord
+    from excavator.audit.text import TextAuditor
+    scenes = [Scene(token="s1", name="t", frames=[
+        Frame(token="f1", scene_token="s1", index=0, texts=[
+            TextRecord("qa", "Are there motorcycles with riders to the front right? No."),
+            TextRecord("qa", "There are no animals on the road."),
+            TextRecord("qa", "One motorcycle is parked to the back."),
+        ])])]
+    cases = reference.filter("leaves", r"^ACTOR:MOTOR_VEHICLE:Motorcycles")
+    res = TextAuditor(cases).run(scenes, close_read=False)
+    assert res[cases[0].case_id]["verdict"] == "present"     # positive hit survives
+    assert res[cases[0].case_id]["hit_count"] == 1           # the two negatives don't count

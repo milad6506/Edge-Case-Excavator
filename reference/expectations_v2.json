@@ -1,6 +1,7 @@
 [
  {
   "id": "ADS-REQ-001A",
+  "title": "Ego Hazard Lights Activation on Breakdown or Accident",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Lighting & Signaling",
@@ -36,6 +37,7 @@
  },
  {
   "id": "ADS-REQ-001B",
+  "title": "Perceive and Respond to Other's Hazard Lights",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Lighting & Signaling",
@@ -71,6 +73,7 @@
  },
  {
   "id": "ADS-REQ-001C",
+  "title": "Hazard Light Activation when Stopped Behind Obstruction",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Lighting & Signaling",
@@ -107,6 +110,7 @@
  },
  {
   "id": "ADS-REQ-001D",
+  "title": "Ego Hazard Lights Deactivation (Cessation of Authorized Use)",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Lighting & Signaling",
@@ -143,6 +147,7 @@
  },
  {
   "id": "ADS-REQ-002A",
+  "title": "Continuous Ego Signaling Before and During Maneuvers",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Signaling & Maneuvering",
@@ -179,6 +184,7 @@
  },
  {
   "id": "ADS-REQ-002B",
+  "title": "Perceive and Respond to Other's Direction Signals",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Signaling & Maneuvering",
@@ -214,6 +220,7 @@
  },
  {
   "id": "ADS-REQ-002C",
+  "title": "Ego Direction Indicator Deactivation upon Maneuver Completion",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Signaling & Maneuvering",
@@ -243,6 +250,7 @@
  },
  {
   "id": "ADS-REQ-003A",
+  "title": "Ego Beam-Switching to Prevent Dazzling",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Lighting & Signaling",
@@ -275,6 +283,7 @@
  },
  {
   "id": "ADS-REQ-003B",
+  "title": "Defensive Behavior Under Oncoming Glare",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Lighting & Signaling",
@@ -305,6 +314,7 @@
  },
  {
   "id": "ADS-REQ-003C",
+  "title": "Ego High-Beam Deactivation and Transition to Low-Beams",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Lighting & Signaling",
@@ -330,6 +340,7 @@
  },
  {
   "id": "ADS-REQ-004A",
+  "title": "Special Signal Requirements for Priority Missions",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Special Vehicle Interaction",
@@ -364,6 +375,7 @@
  },
  {
   "id": "ADS-REQ-004B",
+  "title": "Yield and Stop for Approaching Priority Vehicles",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Special Vehicle Interaction",
@@ -399,6 +411,7 @@
  },
  {
   "id": "ADS-REQ-004C",
+  "title": "Special Priority Signal Deactivation upon Mission Completion",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Special Vehicle Interaction",
@@ -433,6 +446,7 @@
  },
  {
   "id": "ADS-REQ-005A",
+  "title": "Ego Smooth Yielding Without Abrupt Disruption",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Intersections & Right of Way",
@@ -468,6 +482,7 @@
  },
  {
   "id": "ADS-REQ-005B",
+  "title": "Defensive Reaction to Others Failing to Yield",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Intersections & Right of Way",
@@ -498,6 +513,7 @@
  },
  {
   "id": "ADS-REQ-006A",
+  "title": "Slowing and Stopping for Pedestrians at Crossings",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Pedestrian Interaction",
@@ -533,6 +549,7 @@
  },
  {
   "id": "ADS-REQ-006B",
+  "title": "No Overtaking Behind Vehicles Stopped at Crossings",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Pedestrian Interaction",
@@ -568,6 +585,7 @@
  },
  {
   "id": "ADS-REQ-007A",
+  "title": "Pre-Conditions and Clearances for Overtaking",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Signaling & Maneuvering",
@@ -603,6 +621,7 @@
  },
  {
   "id": "ADS-REQ-007B",
+  "title": "Ego Behavior When Being Overtaken by Others",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Signaling & Maneuvering",
@@ -638,6 +657,7 @@
  },
  {
   "id": "ADS-REQ-008A",
+  "title": "Facilitate Public Transport Moving Off From Stops",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Special Vehicle Interaction",
@@ -668,6 +688,7 @@
  },
  {
   "id": "ADS-REQ-008B",
+  "title": "Yielding to Passengers Alighting Public Transport",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Special Vehicle Interaction",
@@ -703,6 +724,7 @@
  },
  {
   "id": "ADS-REQ-009A",
+  "title": "Ego Stalling Warning on Railway Tracks",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Intersections & Right of Way",
@@ -738,6 +760,7 @@
  },
  {
   "id": "ADS-REQ-009B",
+  "title": "Slowing and Yielding for Rail-Borne Vehicles",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Intersections & Right of Way",
@@ -772,6 +795,7 @@
  },
  {
   "id": "ADS-REQ-010A",
+  "title": "Emergency Hand Signal Usage by Ego Vehicle",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Intersections & Right of Way",
@@ -807,6 +831,7 @@
  },
  {
   "id": "ADS-REQ-010B",
+  "title": "Absolute Obedience to Traffic Officials' Gestures",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Intersections & Right of Way",
@@ -837,6 +862,7 @@
  },
  {
   "id": "ADS-REQ-011A",
+  "title": "Ego Audible Warning Activation for Accident Prevention / Overtaking",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Signaling & Maneuvering",
@@ -872,6 +898,7 @@
  },
  {
   "id": "ADS-REQ-011B",
+  "title": "Perceive and Respond to Other's Audible Warnings",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Signaling & Maneuvering",
@@ -907,6 +934,7 @@
  },
  {
   "id": "ADS-REQ-011C",
+  "title": "Ego Audible Warning Deactivation (No Prolonged Sounds)",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Signaling & Maneuvering",
@@ -942,6 +970,7 @@
  },
  {
   "id": "ADS-REQ-012A",
+  "title": "Ego Reversing Lamp Activation during Reversing",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Lighting & Signaling",
@@ -972,6 +1001,7 @@
  },
  {
   "id": "ADS-REQ-012B",
+  "title": "Perceive and Respond to Other's Reversing Lamps",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Lighting & Signaling",
@@ -1002,6 +1032,7 @@
  },
  {
   "id": "ADS-REQ-012C",
+  "title": "Ego Reversing Lamp Deactivation upon Disengaging Reverse",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Lighting & Signaling",
@@ -1032,6 +1063,7 @@
  },
  {
   "id": "ADS-REQ-013A",
+  "title": "Ego Stop Lamp Activation on Braking",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Lighting & Signaling",
@@ -1062,6 +1094,7 @@
  },
  {
   "id": "ADS-REQ-013B",
+  "title": "Perceive and Respond to Other's Stop Lamps",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Lighting & Signaling",
@@ -1092,6 +1125,7 @@
  },
  {
   "id": "ADS-REQ-013C",
+  "title": "Ego Stop Lamp Deactivation on Brake Release",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Lighting & Signaling",
@@ -1122,6 +1156,7 @@
  },
  {
   "id": "ADS-REQ-014A",
+  "title": "Prohibition of Abnormally Slow Speed",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Signaling & Maneuvering",
@@ -1151,6 +1186,7 @@
  },
  {
   "id": "ADS-REQ-014B",
+  "title": "React to Abnormally Slow Vehicles Ahead",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Signaling & Maneuvering",
@@ -1176,6 +1212,7 @@
  },
  {
   "id": "ADS-REQ-014C",
+  "title": "Resume Standard Cruise Speed",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Signaling & Maneuvering",
@@ -1211,6 +1248,7 @@
  },
  {
   "id": "ADS-REQ-015A",
+  "title": "Ego Abrupt Braking Safety Limitations",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Lighting & Signaling",
@@ -1241,6 +1279,7 @@
  },
  {
   "id": "ADS-REQ-015B",
+  "title": "Emergency Evasive Braking on Preceding Stop",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Lighting & Signaling",
@@ -1276,6 +1315,7 @@
  },
  {
   "id": "ADS-REQ-015C",
+  "title": "Brake Pressure Release and Transition to Cruise",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Lighting & Signaling",
@@ -1311,6 +1351,7 @@
  },
  {
   "id": "ADS-REQ-016A",
+  "title": "Emergency Evasive Steering Override",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Signaling & Maneuvering",
@@ -1346,6 +1387,7 @@
  },
  {
   "id": "ADS-REQ-016B",
+  "title": "React to Others' Evasive Steering",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Signaling & Maneuvering",
@@ -1381,6 +1423,7 @@
  },
  {
   "id": "ADS-REQ-016C",
+  "title": "Evasive Steering Cessation and Lane Re-entry",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Signaling & Maneuvering",
@@ -1416,6 +1459,7 @@
  },
  {
   "id": "ADS-REQ-017A",
+  "title": "Door Lock Prevention & Safe Passenger Alighting",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Special Vehicle Interaction",
@@ -1451,6 +1495,7 @@
  },
  {
   "id": "ADS-REQ-017B",
+  "title": "Perceive and Respond to Opened Doors of Parked Cars",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Special Vehicle Interaction",
@@ -1480,6 +1525,7 @@
  },
  {
   "id": "ADS-REQ-017C",
+  "title": "Reset Door Locks & Deactivate Stationary Safety Mode",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Special Vehicle Interaction",
@@ -1515,6 +1561,7 @@
  },
  {
   "id": "ADS-REQ-018A",
+  "title": "Ego Post-Accident Safe Stopping & Site Securing",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Special Vehicle Interaction",
@@ -1550,6 +1597,7 @@
  },
  {
   "id": "ADS-REQ-018B",
+  "title": "Perceive and Safely Traverse Accident Scenes",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Special Vehicle Interaction",
@@ -1585,6 +1633,7 @@
  },
  {
   "id": "ADS-REQ-018C",
+  "title": "Safe State Reset & Route Resumption",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Special Vehicle Interaction",
@@ -1620,6 +1669,7 @@
  },
  {
   "id": "ADS-REQ-019A",
+  "title": "Ego Tunnel Safety Rules & Engine Shutdown",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Intersections & Right of Way",
@@ -1655,6 +1705,7 @@
  },
  {
   "id": "ADS-REQ-019B",
+  "title": "React to Tunnel Stopping or Reversing Violators",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Intersections & Right of Way",
@@ -1690,6 +1741,7 @@
  },
  {
   "id": "ADS-REQ-019C",
+  "title": "Tunnel ODD Exit & Normal ODD Transition",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Intersections & Right of Way",
@@ -1725,6 +1777,7 @@
  },
  {
   "id": "ADS-REQ-020A",
+  "title": "Ego Motorway Driving Rules & U-Turn Prohibitions",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Intersections & Right of Way",
@@ -1760,6 +1813,7 @@
  },
  {
   "id": "ADS-REQ-020B",
+  "title": "React to Motorway Stops, Reversing, or Crossover Violations",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Intersections & Right of Way",
@@ -1795,6 +1849,7 @@
  },
  {
   "id": "ADS-REQ-020C",
+  "title": "Transition to Standard Road Rules upon Motorway Exit",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Intersections & Right of Way",
@@ -1829,6 +1884,7 @@
  },
  {
   "id": "ADS-REQ-021A",
+  "title": "Ego Load Securing & Dimension Compliance",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Signaling & Maneuvering",
@@ -1859,6 +1915,7 @@
  },
  {
   "id": "ADS-REQ-021B",
+  "title": "Perceive and Avoid Loose/Falling Cargo and Debris",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Signaling & Maneuvering",
@@ -1889,6 +1946,7 @@
  },
  {
   "id": "ADS-REQ-021C",
+  "title": "System Reset and Re-calibration after Debris Event",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Signaling & Maneuvering",
@@ -1919,6 +1977,7 @@
  },
  {
   "id": "ADS-REQ-022A",
+  "title": "Ego Downhill Yielding and Reversing on Mountain Roads",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Intersections & Right of Way",
@@ -1949,6 +2008,7 @@
  },
  {
   "id": "ADS-REQ-022B",
+  "title": "Ego Uphill Right-of-Way Assertiveness & Safe Stop",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Intersections & Right of Way",
@@ -1979,6 +2039,7 @@
  },
  {
   "id": "ADS-REQ-022C",
+  "title": "Transition to Flat Road Passing Rules on Level Terrain",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Intersections & Right of Way",
@@ -2013,6 +2074,7 @@
  },
  {
   "id": "ADS-REQ-023A",
+  "title": "Ego Prohibition of Severing Processions and School Files",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Pedestrian Interaction",
@@ -2049,6 +2111,7 @@
  },
  {
   "id": "ADS-REQ-023B",
+  "title": "Perceive and Respond to Grouped Processions and School Files",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Pedestrian Interaction",
@@ -2085,6 +2148,7 @@
  },
  {
   "id": "ADS-REQ-023C",
+  "title": "Resume Standard Driving upon Procession Clear",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Pedestrian Interaction",
@@ -2120,6 +2184,7 @@
  },
  {
   "id": "ADS-REQ-024A",
+  "title": "Ego Wrong-Way driving Prevention and Position Compliance",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Signaling & Maneuvering",
@@ -2151,6 +2216,7 @@
  },
  {
   "id": "ADS-REQ-024B",
+  "title": "Perceive and React to Wrong-Way Oncoming Violators",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Signaling & Maneuvering",
@@ -2182,6 +2248,7 @@
  },
  {
   "id": "ADS-REQ-024C",
+  "title": "Wrong-Way Safety Mode Cessation and Center Keeping Reset",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Signaling & Maneuvering",
@@ -2218,6 +2285,7 @@
  },
  {
   "id": "ADS-REQ-025A",
+  "title": "Ego Standing and Parking Positioning and Alignment",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Signaling & Maneuvering",
@@ -2249,6 +2317,7 @@
  },
  {
   "id": "ADS-REQ-025B",
+  "title": "Perceive and Avoid Prohibited Standing and Parking Zones",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Signaling & Maneuvering",
@@ -2285,6 +2354,7 @@
  },
  {
   "id": "ADS-REQ-025C",
+  "title": "Ego Unattended Secure-State Routine and Anti-Theft Activation",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Signaling & Maneuvering",
@@ -2322,6 +2392,7 @@
  },
  {
   "id": "ADS-REQ-026A",
+  "title": "Ego U-Turn Safety Pre-Verification & Prohibitions",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Signaling & Maneuvering",
@@ -2358,6 +2429,7 @@
  },
  {
   "id": "ADS-REQ-026B",
+  "title": "Perceive and Respond to Other's U-Turn Maneuvers",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Signaling & Maneuvering",
@@ -2394,6 +2466,7 @@
  },
  {
   "id": "ADS-REQ-026C",
+  "title": "Ego U-Turn Maneuver Cessation & Lane Re-entry",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Signaling & Maneuvering",
@@ -2429,6 +2502,7 @@
  },
  {
   "id": "ADS-REQ-027A",
+  "title": "Ego Reversing Safety & Highway/Tunnel Prohibitions",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Signaling & Maneuvering",
@@ -2460,6 +2534,7 @@
  },
  {
   "id": "ADS-REQ-027B",
+  "title": "React to Reversing Violators in Prohibited Zones",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Signaling & Maneuvering",
@@ -2496,6 +2571,7 @@
  },
  {
   "id": "ADS-REQ-027C",
+  "title": "Ego Reversing Cessation and Forward Gear Engagement",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Signaling & Maneuvering",
@@ -2526,6 +2602,7 @@
  },
  {
   "id": "ADS-REQ-028A",
+  "title": "Ego Turning Lane Alignment & Positioning",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Signaling & Maneuvering",
@@ -2562,6 +2639,7 @@
  },
  {
   "id": "ADS-REQ-028B",
+  "title": "Turning Yielding Duties for Oncoming Traffic & Crossing Actors",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Signaling & Maneuvering",
@@ -2598,6 +2676,7 @@
  },
  {
   "id": "ADS-REQ-028C",
+  "title": "Ego Turn Completion and Signal Cessation",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Signaling & Maneuvering",
@@ -2633,6 +2712,7 @@
  },
  {
   "id": "ADS-REQ-029A",
+  "title": "Ego Bordering Property Emerging Safety & Yielding",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Intersections & Right of Way",
@@ -2669,6 +2749,7 @@
  },
  {
   "id": "ADS-REQ-029B",
+  "title": "Perceive and Respond to Vehicles Emerging from Bordering Properties",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Intersections & Right of Way",
@@ -2704,6 +2785,7 @@
  },
  {
   "id": "ADS-REQ-030A",
+  "title": "Ego Level-Crossing Compliance & Gridlock Prohibitions",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Intersections & Right of Way",
@@ -2740,6 +2822,7 @@
  },
  {
   "id": "ADS-REQ-030B",
+  "title": "Unregulated Level-Crossing Verification",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Intersections & Right of Way",
@@ -2775,6 +2858,7 @@
  },
  {
   "id": "ADS-REQ-031A",
+  "title": "Ego Wide Margin for Pedestrians Carrying Bulky Objects",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Pedestrian Interaction",
@@ -2811,6 +2895,7 @@
  },
  {
   "id": "ADS-REQ-031B",
+  "title": "Perceive and Predict Pedestrians with Bulky Objects on Carriageway",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Pedestrian Interaction",
@@ -2847,6 +2932,7 @@
  },
  {
   "id": "ADS-REQ-032A",
+  "title": "Ego Unregulated Intersection Speeds & Right-Hand Yield Duty",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Intersections & Right of Way",
@@ -2883,6 +2969,7 @@
  },
  {
   "id": "ADS-REQ-032B",
+  "title": "Perceive and Yield to Rail-Borne Vehicles at Intersections",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Intersections & Right of Way",
@@ -2918,6 +3005,7 @@
  },
  {
   "id": "ADS-REQ-033A",
+  "title": "Ego Carriageway Islands Navigation Positioning",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Intersections & Right of Way",
@@ -2953,6 +3041,7 @@
  },
  {
   "id": "ADS-REQ-033B",
+  "title": "Perceive and Align with Roundabout / Island Traffic Flow",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Intersections & Right of Way",
@@ -2983,6 +3072,7 @@
  },
  {
   "id": "ADS-REQ-034A",
+  "title": "Ego Road Shoulder Operation and Standing/Parking outside Built-Up Areas",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Intersections & Right of Way",
@@ -3014,6 +3104,7 @@
  },
  {
   "id": "ADS-REQ-034B",
+  "title": "Perceive and Respond to Stationary Obstacles on the Shoulder",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Intersections & Right of Way",
@@ -3045,6 +3136,7 @@
  },
  {
   "id": "ADS-REQ-034C",
+  "title": "Emergency Shoulder Evacuation and Signal Propagation",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Intersections & Right of Way",
@@ -3081,6 +3173,7 @@
  },
  {
   "id": "ADS-REQ-035A",
+  "title": "Ego Roadside Alignment and Shoulder Clearance on Mountain Roads",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Intersections & Right of Way",
@@ -3117,6 +3210,7 @@
  },
  {
   "id": "ADS-REQ-035B",
+  "title": "Perceive and Defensively Respond to Pedestrians and Processions on the Shoulder",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Pedestrian Interaction",
@@ -3153,6 +3247,7 @@
  },
  {
   "id": "ADS-REQ-035C",
+  "title": "Verge/Shoulder Standing without Lamps during Nightfall",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Lighting & Signaling",
@@ -3184,6 +3279,7 @@
  },
  {
   "id": "ADS-REQ-036A",
+  "title": "Ego Passenger Door Lock Prevention & Egress Verification",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Signaling & Maneuvering",
@@ -3219,6 +3315,7 @@
  },
  {
   "id": "ADS-REQ-036B",
+  "title": "Perceive and Respond to Passengers Alighting Stopped Transit Vehicles",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Signaling & Maneuvering",
@@ -3254,6 +3351,7 @@
  },
  {
   "id": "ADS-REQ-036C",
+  "title": "Passenger Door Open Hazard State Cessation",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Signaling & Maneuvering",
@@ -3289,6 +3387,7 @@
  },
  {
   "id": "ADS-REQ-037A",
+  "title": "Ego In-Cabin Seat Belt Compulsory Compliance Check",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Special Vehicle Interaction",
@@ -3324,6 +3423,7 @@
  },
  {
   "id": "ADS-REQ-037B",
+  "title": "OEDR Occlusion Monitoring for Passenger Load Obstruction",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Special Vehicle Interaction",
@@ -3359,6 +3459,7 @@
  },
  {
   "id": "ADS-REQ-037C",
+  "title": "Passenger Load View Obstruction Fallback & Resolution",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Special Vehicle Interaction",
@@ -3394,6 +3495,7 @@
  },
  {
   "id": "ADS-REQ-038A",
+  "title": "Ego Sidewalk and Pedestrian Verge Driving Prohibition",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Signaling & Maneuvering",
@@ -3430,6 +3532,7 @@
  },
  {
   "id": "ADS-REQ-038B",
+  "title": "Perceive and Respond to Sidewalk Violators",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Signaling & Maneuvering",
@@ -3466,6 +3569,7 @@
  },
  {
   "id": "ADS-REQ-038C",
+  "title": "Ego Sidewalk/Driveway Egress Cessation and Lane Integration",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Vehicle Signaling & Maneuvering",
@@ -3502,6 +3606,7 @@
  },
  {
   "id": "ADS-REQ-039A",
+  "title": "Ego safety Zone Driving Prohibition",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Pedestrian Interaction",
@@ -3537,6 +3642,7 @@
  },
  {
   "id": "ADS-REQ-039B",
+  "title": "Perceive and Respond to safety Zone Pedestrian Dynamics",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Pedestrian Interaction",
@@ -3572,6 +3678,7 @@
  },
  {
   "id": "ADS-REQ-039C",
+  "title": "safety Zone Monitoring Cessation and standard Cruise Resumption",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "Pedestrian Interaction",
@@ -3607,6 +3714,7 @@
  },
  {
   "id": "ADS-REQ-040A",
+  "title": "Mandatory ADS Allocation for Moving Vehicles",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "ADS System Readiness & Driver Allocation",
@@ -3636,6 +3744,7 @@
  },
  {
   "id": "ADS-REQ-040B",
+  "title": "ADS Physical and Operational Fitness to Drive",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "ADS System Readiness & Fitness",
@@ -3666,6 +3775,7 @@
  },
  {
   "id": "ADS-REQ-040C",
+  "title": "ADS Knowledge, Skill, and Developmental Operation",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "ADS System Readiness & Competency",
@@ -3696,6 +3806,7 @@
  },
  {
   "id": "ADS-REQ-040D",
+  "title": "Sustained Vehicle Control Authority by ADS",
   "source_framework": "UN Vienna Convention on Road Traffic (1968)",
   "applicability_area": "Universal",
   "category": "ADS System Control & Authority",
@@ -3726,6 +3837,7 @@
  },
  {
   "id": "ADS-REQ-TX-001A",
+  "title": "Texas School Bus Stopped Visual Signal Stop Compliance",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -3756,6 +3868,7 @@
  },
  {
   "id": "ADS-REQ-TX-001B",
+  "title": "Texas School Bus Divided Highway Stop Exemption",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -3786,6 +3899,7 @@
  },
  {
   "id": "ADS-REQ-TX-001C",
+  "title": "Texas School Bus Passing Restriction Cessation",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -3817,6 +3931,7 @@
  },
  {
   "id": "ADS-REQ-TX-002A",
+  "title": "Texas Stationary Emergency and Service Vehicle Lane Vacation",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -3852,6 +3967,7 @@
  },
  {
   "id": "ADS-REQ-TX-002B",
+  "title": "Texas Speed Reduction Near Stationary Service Vehicles",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -3888,6 +4004,7 @@
  },
  {
   "id": "ADS-REQ-TX-002C",
+  "title": "Texas Speed Resumption Past Stationary Incidents",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -3923,6 +4040,7 @@
  },
  {
   "id": "ADS-REQ-TX-003A",
+  "title": "Texas Continuous Turn Signaling Distance Minimum",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -3959,6 +4077,7 @@
  },
  {
   "id": "ADS-REQ-TX-003B",
+  "title": "Texas Turn Signal Prompt Deactivation",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -3989,6 +4108,7 @@
  },
  {
   "id": "ADS-REQ-TX-003C",
+  "title": "Texas Signaling Prohibitions and Courtesy Misuse",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -4024,6 +4144,7 @@
  },
  {
   "id": "ADS-REQ-TX-004A",
+  "title": "Texas Safe Left passing Lane Return Distance",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -4060,6 +4181,7 @@
  },
  {
   "id": "ADS-REQ-TX-004B",
+  "title": "Texas Left-Side Driving Constraints and Intersections",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -4097,6 +4219,7 @@
  },
  {
   "id": "ADS-REQ-TX-005A",
+  "title": "Texas Right-to-Left Merging Yield Right-of-Way Rule",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -4133,6 +4256,7 @@
  },
  {
   "id": "ADS-REQ-TX-005B",
+  "title": "Texas Left-Entry Yield Compliance and Speed Modification",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -4168,6 +4292,7 @@
  },
  {
   "id": "ADS-REQ-TX-005C",
+  "title": "Texas Merging Yield Cessation and Lane Integration",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -4203,6 +4328,7 @@
  },
  {
   "id": "ADS-REQ-TX-006A",
+  "title": "Texas Access and Feeder Road Yield Compliance",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -4239,6 +4365,7 @@
  },
  {
   "id": "ADS-REQ-TX-006B",
+  "title": "Texas Feeder Ramp Yield Execution",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -4274,6 +4401,7 @@
  },
  {
   "id": "ADS-REQ-TX-006C",
+  "title": "Texas Access Road Yield Deactivation",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -4309,6 +4437,7 @@
  },
  {
   "id": "ADS-REQ-TX-007A",
+  "title": "Texas Curve and Crest U-Turn Visibility Limitations",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -4344,6 +4473,7 @@
  },
  {
   "id": "ADS-REQ-TX-007B",
+  "title": "Texas Mountain Highway Control & Curve Horn Warning",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -4375,6 +4505,7 @@
  },
  {
   "id": "ADS-REQ-TX-007C",
+  "title": "Texas Mountain Curve Warning Horn Deactivation",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -4410,6 +4541,7 @@
  },
  {
   "id": "ADS-REQ-TX-008A",
+  "title": "Texas Parallel Parking Wheel Positioning Limits",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -4446,6 +4578,7 @@
  },
  {
   "id": "ADS-REQ-TX-008B",
+  "title": "Texas Prohibited Municipal Parking and Hydrant Buffers",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -4483,6 +4616,7 @@
  },
  {
   "id": "ADS-REQ-TX-008C",
+  "title": "Texas Unattended Vehicle Secure-State Routine",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -4518,6 +4652,7 @@
  },
  {
   "id": "ADS-REQ-TX-009A",
+  "title": "Texas Engaged ADS Operator Status & Compliance",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -4548,6 +4683,7 @@
  },
  {
   "id": "ADS-REQ-TX-009B",
+  "title": "Texas ADS Fallback to Minimal Risk Condition (MRC)",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -4584,6 +4720,7 @@
  },
  {
   "id": "ADS-REQ-TX-009C",
+  "title": "Texas ADS Commercial Plan & Emergency Interaction Plan",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -4619,6 +4756,7 @@
  },
  {
   "id": "ADS-REQ-TX-010A",
+  "title": "Texas Intersection Turning Path Positioning Compliance",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -4655,6 +4793,7 @@
  },
  {
   "id": "ADS-REQ-TX-010B",
+  "title": "Texas Turning Right-of-Way Yield Duty",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -4691,6 +4830,7 @@
  },
  {
   "id": "ADS-REQ-TX-010C",
+  "title": "Texas Turn Signal Prompt Deactivation",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -4721,6 +4861,7 @@
  },
  {
   "id": "ADS-REQ-TX-011A",
+  "title": "Texas Reversing Safety and Highway Prohibitions",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -4752,6 +4893,7 @@
  },
  {
   "id": "ADS-REQ-TX-011B",
+  "title": "Texas React to Reversing Violators in Prohibited Zones",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -4783,6 +4925,7 @@
  },
  {
   "id": "ADS-REQ-TX-011C",
+  "title": "Texas Reversing Lamp Automatic Deactivation",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -4813,6 +4956,7 @@
  },
  {
   "id": "ADS-REQ-TX-012A",
+  "title": "Texas Private Driveway and Sidewalk Crossing Stop Compliance",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -4849,6 +4993,7 @@
  },
  {
   "id": "ADS-REQ-TX-012B",
+  "title": "Texas React to Emerging Vehicles from Private Properties",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -4884,6 +5029,7 @@
  },
  {
   "id": "ADS-REQ-TX-012C",
+  "title": "Texas Private Egress Transition to Flat Road Cruise",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -4919,6 +5065,7 @@
  },
  {
   "id": "ADS-REQ-TX-013A",
+  "title": "Texas Railroad Crossing Signals & Undercarriage Safety Compliance",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -4955,6 +5102,7 @@
  },
  {
   "id": "ADS-REQ-TX-013B",
+  "title": "Texas Unregulated Railroad Crossbuck Yield Duty",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -4990,6 +5138,7 @@
  },
  {
   "id": "ADS-REQ-TX-013C",
+  "title": "Texas Rail Crossing Gear-Shifting Prohibitions",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -5025,6 +5174,7 @@
  },
  {
   "id": "ADS-REQ-TX-014A",
+  "title": "Texas Uncontrolled Intersection Priority & Yield Compliance",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -5056,6 +5206,7 @@
  },
  {
   "id": "ADS-REQ-TX-014B",
+  "title": "Texas Uncontrolled Intersection Right-Hand Rule Yielding",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -5091,6 +5242,7 @@
  },
  {
   "id": "ADS-REQ-TX-014C",
+  "title": "Texas Intersection Clearing and Cruise Resumption",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -5121,6 +5273,7 @@
  },
  {
   "id": "ADS-REQ-TX-015A",
+  "title": "Texas Rotary Traffic Island Right-Side Alignment Compliance",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -5156,6 +5309,7 @@
  },
  {
   "id": "ADS-REQ-TX-015B",
+  "title": "Texas Roundabout Defensive Space Margin Maintenance",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -5186,6 +5340,7 @@
  },
  {
   "id": "ADS-REQ-Texas-016A",
+  "title": "Texas Improved Right Shoulder Driving Permissive Conditions",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -5223,6 +5378,7 @@
  },
  {
   "id": "ADS-REQ-Texas-016B",
+  "title": "Texas Improved Left Shoulder Driving Permissive Conditions",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -5260,6 +5416,7 @@
  },
  {
   "id": "ADS-REQ-Texas-016C",
+  "title": "Texas Shoulder Backing/Reversing Absolute Prohibitions",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -5291,6 +5448,7 @@
  },
  {
   "id": "ADS-REQ-Texas-017A",
+  "title": "Texas Outside-District Roadside Standing and Shoulder Clearance",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -5327,6 +5485,7 @@
  },
  {
   "id": "ADS-REQ-Texas-017B",
+  "title": "Texas React to Shoulder-Encroached Stationary/Disabled Vehicles",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -5363,6 +5522,7 @@
  },
  {
   "id": "ADS-REQ-Texas-017C",
+  "title": "Texas Shoulder Maneuver Cessation and Lane Integration",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -5399,6 +5559,7 @@
  },
  {
   "id": "ADS-REQ-Texas-018A",
+  "title": "Texas In-Cabin Seat Belt & Child Passenger Safety Compliance",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -5434,6 +5595,7 @@
  },
  {
   "id": "ADS-REQ-Texas-018B",
+  "title": "Texas OEDR Cabin Verification for Passenger View Obstruction",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -5469,6 +5631,7 @@
  },
  {
   "id": "ADS-REQ-Texas-018C",
+  "title": "Texas Passenger View Obstruction Mitigation & Fallback",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -5504,6 +5667,7 @@
  },
  {
   "id": "ADS-REQ-Texas-019A",
+  "title": "Texas School Bus Door & Capacity Passenger Compliance",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -5534,6 +5698,7 @@
  },
  {
   "id": "ADS-REQ-Texas-019B",
+  "title": "Texas OEDR React to Stopped Streetcars Receiving/Discharging Passengers",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -5569,6 +5734,7 @@
  },
  {
   "id": "ADS-REQ-Texas-019C",
+  "title": "Texas School Bus Passenger Safe Egress & Door Close Lifecycle",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -5599,6 +5765,7 @@
  },
  {
   "id": "ADS-REQ-Texas-020A",
+  "title": "Texas Trailer and House Trailer Passenger Carriage Prohibition",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -5634,6 +5801,7 @@
  },
  {
   "id": "ADS-REQ-Texas-020B",
+  "title": "Texas OEDR Passenger Safety in Open Beds & Motorcycle Sidecars",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -5669,6 +5837,7 @@
  },
  {
   "id": "ADS-REQ-Texas-020C",
+  "title": "Texas Trailer Passenger Prohibition Exemption Cessation",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -5704,6 +5873,7 @@
  },
  {
   "id": "ADS-REQ-Texas-021A",
+  "title": "Texas Sidewalk and Hike-and-Bike Trail Driving Prohibition",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -5740,6 +5910,7 @@
  },
  {
   "id": "ADS-REQ-Texas-021B",
+  "title": "Texas OEDR React to Sidewalk Violators & Pedestrian Displacement",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -5776,6 +5947,7 @@
  },
  {
   "id": "ADS-REQ-Texas-021C",
+  "title": "Texas Driveway Egress Cessation and Lane Integration Lifecycle",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -5812,6 +5984,7 @@
  },
  {
   "id": "ADS-REQ-Texas-022A",
+  "title": "Texas Property Crossing and Corner-Cutting Prohibitions",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -5848,6 +6021,7 @@
  },
  {
   "id": "ADS-REQ-Texas-022B",
+  "title": "Texas OEDR Crossover Warning for Property Crossing Violators",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -5884,6 +6058,7 @@
  },
  {
   "id": "ADS-REQ-Texas-022C",
+  "title": "Texas Intersection turn Completion and standard Cruise Resumption",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -5920,6 +6095,7 @@
  },
  {
   "id": "ADS-REQ-Texas-023A",
+  "title": "Texas safety Zone Driving Prohibition",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -5955,6 +6131,7 @@
  },
  {
   "id": "ADS-REQ-Texas-023B",
+  "title": "Texas OEDR React to safety Zone Pedestrian Dynamics",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -5990,6 +6167,7 @@
  },
  {
   "id": "ADS-REQ-Texas-023C",
+  "title": "Texas safety Zone clearance and Lane-Keeping Alignment Resumption",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -6025,6 +6203,7 @@
  },
  {
   "id": "ADS-REQ-Texas-024A",
+  "title": "Texas Divided Highway Barrier Crossover Prohibition",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -6060,6 +6239,7 @@
  },
  {
   "id": "ADS-REQ-Texas-024B",
+  "title": "Texas OEDR Median Crossover Warning and defensive Response",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -6091,6 +6271,7 @@
  },
  {
   "id": "ADS-REQ-Texas-024C",
+  "title": "Texas Crossover Casing and Roadway Integration Lifecycle",
   "source_framework": "Texas Transportation Code Chapter 545",
   "applicability_area": "Texas",
   "category": "Texas Vehicles & Traffic",
@@ -6126,6 +6307,7 @@
  },
  {
   "id": "ADS-REQ-AVSC-001",
+  "title": "Robust Detection of VRU Physical Properties",
   "source_framework": "AVSC Best Practice for Interactions Between ADS-DVs and VRUs (AVSC00009202208)",
   "applicability_area": "Universal",
   "category": "OEDR - Detection & Classification",
@@ -6160,6 +6342,7 @@
  },
  {
   "id": "ADS-REQ-AVSC-002",
+  "title": "OEDR Robustness in Adverse Environmental and Lighting Conditions",
   "source_framework": "AVSC Best Practice for Interactions Between ADS-DVs and VRUs (AVSC00009202208)",
   "applicability_area": "Universal",
   "category": "OEDR - Detection & Classification",
@@ -6194,6 +6377,7 @@
  },
  {
   "id": "ADS-REQ-AVSC-003",
+  "title": "Detection and Vigilance Under Spatial Occlusions",
   "source_framework": "AVSC Best Practice for Interactions Between ADS-DVs and VRUs (AVSC00009202208)",
   "applicability_area": "Universal",
   "category": "OEDR - Detection & Classification",
@@ -6228,6 +6412,7 @@
  },
  {
   "id": "ADS-REQ-AVSC-004",
+  "title": "Conservative Trajectory Planning for Unclassified Objects",
   "source_framework": "AVSC Best Practice for Interactions Between ADS-DVs and VRUs (AVSC00009202208)",
   "applicability_area": "Universal",
   "category": "Safety Margins & Trajectory Planning",
@@ -6262,6 +6447,7 @@
  },
  {
   "id": "ADS-REQ-AVSC-005",
+  "title": "Application of Confident Class-Based Safety Envelopes",
   "source_framework": "AVSC Best Practice for Interactions Between ADS-DVs and VRUs (AVSC00009202208)",
   "applicability_area": "Universal",
   "category": "Safety Margins & Trajectory Planning",
@@ -6296,6 +6482,7 @@
  },
  {
   "id": "ADS-REQ-AVSC-006",
+  "title": "Following Behavior Under Narrow Lane Constraints",
   "source_framework": "AVSC Best Practice for Interactions Between ADS-DVs and VRUs (AVSC00009202208)",
   "applicability_area": "Universal",
   "category": "Safety Margins & Trajectory Planning",
@@ -6330,6 +6517,7 @@
  },
  {
   "id": "ADS-REQ-AVSC-007",
+  "title": "Behavioral Prediction Leveraging Kinematics and Kinesthetics",
   "source_framework": "AVSC Best Practice for Interactions Between ADS-DVs and VRUs (AVSC00009202208)",
   "applicability_area": "Universal",
   "category": "Behavioral Prediction & Motion Planning",
@@ -6364,6 +6552,7 @@
  },
  {
   "id": "ADS-REQ-AVSC-008",
+  "title": "Motion Planning Accounting for Non-Compliant VRU Behavior",
   "source_framework": "AVSC Best Practice for Interactions Between ADS-DVs and VRUs (AVSC00009202208)",
   "applicability_area": "Universal",
   "category": "Behavioral Prediction & Motion Planning",
@@ -6398,6 +6587,7 @@
  },
  {
   "id": "ADS-REQ-AVSC-009",
+  "title": "Predictable Vehicle Motion Control to Support VRU Expectations",
   "source_framework": "AVSC Best Practice for Interactions Between ADS-DVs and VRUs (AVSC00009202208)",
   "applicability_area": "Universal",
   "category": "Behavioral Prediction & Motion Planning",
@@ -6432,6 +6622,7 @@
  },
  {
   "id": "ADS-REQ-AVSC-010",
+  "title": "Primacy of Traffic Code and Predictable Interaction Rules",
   "source_framework": "AVSC Best Practice for Interactions Between ADS-DVs and VRUs (AVSC00009202208)",
   "applicability_area": "Universal",
   "category": "Traffic Code & Communication",
@@ -6466,6 +6657,7 @@
  },
  {
   "id": "ADS-REQ-AVSC-011",
+  "title": "Use of Standardized Communication Signals for Conspicuity",
   "source_framework": "AVSC Best Practice for Interactions Between ADS-DVs and VRUs (AVSC00009202208)",
   "applicability_area": "Universal",
   "category": "Traffic Code & Communication",
@@ -6500,6 +6692,7 @@
  },
  {
   "id": "ADS-REQ-AVSC-012",
+  "title": "Adherence to Post-Crash Safety and Assistance Regulations",
   "source_framework": "AVSC Best Practice for Interactions Between ADS-DVs and VRUs (AVSC00009202208)",
   "applicability_area": "Universal",
   "category": "Safety Margins & Trajectory Planning",
@@ -6534,6 +6727,7 @@
  },
  {
   "id": "ADS-REQ-AVSC-013",
+  "title": "Age-Specific Behavioral Adjustment for Children",
   "source_framework": "AVSC Best Practice for Interactions Between ADS-DVs and VRUs (AVSC00009202208)",
   "applicability_area": "Universal",
   "category": "Behavioral Prediction & Motion Planning",
@@ -6563,6 +6757,7 @@
  },
  {
   "id": "ADS-REQ-AVSC-014",
+  "title": "Safety Model Calibration for Preteens and High School Students",
   "source_framework": "AVSC Best Practice for Interactions Between ADS-DVs and VRUs (AVSC00009202208)",
   "applicability_area": "Universal",
   "category": "Behavioral Prediction & Motion Planning",
@@ -6592,6 +6787,7 @@
  },
  {
   "id": "ADS-REQ-AVSC-015",
+  "title": "Vigilant Tracking and Trajectory Prediction for VRUs on Road Shoulders",
   "source_framework": "AVSC Best Practice for Interactions Between ADS-DVs and VRUs (AVSC00009202208)",
   "applicability_area": "Universal",
   "category": "Behavioral Prediction & Motion Planning",
@@ -6626,6 +6822,7 @@
  },
  {
   "id": "ADS-REQ-AVSC-016",
+  "title": "Post-Collision Shoulder Evacuation and Scene Securing",
   "source_framework": "AVSC Best Practice for Interactions Between ADS-DVs and VRUs (AVSC00009202208)",
   "applicability_area": "Universal",
   "category": "Behavioral Prediction & Motion Planning",
@@ -6660,6 +6857,7 @@
  },
  {
   "id": "ADS-REQ-AVSC-017",
+  "title": "Vigilant Tracking and Intent Prediction at Non-Drivable Boundaries",
   "source_framework": "AVSC Best Practice for Interactions Between ADS-DVs and VRUs (AVSC00009202208)",
   "applicability_area": "Universal",
   "category": "OEDR - Detection & Classification",
@@ -6694,6 +6892,7 @@
  },
  {
   "id": "ADS-REQ-ODD-001",
+  "title": "Confined Operation Within Geo-fenced Boundaries",
   "source_framework": "AVSC Best Practice for Describing an Operational Design Domain (AVSC00002202004)",
   "applicability_area": "Universal",
   "category": "ODD Boundary Management",
@@ -6728,6 +6927,7 @@
  },
  {
   "id": "ADS-REQ-ODD-002",
+  "title": "Operational Suspension and Fallback in Non-Permissive Weather",
   "source_framework": "AVSC Best Practice for Describing an Operational Design Domain (AVSC00002202004)",
   "applicability_area": "Universal",
   "category": "ODD Boundary Management",
@@ -6762,6 +6962,7 @@
  },
  {
   "id": "ADS-REQ-ODD-003",
+  "title": "Regulation and Signage Recognition and Compliance",
   "source_framework": "AVSC Best Practice for Describing an Operational Design Domain (AVSC00002202004)",
   "applicability_area": "Universal",
   "category": "Perception & Object Classification",
@@ -6791,6 +6992,7 @@
  },
  {
   "id": "ADS-REQ-ODD-004",
+  "title": "Traction and Speed Adaptation to Surface State of Repair",
   "source_framework": "AVSC Best Practice for Describing an Operational Design Domain (AVSC00002202004)",
   "applicability_area": "Universal",
   "category": "Motion Planning & Control",
@@ -6825,6 +7027,7 @@
  },
  {
   "id": "ADS-REQ-ODD-005",
+  "title": "Steering and Deceleration Adjustment on Slopes and Curves",
   "source_framework": "AVSC Best Practice for Describing an Operational Design Domain (AVSC00002202004)",
   "applicability_area": "Universal",
   "category": "Motion Planning & Control",
@@ -6854,6 +7057,7 @@
  },
  {
   "id": "ADS-REQ-ODD-006",
+  "title": "Classification and Assumption Refining of Diverse Road Users",
   "source_framework": "AVSC Best Practice for Describing an Operational Design Domain (AVSC00002202004)",
   "applicability_area": "Universal",
   "category": "Perception & Object Classification",
@@ -6883,6 +7087,7 @@
  },
  {
   "id": "ADS-REQ-ODD-007",
+  "title": "Conservative Path Planning for Unclassified Objects",
   "source_framework": "AVSC Best Practice for Describing an Operational Design Domain (AVSC00002202004)",
   "applicability_area": "Universal",
   "category": "Perception & Object Classification",
@@ -6912,6 +7117,7 @@
  },
  {
   "id": "ADS-REQ-ODD-008",
+  "title": "Communications Integrity and Infrastructure Shadow Handling",
   "source_framework": "AVSC Best Practice for Describing an Operational Design Domain (AVSC00002202004)",
   "applicability_area": "Universal",
   "category": "ODD Boundary Management",
@@ -6946,6 +7152,7 @@
  },
  {
   "id": "ADS-REQ-ODD-009",
+  "title": "Infrastructural Shoulder Geometry Identification and Classification",
   "source_framework": "AVSC Best Practice for Describing an Operational Design Domain (AVSC00002202004)",
   "applicability_area": "Universal",
   "category": "ODD Boundary Management",
@@ -6980,6 +7187,7 @@
  },
  {
   "id": "ADS-REQ-ODD-010",
+  "title": "ODD Boundary Encroachment Limits and Shoulder Usage Policy",
   "source_framework": "AVSC Best Practice for Describing an Operational Design Domain (AVSC00002202004)",
   "applicability_area": "Universal",
   "category": "ODD Boundary Management",
@@ -7014,6 +7222,7 @@
  },
  {
   "id": "ADS-REQ-ODD-011",
+  "title": "Bordering Infrastructure Identification and Traveled Way Segmentation",
   "source_framework": "AVSC Best Practice for Describing an Operational Design Domain (AVSC00002202004)",
   "applicability_area": "Universal",
   "category": "ODD Boundary Management",
@@ -7048,6 +7257,7 @@
  },
  {
   "id": "ADS-REQ-FR-001",
+  "title": "ADS Vehicle Immobilization and Status Indication",
   "source_framework": "AVSC Best Practice for First Responder Interactions (AVSC-I-01-2024)",
   "applicability_area": "Universal",
   "category": "First Responder Interactions",
@@ -7084,6 +7294,7 @@
  },
  {
   "id": "ADS-REQ-FR-002",
+  "title": "ADS Interior Access & Door Unlocking Protocols",
   "source_framework": "AVSC Best Practice for First Responder Interactions (AVSC-I-01-2024)",
   "applicability_area": "Universal",
   "category": "First Responder Interactions",
@@ -7120,6 +7331,7 @@
  },
  {
   "id": "ADS-REQ-FR-003",
+  "title": "ADS High-Voltage & Electrical System De-Powering",
   "source_framework": "AVSC Best Practice for First Responder Interactions (AVSC-I-01-2024)",
   "applicability_area": "Universal",
   "category": "First Responder Interactions",
@@ -7156,6 +7368,7 @@
  },
  {
   "id": "ADS-REQ-FR-004",
+  "title": "ADS Non-Traditional Movement & Extrication Cut-Zones",
   "source_framework": "AVSC Best Practice for First Responder Interactions (AVSC-I-01-2024)",
   "applicability_area": "Universal",
   "category": "First Responder Interactions",
@@ -7191,6 +7404,7 @@
  },
  {
   "id": "ADS-REQ-FR-005",
+  "title": "ADS Tow-Mode Engagement & Safe Recovery",
   "source_framework": "AVSC Best Practice for First Responder Interactions (AVSC-I-01-2024)",
   "applicability_area": "Universal",
   "category": "First Responder Interactions",
@@ -7221,6 +7435,7 @@
  },
  {
   "id": "ADS-REQ-FR-006",
+  "title": "Emergency Priority Vehicle Perception & Yielding",
   "source_framework": "AVSC Best Practice for First Responder Interactions (AVSC-I-01-2024)",
   "applicability_area": "Universal",
   "category": "First Responder Interactions",
@@ -7255,6 +7470,7 @@
  },
  {
   "id": "ADS-REQ-FR-007",
+  "title": "Manual Officer Signal & Flashlight Obedience",
   "source_framework": "AVSC Best Practice for First Responder Interactions (AVSC-I-01-2024)",
   "applicability_area": "Universal",
   "category": "First Responder Interactions",
@@ -7289,6 +7505,7 @@
  },
  {
   "id": "ADS-REQ-FR-008",
+  "title": "Temporary Traffic Control Device Recognition",
   "source_framework": "AVSC Best Practice for First Responder Interactions (AVSC-I-01-2024)",
   "applicability_area": "Universal",
   "category": "First Responder Interactions",
@@ -7324,6 +7541,7 @@
  },
  {
   "id": "ADS-REQ-FR-009",
+  "title": "Traffic Stop Stationary Hold & Official Release Lifecycle",
   "source_framework": "AVSC Best Practice for First Responder Interactions (AVSC-I-01-2024)",
   "applicability_area": "Universal",
   "category": "First Responder Interactions",
@@ -7359,6 +7577,7 @@
  },
  {
   "id": "ADS-REQ-FR-010",
+  "title": "External Identification Markings & Hazard Placards",
   "source_framework": "AVSC Best Practice for First Responder Interactions (AVSC-I-01-2024)",
   "applicability_area": "Universal",
   "category": "First Responder Interactions",
@@ -7388,6 +7607,7 @@
  },
  {
   "id": "ADS-REQ-FR-011",
+  "title": "In-Cabin Passenger Verification & Assistance",
   "source_framework": "AVSC Best Practice for First Responder Interactions (AVSC-I-01-2024)",
   "applicability_area": "Universal",
   "category": "First Responder Interactions",
@@ -7423,6 +7643,7 @@
  },
  {
   "id": "ADS-REQ-FR-012",
+  "title": "First Responder Interaction Plan & 24/7 Fleet Availability",
   "source_framework": "AVSC Best Practice for First Responder Interactions (AVSC-I-01-2024)",
   "applicability_area": "Universal",
   "category": "First Responder Interactions",

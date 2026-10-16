@@ -352,11 +352,11 @@ def parse_meta_actions(lines):
 
 def parse_expectations(lines):
     txt = "\n".join(lines)
-    ids = re.findall(r"^\[([A-Za-z0-9-]+)\]", txt, re.M)
-    blocks = re.split(r"^\[[A-Za-z0-9-]+\]", txt, flags=re.M)[1:]
+    ids = re.findall(r"^\[([A-Za-z0-9-]+)\]\s*(.+)", txt, re.M)
+    blocks = re.split(r"^\[[A-Za-z0-9-]+\][^\n]*", txt, flags=re.M)[1:]
     exps = []
-    for eid, b in zip(ids, blocks):
-        e = {"id": eid}
+    for (eid, title), b in zip(ids, blocks):
+        e = {"id": eid, "title": title.strip()}
         f = lambda label: (re.search(rf"{label}:\s*(.+)", b) or [None, None])[1]
         e["source_framework"] = (f("Source Framework") or "").strip()
         e["applicability_area"] = (f("Applicability Area") or "").strip()

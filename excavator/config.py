@@ -56,6 +56,7 @@ class ExcavatorConfig:
     detector_conf: float = 0.25
     api: ApiConfig = field(default_factory=ApiConfig)
     close_read: bool = True               # L1c LLM close-reading of keyword hits
+    unit_label: str | None = None         # assessment-unit description for findings
 
     def validate(self) -> None:
         if self.adapter not in ("drivelm", "nuscenes_flat"):

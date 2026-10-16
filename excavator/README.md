@@ -94,3 +94,18 @@ Subclass `excavator.adapters.base.BaseAdapter`, implement
 `load(limit) -> list[Scene]` (frames carry camera image paths + text records),
 and register in `excavator/adapters/__init__.py`. Anything nuScenes-shaped
 (scenes → keyframes → cameras) maps directly.
+
+## Worked example — DriveLM-nuScenes (committed)
+
+`../findings/drivelm-full/` contains the committed result of a full L1 text
+audit (696 scenario sequences, keyword sweep + glm-5.3-flash close-reading):
+
+- `findings.txt` — the readable audit findings (headline, gap list, corner
+  candidates, method & caveats)
+- `excavation_report_slim.json` — per-case verdicts + close-read reasons
+  (evidence bulk stripped)
+- `coverage_matrix.html` — the interactive matrix
+
+The raw report with full evidence (4+ MB) stays local in gitignored `runs/`.
+All published artifacts are scrubbed of local filesystem identifiers; dataset
+files themselves are never committed — only audit results.

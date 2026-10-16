@@ -11,7 +11,12 @@ from .config import ExcavatorConfig
 from .fuse import fuse_case, mine_corners, summarize
 from .llm import LlmClient
 from .reference import Reference
-from .report import write_report
+from .report import write_findings, write_report
+
+_UNIT_BY_ADAPTER = {
+    "drivelm": "scenario sequence (scene: multi-keyframe ego trajectory, 6 surround cameras)",
+    "nuscenes_flat": "scenario sequence (scene-tag frame grouping across cameras)",
+}
 
 
 def run(config: ExcavatorConfig) -> dict:
@@ -93,8 +98,16 @@ def run(config: ExcavatorConfig) -> dict:
     report_path, html_path = write_report(
         out_dir, config_summary=cfg_summary, reference_stats=reference.stats(),
         fused=fused, corners=corners, summary=summary, scene_count=len(scenes))
-    print(f"[done] {summary['total_cases']} cases · scenes: {len(scenes)} · "
+    unit = config.unit_label or _UNIT_BY_ADAPTER.get(config.adapter, "scenario sequence (Scene)")
+    findings_path = write_findings(
+        out_dir, dataset_label=f"{config.adapter} @ {config.dataset_root}",
+        config_summary=cfg_summary, reference_stats=reference.stats(),
+        fused=fused, corners=corners, summary=summary, scene_count=len(scenes),
+        unit=unit)
+    print(f"[done] {summary['total_cases']} cases · sequences: {len(scenes)} · "
           f"verdicts: {summary['by_verdict']}")
-    print(f"[done] report: {report_path}")
-    print(f"[done] html:   {html_path}")
-    return {"summary": summary, "report": str(report_path), "html": str(html_path)}
+    print(f"[done] findings: {findings_path}")
+    print(f"[done] report:   {report_path}")
+    print(f"[done] html:     {html_path}")
+    return {"summary": summary, "report": str(report_path), "html": str(html_path),
+            "findings": str(findings_path)}

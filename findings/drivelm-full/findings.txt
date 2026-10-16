@@ -1,0 +1,184 @@
+==============================================================================
+EDGE-CASE EXCAVATOR — AUDIT FINDINGS
+==============================================================================
+Dataset            : drivelm @ ~/Documents/DriveLM
+Assessment unit    : scenario sequence (scene: multi-keyframe ego trajectory, 6 surround cameras)
+Sequences audited  : 696
+Reference model    : taxonomy v6.0 + 221 behavioral expectations (352 audited cases)
+Levels executed    : text
+Config             : adapter=drivelm scope=all limit=None
+
+==============================================================================
+1. HEADLINE
+==============================================================================
+  COVERED                86   (24.4%)
+  COVERED_WEAK           55   (15.6%)
+  FALSE_POSITIVE        121   (34.4%)
+  TEXT_ABSENT            90   (25.6%)
+  corner candidates     200
+
+   NOTE: absence is not yet verified — TEXT_ABSENT cases are queued for the
+   sensory (L2 VLM) and detector (L3) levels. Only cases confirmed absent by
+   all executed levels are MISSING_CANDIDATE.
+
+==============================================================================
+2. COVERAGE BY CASE KIND
+==============================================================================
+  kind            COVERED COVERED_W DETECTOR_ VLM_PRESE FALSE_POS TEXT_ABSE MISSING_C UNVERIFIE
+  actor                16         6         0         0        14         6         0         0
+  band                  0         0         0         0         3        14         0         0
+  buffer                2         1         0         0         4         0         0         0
+  expectation          64        38         0         0        54        65         0         0
+  factor                1         1         0         0         6         1         0         0
+  misbehavior           2         8         0         0        36         3         0         0
+  state                 1         1         0         0         4         1         0         0
+
+==============================================================================
+3. THE GAP LIST (sequences show no evidence for these cases)
+==============================================================================
+
+  3.1 Actor sub-classes — 6 absent
+      - ACTOR:ANIMAL:Mounted Horses & Herded Livestock (Cattle, Sheep) with Herders
+      - ACTOR:MOTOR_VEHICLE:Shuttle Vans & Airport / Transit Passenger Vans
+      - ACTOR:RAIL_VEHICLE:Railway Crew, Switchmen & Motormen
+      - ACTOR:VRU:Grouped Pedestrian Formations & Processions
+      - ACTOR:VRU:Intoxicated, Impaired or Incapacitated Pedestrians
+      - ACTOR:VRU:Pedestrians Child
+
+  3.2 Misbehavior regime tokens — 3 absent
+      - MISBEHAVIOR:DOMESTIC_PET_SHOULDER_STRAY
+      - MISBEHAVIOR:INADVERTENT_HORN_TAP
+      - MISBEHAVIOR:PROLONGED_ABUSIVE_HONK
+
+  3.3 Signaling states — 1 absent
+      - STATE:MOTOR_VEHICLE:emergency_strobe_states
+
+  3.4 ODD factor enums — 1 absent
+      - FACTOR:L6.6.1.V2X Status
+
+  3.5 ODD numeric bands — 14 absent
+      - BAND:L1.1.3.Damp / Wet Pavement
+      - BAND:L1.1.3.Glaze Ice / Black Ice
+      - BAND:L1.1.3.Snow / Slush Covered
+      - BAND:L1.1.4.Lane Width
+      - BAND:L1.1.5.Shoulder Width
+      - BAND:L4.4.1.Longitudinal Spatial Headway Gap
+      - BAND:L4.4.1.Longitudinal Time Headway
+      - BAND:L5.5.1.Heavy Rain
+      - BAND:L5.5.1.Light Rain
+      - BAND:L5.5.1.Moderate Rain
+      - BAND:L5.5.2.Civil Twilight
+      - BAND:L5.5.2.Night Streetlit
+      - BAND:L5.5.2.Night Unlit
+      - BAND:L5.5.3.Dense Fog / Heavy Smoke
+
+  3.7 Behavioral expectations — 65 of 221 absent (full list in excavation_report.json)
+      gap distribution by source framework:
+        - UN Vienna Convention on Road Traffic (1968): 28
+        - AVSC Best Practice for Interactions Between ADS-DVs and VRUs (AVSC00009202208): 17
+        - AVSC Best Practice for Describing an Operational Design Domain (AVSC00002202004): 11
+        - Texas Transportation Code Chapter 545: 6
+        - AVSC Best Practice for First Responder Interactions (AVSC-I-01-2024): 3
+
+==============================================================================
+4. CORNER-CASE CANDIDATES (co-occurrence mining)
+==============================================================================
+  200 candidate pairs; top items:
+    - ACTOR:ANIMAL:Domestic Pets  ×  ACTOR:MOTOR_VEHICLE:Emergency Priority Vehicles
+        unrealized_confluence: co-occurrence 0 (individually 2 / 2 sequences)
+    - ACTOR:ANIMAL:Domestic Pets  ×  ACTOR:MOTOR_VEHICLE:Rescue Command Vehicles & Mobile Emergency Command Units
+        unrealized_confluence: co-occurrence 0 (individually 2 / 2 sequences)
+    - ACTOR:ANIMAL:Domestic Pets  ×  ACTOR:RAIL_VEHICLE:Freight Trains & Heavy Rail Locomotives
+        unrealized_confluence: co-occurrence 0 (individually 2 / 2 sequences)
+    - ACTOR:ANIMAL:Domestic Pets  ×  ACTOR:STATIC_OBSTACLE:Fallen Trees, Branches & Downed Utility Wires
+        unrealized_confluence: co-occurrence 0 (individually 2 / 2 sequences)
+    - ACTOR:ANIMAL:Domestic Pets  ×  MISBEHAVIOR:UNLAWFUL_SIREN_ASSERTION
+        unrealized_confluence: co-occurrence 0 (individually 2 / 2 sequences)
+    - ACTOR:ANIMAL:Domestic Pets  ×  STATE:MOTOR_VEHICLE:emergency_siren_states
+        unrealized_confluence: co-occurrence 0 (individually 2 / 2 sequences)
+    - ACTOR:MOTOR_VEHICLE:Emergency Priority Vehicles  ×  ACTOR:RAIL_VEHICLE:Freight Trains & Heavy Rail Locomotives
+        unrealized_confluence: co-occurrence 0 (individually 2 / 2 sequences)
+    - ACTOR:MOTOR_VEHICLE:Emergency Priority Vehicles  ×  ACTOR:STATIC_OBSTACLE:Fallen Trees, Branches & Downed Utility Wires
+        unrealized_confluence: co-occurrence 0 (individually 2 / 2 sequences)
+    - ACTOR:MOTOR_VEHICLE:Rescue Command Vehicles & Mobile Emergency Command Units  ×  ACTOR:RAIL_VEHICLE:Freight Trains & Heavy Rail Locomotives
+        unrealized_confluence: co-occurrence 0 (individually 2 / 2 sequences)
+    - ACTOR:MOTOR_VEHICLE:Rescue Command Vehicles & Mobile Emergency Command Units  ×  ACTOR:STATIC_OBSTACLE:Fallen Trees, Branches & Downed Utility Wires
+        unrealized_confluence: co-occurrence 0 (individually 2 / 2 sequences)
+    - ACTOR:RAIL_VEHICLE:Freight Trains & Heavy Rail Locomotives  ×  ACTOR:STATIC_OBSTACLE:Fallen Trees, Branches & Downed Utility Wires
+        unrealized_confluence: co-occurrence 0 (individually 2 / 2 sequences)
+    - ACTOR:RAIL_VEHICLE:Freight Trains & Heavy Rail Locomotives  ×  MISBEHAVIOR:UNLAWFUL_SIREN_ASSERTION
+        unrealized_confluence: co-occurrence 0 (individually 2 / 2 sequences)
+    - ACTOR:RAIL_VEHICLE:Freight Trains & Heavy Rail Locomotives  ×  STATE:MOTOR_VEHICLE:emergency_siren_states
+        unrealized_confluence: co-occurrence 0 (individually 2 / 2 sequences)
+    - ACTOR:STATIC_OBSTACLE:Fallen Trees, Branches & Downed Utility Wires  ×  MISBEHAVIOR:UNLAWFUL_SIREN_ASSERTION
+        unrealized_confluence: co-occurrence 0 (individually 2 / 2 sequences)
+    - ACTOR:STATIC_OBSTACLE:Fallen Trees, Branches & Downed Utility Wires  ×  STATE:MOTOR_VEHICLE:emergency_siren_states
+        unrealized_confluence: co-occurrence 0 (individually 2 / 2 sequences)
+    - ACTOR:ANIMAL:Animal-Drawn Carriages, Buggies & Equestrian Riders  ×  ACTOR:ANIMAL:Domestic Pets
+        unrealized_confluence: co-occurrence 0 (individually 4 / 2 sequences)
+    - ACTOR:ANIMAL:Animal-Drawn Carriages, Buggies & Equestrian Riders  ×  ACTOR:MOTOR_VEHICLE:Emergency Priority Vehicles
+        unrealized_confluence: co-occurrence 0 (individually 4 / 2 sequences)
+    - ACTOR:ANIMAL:Animal-Drawn Carriages, Buggies & Equestrian Riders  ×  ACTOR:MOTOR_VEHICLE:Rescue Command Vehicles & Mobile Emergency Command Units
+        unrealized_confluence: co-occurrence 0 (individually 4 / 2 sequences)
+    - ACTOR:ANIMAL:Animal-Drawn Carriages, Buggies & Equestrian Riders  ×  ACTOR:RAIL_VEHICLE:Freight Trains & Heavy Rail Locomotives
+        unrealized_confluence: co-occurrence 0 (individually 4 / 2 sequences)
+    - ACTOR:ANIMAL:Animal-Drawn Carriages, Buggies & Equestrian Riders  ×  ACTOR:STATIC_OBSTACLE:Fallen Trees, Branches & Downed Utility Wires
+        unrealized_confluence: co-occurrence 0 (individually 4 / 2 sequences)
+    - ACTOR:ANIMAL:Animal-Drawn Carriages, Buggies & Equestrian Riders  ×  MISBEHAVIOR:UNLAWFUL_SIREN_ASSERTION
+        unrealized_confluence: co-occurrence 0 (individually 4 / 2 sequences)
+    - ACTOR:ANIMAL:Animal-Drawn Carriages, Buggies & Equestrian Riders  ×  STATE:MOTOR_VEHICLE:emergency_siren_states
+        unrealized_confluence: co-occurrence 0 (individually 4 / 2 sequences)
+    - ACTOR:ANIMAL:Domestic Pets  ×  ACTOR:VRU:Bicyclists & Commuter Cyclists
+        unrealized_confluence: co-occurrence 0 (individually 2 / 4 sequences)
+    - ACTOR:MOTOR_VEHICLE:Emergency Priority Vehicles  ×  ACTOR:VRU:Bicyclists & Commuter Cyclists
+        unrealized_confluence: co-occurrence 0 (individually 2 / 4 sequences)
+    - ACTOR:MOTOR_VEHICLE:Rescue Command Vehicles & Mobile Emergency Command Units  ×  ACTOR:VRU:Bicyclists & Commuter Cyclists
+        unrealized_confluence: co-occurrence 0 (individually 2 / 4 sequences)
+
+==============================================================================
+5. EXPECTATION COVERAGE HIGHLIGHTS
+==============================================================================
+  102 of 221 behavioral expectations have sequences in the corpus; sample:
+    + EXP:ADS-REQ-001D  Ego Hazard Lights Deactivation (Cessation of Authori
+        sequence: ACT-03 -> ACT-13 -> ACT-04 -> ACT-15
+    + EXP:ADS-REQ-002A  Continuous Ego Signaling Before and During Maneuvers
+        sequence: ACT-05 -> ACT-03 -> ACT-10 -> ACT-02
+    + EXP:ADS-REQ-002B  Perceive and Respond to Other's Direction Signals
+        sequence: ACT-05 -> ACT-03 -> ACT-10 -> ACT-02
+    + EXP:ADS-REQ-003C  Ego High-Beam Deactivation and Transition to Low-Bea
+        sequence: ACT-01 -> ACT-03
+    + EXP:ADS-REQ-005A  Ego Smooth Yielding Without Abrupt Disruption
+        sequence: ACT-05 -> ACT-03 -> ACT-06 -> ACT-02
+    + EXP:ADS-REQ-006A  Slowing and Stopping for Pedestrians at Crossings
+        sequence: ACT-05 -> ACT-06 -> ACT-08 -> ACT-06
+    + EXP:ADS-REQ-006B  No Overtaking Behind Vehicles Stopped at Crossings
+        sequence: ACT-05 -> ACT-06 -> ACT-08 -> ACT-06
+    + EXP:ADS-REQ-007B  Ego Behavior When Being Overtaken by Others
+        sequence: ACT-05 -> ACT-06 -> ACT-08 -> ACT-06
+    + EXP:ADS-REQ-008A  Facilitate Public Transport Moving Off From Stops
+        sequence: ACT-03 -> ACT-01 -> ACT-02
+    + EXP:ADS-REQ-008B  Yielding to Passengers Alighting Public Transport
+        sequence: ACT-05 -> ACT-06 -> ACT-08 -> ACT-06
+    + EXP:ADS-REQ-010A  Emergency Hand Signal Usage by Ego Vehicle
+        sequence: ACT-05 -> ACT-03 -> ACT-10 -> ACT-02
+    + EXP:ADS-REQ-010B  Absolute Obedience to Traffic Officials' Gestures
+        sequence: ACT-01 -> ACT-11 -> ACT-03
+    + EXP:ADS-REQ-012B  Perceive and Respond to Other's Reversing Lamps
+        sequence: ACT-05 -> ACT-03 -> ACT-04
+    + EXP:ADS-REQ-012C  Ego Reversing Lamp Deactivation upon Disengaging Rev
+        sequence: ACT-16 -> ACT-04 -> ACT-02
+    + EXP:ADS-REQ-013A  Ego Stop Lamp Activation on Braking
+        sequence: ACT-03 -> ACT-01 -> ACT-02
+
+==============================================================================
+6. METHOD & CAVEATS
+==============================================================================
+  Unit of assessment is the scenario sequence (scene: multi-keyframe ego
+  trajectory, 6 surround cameras); frames and cameras never produce verdicts
+  alone.
+  L1 keywords are recall-first (plural-tolerant phrases + distinctive tokens);
+  L1c LLM close-reading filters incidental word overlaps.
+  TEXT_ABSENT != MISSING: sensory (VLM) and detector levels must confirm
+  absence before a case is a missing-case candidate.
+  Keyword coverage cannot see compliance states annotated only visually;
+  the L2/L3 levels exist precisely for those.

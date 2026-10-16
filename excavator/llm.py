@@ -57,9 +57,10 @@ class LlmClient:
                                              data=payload, headers=headers, method="POST")
                 with urllib.request.urlopen(req, timeout=self.timeout_s) as resp:
                     data = json.loads(resp.read())
-                content = data["choices"][0]["message"].get("content")
-                if content is None:  # reasoning models may return null content
-                    content = ""
+                msg = data["choices"][0]["message"]
+                content = msg.get("content")
+                if not content:  # reasoning models may return null content
+                    content = msg.get("reasoning") or msg.get("reasoning_content") or ""
                 return content
             except urllib.error.HTTPError as e:
                 self.errors += 1

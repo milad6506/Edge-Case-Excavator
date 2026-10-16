@@ -68,10 +68,13 @@ def fuse_case(cases: dict[str, Case], results: dict[str, dict[str, dict]],
             "verdict": final, "levels": details,
             "present_levels": sorted(present_levels),
         }
+        if case.kind == "expectation":
+            fused[cid]["source"] = case.meta.get("source_framework")
+            fused[cid]["sequence"] = case.meta.get("sequence")
     return fused
 
 
-def mine_corners(scene_hits: dict[str, set[str]], min_presence: int = 1,
+def mine_corners(scene_hits: dict[str, set[str]], min_presence: int = 2,
                  max_pairs: int = 200) -> list[dict]:
     """Corner-case candidates from co-occurrence structure over leaf cases.
 

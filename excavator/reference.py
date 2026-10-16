@@ -41,6 +41,13 @@ _GENERIC_WORDS = {
     "sign", "signs", "signal", "signals", "marking", "markings", "official",
     "officials", "equipment", "operator", "operators", "passenger", "passengers",
     "zone", "zones", "area", "areas", "pedestrian", "pedestrians", "stage", "buffer",
+    # numerals, sizes, colors, generic roles seen over-matching in QA corpora
+    "one", "two", "three", "four", "five", "six", "seven", "eight", "ten",
+    "large", "small", "heavy", "minor", "major", "scale",
+    "rider", "riders", "riding", "mobile", "priority", "command", "unit", "units",
+    "service", "patrol", "airport", "nearby", "standard", "general", "public",
+    "commercial", "truck", "trucks", "yellow", "red", "green", "white", "black",
+    "blue", "silver", "brown", "adult", "person", "persons",
 }
 
 
