@@ -42,7 +42,9 @@ python3 -m excavator.cli excavate --dataset-root ~/Documents/DriveLM \
 ```
 
 See [`excavator/README.md`](excavator/README.md) and
-[`ASSESSOR_PLAN.md`](ASSESSOR_PLAN.md) for the full architecture.
+[`ASSESSOR_PLAN.md`](ASSESSOR_PLAN.md) for the full architecture, and
+[`examples/`](examples/) for committed audit results on real datasets
+(DriveLM-nuScenes first).
 
 ---
 

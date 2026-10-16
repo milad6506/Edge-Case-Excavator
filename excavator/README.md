@@ -97,15 +97,15 @@ and register in `excavator/adapters/__init__.py`. Anything nuScenes-shaped
 
 ## Worked example — DriveLM-nuScenes (committed)
 
-`../findings/drivelm-full/` contains the committed result of a full L1 text
-audit (696 scenario sequences, keyword sweep + glm-5.3-flash close-reading):
+`../examples/` contains committed audit results on real datasets (dataset
+files themselves are never pushed — only scrubbed results). The DriveLM
+example is a full L1 text audit (696 scenario sequences, keyword sweep +
+glm-5.3-flash close-reading):
 
-- `findings.txt` — the readable audit findings (headline, gap list, corner
-  candidates, method & caveats)
-- `excavation_report_slim.json` — per-case verdicts + close-read reasons
-  (evidence bulk stripped)
-- `coverage_matrix.html` — the interactive matrix
+- `examples/drivelm-full/findings.txt` — readable audit findings (headline,
+  gap list, corner candidates, method & caveats)
+- `examples/drivelm-full/excavation_report_slim.json` — per-case verdicts +
+  close-read reasons (evidence bulk stripped)
+- `examples/drivelm-full/coverage_matrix.html` — the interactive matrix
 
-The raw report with full evidence (4+ MB) stays local in gitignored `runs/`.
-All published artifacts are scrubbed of local filesystem identifiers; dataset
-files themselves are never committed — only audit results.
+The raw report with full evidence (~4.3 MB) stays local in gitignored `runs/`.
